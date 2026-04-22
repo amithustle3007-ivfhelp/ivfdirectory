@@ -4,6 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IVF Cost in India 2025 — Compare Prices Across Mumbai, Delhi & Bangalore</title>
+
+<!-- ════════════════════════════════════════════════
+     GOOGLE ANALYTICS 4
+     Replace G-XXXXXXXXXX with your Measurement ID
+     Get it at: analytics.google.com → Admin → Data Streams
+     ════════════════════════════════════════════════ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    page_title: 'IVF Cost Comparison India',
+    page_location: window.location.href
+  });
+
+  // Helper — call this anywhere to fire a GA4 event
+  function gaEvent(eventName, params) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', eventName, params || {});
+    }
+  }
+</script>
 <meta name="description" content="Compare IVF treatment costs across top clinics in Mumbai, Delhi and Bangalore. Real pricing data for IVF, IUI, ICSI, FET and egg freezing. Free, transparent, updated 2025.">
 <meta name="keywords" content="IVF cost India, IVF price Mumbai, IVF cost Delhi, IVF price Bangalore, IUI cost India, ICSI price India, egg freezing cost India, IVF clinic comparison India 2025">
 <meta name="robots" content="index, follow">
@@ -14,8 +37,37 @@
 <meta property="og:description" content="Real IVF pricing data from top clinics. Compare costs for IVF, IUI, ICSI, FET across 3 cities.">
 <meta property="og:type" content="website">
 
-<!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your publisher ID -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4593374584526064" crossorigin="anonymous"></script>
+<!-- ════════════════════════════════════════════
+     GOOGLE ADSENSE
+     Replace ca-pub-XXXXXXXXXXXXXXXX with your Publisher ID
+     Get it at: adsense.google.com after approval
+     ════════════════════════════════════════════ -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<!-- ════════════════════════════════════════════
+     FORMSPREE
+     Replace XXXXXXXX with your Form ID
+     Get it at: formspree.io → New Form
+     e.g. endpoint https://formspree.io/f/xpwzgkrb → ID is xpwzgkrb
+     ════════════════════════════════════════════ -->
+<script>
+  const FORMSPREE_ID = 'XXXXXXXX';
+  const FORMSPREE_URL = 'https://formspree.io/f/' + FORMSPREE_ID;
+
+  async function sendToFormspree(data) {
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      return res.ok;
+    } catch (e) {
+      console.warn('Formspree error:', e);
+      return false;
+    }
+  }
+</script>
 
 <!-- Schema.org FAQPage for Google rich results -->
 <script type="application/ld+json">
@@ -390,7 +442,7 @@ footer strong { color: rgba(255,255,255,0.9); }
 <div class="ad-wrap">
   <div class="ad-slot ad-leaderboard">
     <!-- AdSense: 728×90 leaderboard -->
-    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-4593374584526064" data-ad-slot="XXXXXXXXXX"></ins>
+    <!-- <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins> -->
     Ad · 728×90
   </div>
 </div>
@@ -497,7 +549,7 @@ footer strong { color: rgba(255,255,255,0.9); }
     <div class="ad-wrap-inline">
       <div class="ad-slot ad-leaderboard">
         <!-- AdSense: responsive in-article -->
-         <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4593374584526064" data-ad-slot="XXXXXXXXXX"></ins>
+        <!-- <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins> -->
         Ad · In-article
       </div>
     </div>
@@ -785,6 +837,8 @@ function setFilter(type, value, btn) {
   if (type === 'proc') { currentProc = value; document.querySelectorAll('[data-filter="proc"]').forEach(b => b.classList.remove('active')); }
   btn.classList.add('active');
   renderTable();
+  // GA4 — track which city/procedure users compare most
+  gaEvent('filter_selected', { filter_type: type, filter_value: value, city: currentCity, procedure: currentProc });
 }
 
 function badgeHTML(accred) {
@@ -879,7 +933,12 @@ function toggleFaq(el) {
   const ans = el.nextElementSibling;
   const open = ans.classList.contains('open');
   document.querySelectorAll('.faq-answer.open').forEach(a => { a.classList.remove('open'); a.previousElementSibling.classList.remove('open'); });
-  if (!open) { ans.classList.add('open'); el.classList.add('open'); }
+  if (!open) {
+    ans.classList.add('open');
+    el.classList.add('open');
+    // GA4 — track which FAQ questions get opened
+    gaEvent('faq_opened', { question: el.querySelector('span').textContent.trim().substring(0, 80) });
+  }
 }
 
 function renderSidebarPrices() {
@@ -887,13 +946,39 @@ function renderSidebarPrices() {
   list.innerHTML = SIDEBAR_PRICES.map(p => `<li><strong>${p.label}</strong><span class="price">${p.range}</span></li>`).join('');
 }
 
-function submitLead() {
+async function submitLead() {
   const phone = document.getElementById('lead-phone').value.trim();
-  const city = document.getElementById('lead-city').value;
-  const proc = document.getElementById('lead-proc').value;
+  const city  = document.getElementById('lead-city').value;
+  const proc  = document.getElementById('lead-proc').value;
+
   if (!phone) { alert('Please enter your phone number'); return; }
-  const msg = encodeURIComponent(`Hi IVFdirectory 👋\nI'd like a free cost estimate.\nPhone: ${phone}\nCity: ${city || 'Not specified'}\nTreatment: ${proc || 'Not specified'}`);
-  window.open(`https://wa.me/919999999999?text=${msg}`, '_blank');
+
+  // 1. Send to Formspree (email delivery to your inbox)
+  const sent = await sendToFormspree({
+    phone:     phone,
+    city:      city || 'Not specified',
+    procedure: proc || 'Not specified',
+    source:    'ivfdirectory_cost_page',
+    timestamp: new Date().toISOString()
+  });
+
+  // 2. GA4 — track lead submission (most valuable conversion event)
+  gaEvent('lead_submitted', {
+    city:      city || 'unspecified',
+    procedure: proc || 'unspecified',
+    formspree_ok: sent
+  });
+
+  // 3. Open WhatsApp with pre-filled message
+  const msg = encodeURIComponent(
+    'Hi IVFdirectory \uD83D\uDC4B\nI\'d like a free cost estimate.\n' +
+    'Phone: ' + phone + '\n' +
+    'City: ' + (city || 'Not specified') + '\n' +
+    'Treatment: ' + (proc || 'Not specified')
+  );
+  window.open('https://wa.me/919999999999?text=' + msg, '_blank');
+
+  // 4. Show success state
   document.getElementById('lead-form-wrap').style.display = 'none';
   document.getElementById('lead-success').style.display = 'block';
 }
@@ -904,6 +989,9 @@ renderBreakdown();
 renderProcCards();
 renderFAQ();
 renderSidebarPrices();
+
+// GA4 — log initial city/procedure view
+gaEvent('page_view_tool', { default_city: currentCity, default_procedure: currentProc });
 </script>
 </body>
 </html>
