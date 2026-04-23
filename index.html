@@ -956,6 +956,8 @@ async function submitLead() {
 
   // 1. Send to Formspree (email delivery to your inbox)
   const sent = await sendToFormspree({
+    _replyto:  'amithustle3007@gmail.com',
+    _subject:  'New IVF Lead — ' + (city || 'Unknown city') + ' · ' + (proc || 'Unknown procedure'),
     phone:     phone,
     city:      city || 'Not specified',
     procedure: proc || 'Not specified',
@@ -977,7 +979,7 @@ async function submitLead() {
     'City: ' + (city || 'Not specified') + '\n' +
     'Treatment: ' + (proc || 'Not specified')
   );
-  window.open('https://wa.me/919999999999?text=' + msg, '_blank');
+  window.open('https://wa.me/919560663800?text=' + msg, '_blank');
 
   // 4. Show success state
   document.getElementById('lead-form-wrap').style.display = 'none';

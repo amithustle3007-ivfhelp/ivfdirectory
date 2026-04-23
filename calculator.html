@@ -274,10 +274,6 @@ footer strong{color:rgba(255,255,255,0.9);}
         <div style="padding:0 1.5rem 0.5rem;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;">Cumulative success across multiple cycles</div>
         <div class="mc-grid" id="mc"></div>
       </div>
-      <div class="ad-wrap" style="padding:1rem 0;background:transparent;border:none;">
-        <ins class="adsbygoogle" style="display:block;width:100%;max-width:728px;min-height:90px;" data-ad-format="auto" data-ad-client="ca-pub-4593374584526064" data-ad-slot="AUTO" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-      </div>
       <div class="disc" id="sdisc"></div>
       <div class="lead-res"><h3>Want Clinic Recommendations?</h3><p>We'll match you with clinics in your city that have strong track records for your profile — free, within 2 hours.</p><div id="slf"><div class="lg"><input class="li" id="s-ph" type="tel" placeholder="Phone / WhatsApp"><input class="li" id="s-nm" type="text" placeholder="Your name"><button class="lb" onclick="subSL()">Get Matched With Clinics →</button></div><p class="ltrust">Free · No spam · Reply within 2 hrs</p></div><div class="lsuc" id="slsuc">🎉 Received! We'll WhatsApp you clinic matches shortly.</div></div>
       <button class="btn-reset" onclick="resetS()">← Try different inputs</button>
@@ -350,10 +346,6 @@ footer strong{color:rgba(255,255,255,0.9);}
       <div class="cost-card">
         <div class="c-head"><h3>Your Personalised Cost Estimate</h3><div class="c-total" id="ctotal">—</div><div class="c-range" id="crange"></div></div>
         <div class="c-items" id="citems"></div>
-      </div>
-      <div class="ad-wrap" style="padding:1rem 0;background:transparent;border:none;">
-        <ins class="adsbygoogle" style="display:block;width:100%;max-width:728px;min-height:90px;" data-ad-format="auto" data-ad-client="ca-pub-4593374584526064" data-ad-slot="AUTO" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
       </div>
       <div class="disc">💡 <strong>Always ask for an itemised written quote</strong> from your clinic. Medications (₹35K–₹1L) are almost always billed separately. Prices based on published clinic data as of April 2025.</div>
       <div class="lead-res"><h3>Get Actual Clinic Quotes</h3><p>Tell us your city and budget — we'll send real quotes from matching clinics within 2 hours.</p><div id="clf"><div class="lg"><input class="li" id="c-ph" type="tel" placeholder="Phone / WhatsApp"><input class="li" id="c-nm" type="text" placeholder="Your name"><button class="lb" onclick="subCL()">Send Me Quotes →</button></div><p class="ltrust">Free · No spam · Reply within 2 hrs</p></div><div class="lsuc" id="clsuc">🎉 Received! We'll WhatsApp you clinic quotes shortly.</div></div>
@@ -467,10 +459,17 @@ async function subSL(){
   const ph=document.getElementById('s-ph').value.trim();
   const nm=document.getElementById('s-nm').value.trim();
   if(!ph){alert('Please enter your phone number');return;}
-  await sendToFormspree({name:nm,phone:ph,age:sS.age,amh:sS.amh,diagnosis:sS.diag,prior_ivf:sS.priorIVF,bmi:sS.bmi,source:'success_predictor'});
+  await sendToFormspree({
+    _replyto:   'amithustle3007@gmail.com',
+    _subject:   'New IVF Lead — Success Predictor · Age ' + sS.age + ' · ' + (sS.diag || 'unknown diagnosis'),
+    name:nm, phone:ph,
+    age:sS.age, amh:sS.amh, diagnosis:sS.diag,
+    prior_ivf:sS.priorIVF, bmi:sS.bmi,
+    source:'success_predictor'
+  });
   gaEvent('success_lead',{age:sS.age,diag:sS.diag});
   const msg=encodeURIComponent('Hi IVFdirectory 👋\nI used the IVF success predictor.\nName: '+(nm||'—')+'\nPhone: '+ph+'\nAge: '+sS.age+'\nDiagnosis: '+sS.diag+'\nPlease recommend clinics for my profile. Thank you!');
-  window.open('https://wa.me/919999999999?text='+msg,'_blank');
+  window.open('https://wa.me/919560663800?text='+msg,'_blank');
   document.getElementById('slf').style.display='none';
   document.getElementById('slsuc').style.display='block';
 }
@@ -515,37 +514,42 @@ function calcC(){
   if(!cS.proc){alert('Please go back and select a procedure');return;}
   if(!cS.clinic){alert('Please go back and select a clinic type');return;}
   if(!cS.cycles){alert('Please select number of cycles');return;}
-  const addons={pgt:document.getElementById('c-pgt').checked,freeze:document.getElementById('c-freeze').checked,hatch:document.getElementById('c-hatch').checked,hystero:document.getElementById('c-hystero').checked};
-  const base=BP[cS.proc][cS.clinic];
-  const adj=CA[cS.city];
-  const pn=Math.round(base.n*adj),px=Math.round(base.x*adj);
-  const mn=base.m.n,mx=base.m.x;
-  let an=0,ax=0;
-  const ar=[];
-  Object.entries(addons).forEach(([k,on])=>{if(on&&AD[k]){an+=AD[k].n;ax+=AD[k].x;ar.push(AD[k]);}});
-  const sn=pn+mn+an,sx=px+mx+ax;
-  const tn=sn*cS.cycles,tx=sx*cS.cycles;
-  const mid=Math.round((tn+tx)/2);
-  const pl={IVF:'IVF base',ICSI:'IVF + ICSI',FET:'Frozen embryo transfer',DonorEgg:'Donor egg IVF',IUI:'IUI'};
-  const cl={budget:'Budget clinic',mid:'Mid-range clinic',premium:'Premium clinic'};
-
-  document.querySelectorAll('[id^="cs-"]').forEach(c=>c.classList.remove('active'));
-  document.getElementById('cr').style.display='block';
-  document.getElementById('ctotal').textContent=fi(mid);
-  document.getElementById('crange').textContent=fs(tn)+' – '+fs(tx)+' total for '+cS.cycles+' cycle'+(cS.cycles>1?'s':'');
-
-  const rows=[
-    {l:pl[cS.proc]+' · '+cl[cS.clinic]+' · '+cS.city,n:pn,x:px,t:'c'},
-    {l:'Stimulation medications',n:mn,x:mx,t:'c'},
-    ...ar.map(a=>({l:a.l,n:a.n,x:a.x,t:'a'}))
-  ];
-  document.getElementById('citems').innerHTML=rows.map(r=>`<div class="c-row"><span class="c-rlabel">${r.l}<span class="cb ${r.t==='c'?'cb-c':'cb-a'}">${r.t==='c'?'core':'add-on'}</span></span><span class="c-rprice">${fs(r.n)} – ${fs(r.x)}</span></div>`).join('')+
-    `<div class="c-row" style="border-top:2px solid var(--border);margin-top:0.5rem;padding-top:0.75rem;"><span class="c-rlabel">Per cycle subtotal</span><span class="c-rprice">${fs(sn)} – ${fs(sx)}</span></div>`+
-    (cS.cycles>1?`<div class="c-row"><span class="c-rlabel">× ${cS.cycles} cycles total</span><span class="c-rprice" style="color:var(--teal);">${fs(tn)} – ${fs(tx)}</span></div>`:'');
-
-  gaEvent('cost_calc',{city:cS.city,proc:cS.proc,clinic:cS.clinic,cycles:cS.cycles});
-  window.scrollTo({top:0,behavior:'smooth'});
-  rCP(CT);
+  try{
+    const addons={pgt:document.getElementById('c-pgt').checked,freeze:document.getElementById('c-freeze').checked,hatch:document.getElementById('c-hatch').checked,hystero:document.getElementById('c-hystero').checked};
+    const base=BP[cS.proc][cS.clinic];
+    const adj=CA[cS.city];
+    const pn=Math.round(base.n*adj),px=Math.round(base.x*adj);
+    const mn=base.m.n,mx=base.m.x;
+    let an=0,ax=0;
+    const ar=[];
+    Object.entries(addons).forEach(([k,on])=>{if(on&&AD[k]){an+=AD[k].n;ax+=AD[k].x;ar.push(AD[k]);}});
+    const sn=pn+mn+an,sx=px+mx+ax;
+    const tn=sn*cS.cycles,tx=sx*cS.cycles;
+    const mid=Math.round((tn+tx)/2);
+    const pl={IVF:'IVF base',ICSI:'IVF + ICSI',FET:'Frozen embryo transfer',DonorEgg:'Donor egg IVF',IUI:'IUI'};
+    const cl={budget:'Budget clinic',mid:'Mid-range clinic',premium:'Premium clinic'};
+    // Hide all steps, show result
+    document.querySelectorAll('[id^="cs-"]').forEach(c=>c.classList.remove('active'));
+    const cr=document.getElementById('cr');
+    cr.style.display='block';
+    document.getElementById('ctotal').textContent=fi(mid);
+    document.getElementById('crange').textContent=fs(tn)+' – '+fs(tx)+' total for '+cS.cycles+' cycle'+(cS.cycles>1?'s':'');
+    const rows=[
+      {l:pl[cS.proc]+' · '+cl[cS.clinic]+' · '+cS.city,n:pn,x:px,t:'c'},
+      {l:'Stimulation medications',n:mn,x:mx,t:'c'},
+      ...ar.map(a=>({l:a.l,n:a.n,x:a.x,t:'a'}))
+    ];
+    document.getElementById('citems').innerHTML=
+      rows.map(r=>`<div class="c-row"><span class="c-rlabel">${r.l}<span class="cb ${r.t==='c'?'cb-c':'cb-a'}">${r.t==='c'?'core':'add-on'}</span></span><span class="c-rprice">${fs(r.n)} – ${fs(r.x)}</span></div>`).join('')+
+      `<div class="c-row" style="border-top:2px solid var(--border);margin-top:0.5rem;padding-top:0.75rem;"><span class="c-rlabel"><strong>Per cycle subtotal</strong></span><span class="c-rprice"><strong>${fs(sn)} – ${fs(sx)}</strong></span></div>`+
+      (cS.cycles>1?`<div class="c-row"><span class="c-rlabel"><strong>× ${cS.cycles} cycles — total budget</strong></span><span class="c-rprice" style="color:var(--teal);font-size:15px;"><strong>${fs(tn)} – ${fs(tx)}</strong></span></div>`:'');
+    gaEvent('cost_calc',{city:cS.city,proc:cS.proc,clinic:cS.clinic,cycles:cS.cycles});
+    window.scrollTo({top:0,behavior:'smooth'});
+    rCP(CT);
+  }catch(e){
+    alert('Something went wrong. Please go back and check all selections are made.');
+    console.error('calcC error:',e);
+  }
 }
 
 function resetC(){
@@ -568,10 +572,17 @@ async function subCL(){
   const ph=document.getElementById('c-ph').value.trim();
   const nm=document.getElementById('c-nm').value.trim();
   if(!ph){alert('Please enter your phone number');return;}
-  await sendToFormspree({name:nm,phone:ph,city:cS.city,procedure:cS.proc,clinic_type:cS.clinic,cycles:cS.cycles,source:'cost_calculator'});
+  await sendToFormspree({
+    _replyto:    'amithustle3007@gmail.com',
+    _subject:    'New IVF Lead — Cost Calculator · ' + (cS.city||'') + ' · ' + (cS.proc||''),
+    name:nm, phone:ph,
+    city:cS.city, procedure:cS.proc,
+    clinic_type:cS.clinic, cycles:cS.cycles,
+    source:'cost_calculator'
+  });
   gaEvent('cost_lead',{city:cS.city,proc:cS.proc});
   const msg=encodeURIComponent('Hi IVFdirectory 👋\nI used the IVF cost calculator.\nName: '+(nm||'—')+'\nPhone: '+ph+'\nCity: '+cS.city+'\nProcedure: '+cS.proc+'\nClinic type: '+cS.clinic+'\nCycles: '+cS.cycles+'\nPlease send me clinic quotes. Thank you!');
-  window.open('https://wa.me/919999999999?text='+msg,'_blank');
+  window.open('https://wa.me/919560663800?text='+msg,'_blank');
   document.getElementById('clf').style.display='none';
   document.getElementById('clsuc').style.display='block';
 }
