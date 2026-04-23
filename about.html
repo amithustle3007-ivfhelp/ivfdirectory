@@ -1,492 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-  <meta name="description" content="About IVF Help — India's free IVF cost comparison and clinic discovery platform. Informational purposes only." />
-  <title>About — IVF Help</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --navy:       #0f172a;
-      --navy-mid:   #1e293b;
-      --green:      #16a34a;
-      --green-dark: #15803d;
-      --green-light:#dcfce7;
-      --green-text: #166534;
-      --body-bg:    #f8fafc;
-      --white:      #ffffff;
-      --border:     #e2e8f0;
-      --text:       #0f172a;
-      --text-muted: #475569;
-      --text-faint: #94a3b8;
-      --sans:       'Inter', system-ui, -apple-system, sans-serif;
-      --radius:     8px;
-      --max:        740px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About IVFdirectory — India's IVF Price Discovery Platform</title>
+<meta name="description" content="IVFdirectory is India's most transparent IVF pricing platform. We help patients compare real costs across top clinics in Mumbai, Delhi and Bangalore.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.ivfdirectory.in/about.html">
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+<!-- Google Analytics 4 | G-1JBW0NLD3Y -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JBW0NLD3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1JBW0NLD3Y', {
+    page_title: 'About — IVFdirectory',
+    page_location: window.location.href
+  });
+</script>
 
-    body {
-      font-family: var(--sans);
-      background: var(--body-bg);
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-    }
+<!-- Google AdSense | ca-pub-4593374584526064 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4593374584526064" crossorigin="anonymous"></script>
 
-    /* ── Nav ── */
-    .site-nav {
-      background: var(--navy);
-      padding: 0 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    .site-nav .logo {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-      text-decoration: none;
-      letter-spacing: -0.01em;
-    }
+<style>
+:root {
+  --ink: #111827;
+  --ink2: #374151;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --white: #fff;
+  --teal: #0d9488;
+  --teal-light: #f0fdfa;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; }
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 { font-family: 'DM Serif Display', serif; line-height: 1.2; }
 
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.5rem; height: 56px;
+  display: flex; align-items: center; gap: 2rem;
+}
+.nav-brand { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 15px; color: var(--ink); text-decoration: none; }
+.nav-brand-dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; }
+.nav-links { display: flex; gap: 0.25rem; flex: 1; }
+.nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); padding: 0.35rem 0.65rem; border-radius: 6px; transition: all 0.12s; }
+.nav-links a:hover { color: var(--teal); background: var(--teal-light); text-decoration: none; }
+.nav-cta { margin-left: auto; background: var(--teal); color: white; font-size: 13px; font-weight: 600; padding: 0.45rem 1rem; border-radius: 7px; white-space: nowrap; }
+.nav-cta:hover { opacity: 0.88; text-decoration: none; }
 
-    .nav-links a {
-      font-size: 0.8rem;
-      color: #94a3b8;
-      text-decoration: none;
-      transition: color .15s;
-    }
+.page-hero {
+  background: white; border-bottom: 1px solid var(--border);
+  padding: 3rem 1.5rem 2.5rem; text-align: center;
+}
+.page-hero .eyebrow {
+  display: inline-block; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase; color: var(--teal);
+  background: var(--teal-light); padding: 0.3rem 0.8rem;
+  border-radius: 100px; margin-bottom: 1rem;
+  border: 1px solid rgba(13,148,136,0.2);
+}
+.page-hero h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--ink); margin-bottom: 0.75rem; }
+.page-hero p { font-size: 1rem; color: var(--muted); max-width: 520px; margin: 0 auto; font-weight: 300; }
 
-    .nav-links a:hover,
-    .nav-links a.active { color: #fff; }
+.content-wrap { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem; }
 
-    /* ── Hero ── */
-    .page-hero {
-      background: var(--navy-mid);
-      padding: 3rem 1.5rem 2.75rem;
-      text-align: center;
-      border-bottom: 1px solid #334155;
-    }
+.ad-wrap { display: flex; justify-content: center; padding: 1.5rem; background: white; border-bottom: 1px solid var(--border); }
+.ad-slot { background: var(--bg); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; }
+.ad-leaderboard { height: 90px; width: 100%; max-width: 728px; }
 
-    .page-hero .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(22,163,74,.15);
-      color: #4ade80;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-bottom: 1.1rem;
-    }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.4rem; color: var(--ink); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--teal-light); }
+.section p { font-size: 15px; color: var(--ink2); margin-bottom: 0.75rem; }
 
-    .page-hero .badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #4ade80;
-    }
+.values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem; }
+@media (max-width: 560px) { .values-grid { grid-template-columns: 1fr; } }
+.value-card { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+.value-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.value-card h3 { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 0.35rem; }
+.value-card p { font-size: 13px; color: var(--muted); margin: 0; }
 
-    .page-hero h1 {
-      font-size: clamp(1.6rem, 4vw, 2.25rem);
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: -0.02em;
-      line-height: 1.25;
-      margin-bottom: 0.75rem;
-    }
+.contact-box { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; margin-top: 1rem; }
+.contact-box p { margin-bottom: 0.5rem; font-size: 14px; color: var(--ink2); }
+.contact-box a { font-weight: 600; }
 
-    .page-hero .subtitle {
-      font-size: 0.95rem;
-      color: #94a3b8;
-      max-width: 520px;
-      margin: 0 auto;
-    }
+.disclaimer-box { background: #fffbeb; border: 1px solid rgba(217,119,6,0.25); border-radius: 10px; padding: 1.25rem 1.5rem; margin-top: 1rem; }
+.disclaimer-box p { font-size: 13px; color: #92400e; margin: 0; line-height: 1.6; }
 
-    /* ── Layout ── */
-    .container {
-      max-width: var(--max);
-      margin: 2.5rem auto 4rem;
-      padding: 0 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
+footer {
+  background: #111827; color: rgba(255,255,255,0.55);
+  padding: 2rem 1.5rem; font-size: 12.5px; text-align: center; line-height: 1.8;
+}
+footer a { color: rgba(255,255,255,0.7); }
+footer strong { color: rgba(255,255,255,0.9); }
 
-    /* ── Card ── */
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem 2rem;
-    }
-
-    .card-label {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 0.75rem;
-    }
-
-    .card h2 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.75rem;
-      letter-spacing: -0.01em;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.8;
-      margin-bottom: 0.75rem;
-    }
-
-    .card p:last-child { margin-bottom: 0; }
-
-    a { color: var(--green-dark); text-decoration: underline; text-underline-offset: 2px; }
-    a:hover { text-decoration: none; }
-
-    /* ── Disclaimer ── */
-    .disclaimer {
-      background: #fffbeb;
-      border: 1px solid #fde68a;
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-    }
-
-    .disclaimer .dis-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 0.6rem;
-    }
-
-    .disclaimer .dis-icon {
-      width: 20px;
-      height: 20px;
-      background: #f59e0b;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 11px;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .disclaimer .dis-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: #92400e;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .disclaimer p {
-      font-size: 0.88rem;
-      color: #78350f;
-      line-height: 1.75;
-      margin: 0;
-    }
-
-    /* ── Contact card ── */
-    .contact-card {
-      background: var(--green-light);
-      border: 1px solid #bbf7d0;
-      border-radius: var(--radius);
-      padding: 1.5rem 1.75rem;
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
-    .contact-avatar {
-      width: 48px;
-      height: 48px;
-      background: var(--green);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .contact-avatar svg {
-      width: 22px;
-      height: 22px;
-      fill: none;
-      stroke: #fff;
-      stroke-width: 1.75;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .contact-info .cl {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--green-text);
-      margin-bottom: 0.3rem;
-    }
-
-    .contact-info .email-link {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--green-dark);
-      text-decoration: none;
-    }
-
-    .contact-info .email-link:hover { text-decoration: underline; }
-
-    .contact-info .sub {
-      font-size: 0.78rem;
-      color: #4ade80;
-      color: var(--green-text);
-      opacity: 0.8;
-      margin-top: 2px;
-    }
-
-    /* ── Stats strip (matches homepage style) ── */
-    .stats-strip {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.75rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
-      text-align: center;
-    }
-
-    .stat-item .stat-val {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--text);
-      letter-spacing: -0.02em;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .stat-item .stat-label {
-      font-size: 0.72rem;
-      color: var(--text-faint);
-    }
-
-    /* ── Nav breadcrumb ── */
-    .page-nav {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .page-nav a {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color .15s;
-    }
-
-    .page-nav a:hover { color: var(--green-dark); }
-
-    /* ── Footer ── */
-    footer {
-      background: var(--navy-mid);
-      border-top: 1px solid #334155;
-      padding: 2rem 1.5rem;
-      text-align: center;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-links a {
-      font-size: 0.78rem;
-      color: #64748b;
-      text-decoration: none;
-      transition: color .15s;
-    }
-
-    .footer-links a:hover { color: #fff; }
-
-    footer p {
-      font-size: 0.78rem;
-      color: #64748b;
-      margin: 0;
-    }
-
-    @media (max-width: 600px) {
-      .site-nav { padding: 0 1rem; }
-      .nav-links { display: none; }
-      .page-hero { padding: 2rem 1rem; }
-      .container { padding: 0 1rem; margin-top: 1.5rem; }
-      .card { padding: 1.25rem 1.25rem; }
-      .contact-card { flex-direction: column; align-items: flex-start; gap: 1rem; }
-      .stats-strip { grid-template-columns: repeat(2, 1fr); }
-    }
-  </style>
+@media (max-width: 600px) { .nav-links { display: none; } }
+</style>
 </head>
 <body>
 
-<!-- ── Nav ── -->
-<nav class="site-nav">
-  <a href="https://www.ivfhelp.org/" class="logo">IVFdirectory</a>
-  <ul class="nav-links">
-    <li><a href="https://www.ivfhelp.org/">Home</a></li>
-    <li><a href="https://www.ivfhelp.org/clinics/">Find Clinics</a></li>
-    <li><a href="https://www.ivfhelp.org/ivf-cost/">Cost Guide</a></li>
-    <li><a href="https://www.ivfhelp.org/about/" class="active">About</a></li>
-  </ul>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-brand-dot"></div>
+    IVFdirectory
+  </a>
+  <div class="nav-links">
+    <a href="index.html#compare">Compare Prices</a>
+    <a href="index.html#breakdown">Cost Breakdown</a>
+    <a href="index.html#procedures">Procedures</a>
+    <a href="index.html#faq">FAQs</a>
+  </div>
+  <a href="index.html#get-quote" class="nav-cta">Get Free Quote</a>
 </nav>
 
-<!-- ── Hero ── -->
+<div class="ad-wrap">
+  <div class="ad-slot ad-leaderboard">
+    <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-ad-client="ca-pub-4593374584526064" data-ad-slot="AUTO" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
 <div class="page-hero">
-  <div class="badge">About this site</div>
-  <h1>India's IVF price discovery platform</h1>
-  <p class="subtitle">Transparent, clinic-level pricing for IVF and fertility treatments — no spam, no registration.</p>
+  <div class="eyebrow">About Us</div>
+  <h1>India's IVF Price Discovery Platform</h1>
+  <p>Helping patients make informed decisions about fertility treatment costs — free, transparent, no registration required.</p>
 </div>
 
-<!-- ── Content ── -->
-<div class="container">
+<div class="content-wrap">
 
-  <!-- Stats strip matching homepage -->
-  <div class="stats-strip">
-    <div class="stat-item">
-      <div class="stat-val">10</div>
-      <div class="stat-label">Clinics compared</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val">3</div>
-      <div class="stat-label">Cities covered</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val">6</div>
-      <div class="stat-label">Procedures</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val">₹1.1L</div>
-      <div class="stat-label">Lowest IVF price</div>
+  <div class="section">
+    <h2>What We Do</h2>
+    <p>IVFdirectory is an independent information platform dedicated to bringing price transparency to fertility treatment in India. We compile, structure and publish real pricing data from IVF clinics across Mumbai, Delhi and Bangalore so patients can compare costs before committing to treatment.</p>
+    <p>IVF in India is a ₹10,000+ crore market, yet most patients discover the true cost only after their first consultation — when medications, add-ons and hidden charges are revealed. We exist to change that. Our data covers IVF, IUI, ICSI, frozen embryo transfer, egg freezing, and donor egg IVF across all major clinic chains including Nova IVF, Indira IVF, Birla Fertility, Cloudnine, Bloom IVF, Milann, and Risaa IVF.</p>
+  </div>
+
+  <div class="section">
+    <h2>Our Values</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🔍</div>
+        <h3>Transparency first</h3>
+        <p>We show both base price and all-inclusive estimates so patients are never surprised by medication costs.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🆓</div>
+        <h3>Free for patients</h3>
+        <p>All price comparison tools and information on this site are completely free. No account, no paywall, no spam.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📊</div>
+        <h3>Data-driven</h3>
+        <p>Prices are sourced from clinic websites and verified aggregators. Every data point shows its source and confidence level.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🇮🇳</div>
+        <h3>India-focused</h3>
+        <p>Built specifically for the Indian regulatory, cultural and linguistic context — not adapted from Western platforms.</p>
+      </div>
     </div>
   </div>
 
-  <!-- About -->
-  <div class="card">
-    <p class="card-label">Who we are</p>
-    <h2>About IVF Help</h2>
-    <p>
-      IVF Help is a free, independent resource dedicated to helping individuals and couples in India
-      understand and compare the real costs of IVF, IUI, ICSI, frozen embryo transfer (FET), and egg
-      freezing. We publish transparent, clinic-level pricing data across Mumbai, Delhi, and Bangalore,
-      sourced from clinic websites, Practo, Vaidam, and verified aggregators, so that patients can
-      make informed decisions without the stress of surprise fees or incomplete quotes.
-    </p>
-    <p>
-      Our goal is simple: to make fertility treatment costs clear, comparable, and accessible. We
-      cover everything from what a base IVF cycle includes, to which add-ons are typically billed
-      separately, to how success rates vary by age and clinic type — all in plain language, without
-      requiring you to register or share your personal details.
-    </p>
-    <p>
-      Pricing data was last reviewed in April 2025. We update our comparisons regularly as clinic
-      packages change. For the most accurate quote for your specific situation, we always recommend
-      requesting an itemised estimate directly from your chosen clinic.
-    </p>
+  <div class="section">
+    <h2>How Our Data Works</h2>
+    <p>We compile pricing information from three sources, each assigned a confidence level:</p>
+    <p><strong>High confidence</strong> — prices sourced directly from the clinic's own website or published price list. These are the most reliable.</p>
+    <p><strong>Medium confidence</strong> — prices sourced from verified health aggregators such as Practo, Vaidam, and Justdial. Reliable but may lag behind clinic updates.</p>
+    <p><strong>Low confidence</strong> — prices derived from patient forums, third-party blogs, or older sources. Shown as indicative estimates only.</p>
+    <p>We review and update our data regularly. All prices include the date last reviewed. If you believe any information is inaccurate, please contact us at the address below.</p>
   </div>
 
-  <!-- Disclaimer -->
-  <div class="disclaimer">
-    <div class="dis-header">
-      <div class="dis-icon">!</div>
-      <span class="dis-label">Informational purposes only</span>
-    </div>
-    <p>
-      All content published on IVF Help is intended for general informational purposes only and does
-      <strong>not</strong> constitute medical advice, diagnosis, or treatment. Nothing on this website
-      should be taken as a substitute for professional medical advice from a qualified fertility
-      specialist or licensed healthcare provider. Fertility treatment is highly individualised —
-      always consult a doctor who knows your medical history before making any treatment decisions.
-      IVF Help is not a medical practice, does not employ medical professionals, and does not
-      provide personalised fertility consultations.
-    </p>
-  </div>
-
-  <!-- Contact -->
-  <div class="contact-card">
-    <div class="contact-avatar">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-        <polyline points="22,6 12,13 2,6"/>
-      </svg>
-    </div>
-    <div class="contact-info">
-      <div class="cl">Get in touch</div>
-      <a href="mailto:contact@ivfhelp.org" class="email-link">contact@ivfhelp.org</a>
-      <div class="sub">We typically reply within 2 business days</div>
+  <div class="section">
+    <h2>Medical Disclaimer</h2>
+    <div class="disclaimer-box">
+      <p>IVFdirectory provides general information only and does not constitute medical or financial advice. Pricing shown is indicative and subject to change. Always consult a qualified fertility specialist before making any treatment decisions. The presence of a clinic on this site does not constitute an endorsement. IVFdirectory is not responsible for any decisions made based on information published here.</p>
     </div>
   </div>
 
-  <!-- Page nav -->
-  <nav class="page-nav" aria-label="Related pages">
-    <a href="https://www.ivfhelp.org/">← Home</a>
-    <a href="https://www.ivfhelp.org/clinics/">Find Clinics</a>
-    <a href="https://www.ivfhelp.org/ivf-cost/">Cost Guide</a>
-    <a href="https://www.ivfhelp.org/privacy/">Privacy Policy</a>
-  </nav>
+  <div class="section">
+    <h2>Contact Us</h2>
+    <div class="contact-box">
+      <p>For data corrections, clinic listings, advertising enquiries, or general feedback:</p>
+      <p>📧 Email: <a href="mailto:hello@ivfdirectory.in">hello@ivfdirectory.in</a></p>
+      <p>📍 Mumbai, Maharashtra, India</p>
+      <p>We aim to respond to all enquiries within 2 business days.</p>
+    </div>
+  </div>
 
 </div>
 
-<!-- ── Footer ── -->
 <footer>
-  <div class="footer-links">
-    <a href="https://www.ivfhelp.org/">Home</a>
-    <a href="https://www.ivfhelp.org/clinics/">Find Clinics</a>
-    <a href="https://www.ivfhelp.org/ivf-cost/">Cost Guide</a>
-    <a href="https://www.ivfhelp.org/about/">About</a>
-    <a href="https://www.ivfhelp.org/privacy/">Privacy Policy</a>
-  </div>
-  <p>
-    &copy; <span id="yr"></span> IVF Help &nbsp;·&nbsp;
-    Pricing data compiled from clinic websites, Practo, Vaidam, and verified aggregators. Updated April 2025. &nbsp;·&nbsp;
-    For informational purposes only — not medical advice.
-  </p>
+  <strong>IVFdirectory India</strong> — India's IVF price discovery platform<br>
+  Pricing data compiled from clinic websites, Practo, Vaidam, and verified aggregators. Updated April 2025.<br>
+  This website provides general information only and does not constitute medical advice.<br><br>
+  <a href="index.html#compare">Find Clinics</a> · <a href="index.html#compare">Cost Guide</a> · <a href="index.html#breakdown">Cost Breakdown</a> · <a href="index.html#faq">FAQs</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a>
 </footer>
-
-<script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>

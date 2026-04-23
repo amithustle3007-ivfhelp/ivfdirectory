@@ -1,653 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-  <meta name="description" content="Privacy Policy for IVF Help — how we collect, use, and protect your data." />
-  <title>Privacy Policy — IVF Help</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    /* ── Design tokens extracted from ivfhelp.org ── */
-    :root {
-      --navy:       #0f172a;   /* site header / dark bg */
-      --navy-mid:   #1e293b;   /* nav bar, footer */
-      --green:      #16a34a;   /* primary CTA green */
-      --green-dark: #15803d;
-      --green-light:#dcfce7;
-      --green-text: #166534;
-      --amber:      #f59e0b;   /* ● live indicator dot */
-      --body-bg:    #f8fafc;   /* page background */
-      --white:      #ffffff;
-      --border:     #e2e8f0;
-      --text:       #0f172a;
-      --text-muted: #475569;
-      --text-faint: #94a3b8;
-      --sans:       'Inter', system-ui, -apple-system, sans-serif;
-      --radius:     8px;
-      --max:        740px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — IVFdirectory India</title>
+<meta name="description" content="Privacy Policy for IVFdirectory.in — how we collect, use and protect your data. Compliant with Google AdSense, GDPR, CCPA and CalOPPA.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.ivfdirectory.in/privacy.html">
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+<!-- Google Analytics 4 | G-1JBW0NLD3Y -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JBW0NLD3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1JBW0NLD3Y', {
+    page_title: 'Privacy Policy — IVFdirectory',
+    page_location: window.location.href
+  });
+</script>
 
-    body {
-      font-family: var(--sans);
-      background: var(--body-bg);
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-    }
+<!-- Google AdSense | ca-pub-4593374584526064 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4593374584526064" crossorigin="anonymous"></script>
 
-    /* ── Nav (matches site) ── */
-    .site-nav {
-      background: var(--navy);
-      padding: 0 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    .site-nav .logo {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-      text-decoration: none;
-      letter-spacing: -0.01em;
-    }
+<style>
+:root {
+  --ink: #111827;
+  --ink2: #374151;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --white: #fff;
+  --teal: #0d9488;
+  --teal-light: #f0fdfa;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; }
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 { font-family: 'DM Serif Display', serif; line-height: 1.2; }
 
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.5rem; height: 56px;
+  display: flex; align-items: center; gap: 2rem;
+}
+.nav-brand { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 15px; color: var(--ink); text-decoration: none; }
+.nav-brand-dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; }
+.nav-links { display: flex; gap: 0.25rem; flex: 1; }
+.nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); padding: 0.35rem 0.65rem; border-radius: 6px; transition: all 0.12s; }
+.nav-links a:hover { color: var(--teal); background: var(--teal-light); text-decoration: none; }
+.nav-cta { margin-left: auto; background: var(--teal); color: white; font-size: 13px; font-weight: 600; padding: 0.45rem 1rem; border-radius: 7px; white-space: nowrap; }
+.nav-cta:hover { opacity: 0.88; text-decoration: none; }
 
-    .nav-links a {
-      font-size: 0.8rem;
-      color: #94a3b8;
-      text-decoration: none;
-      font-weight: 400;
-      transition: color .15s;
-    }
+.page-hero {
+  background: white; border-bottom: 1px solid var(--border);
+  padding: 3rem 1.5rem 2.5rem; text-align: center;
+}
+.page-hero .eyebrow {
+  display: inline-block; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase; color: var(--teal);
+  background: var(--teal-light); padding: 0.3rem 0.8rem;
+  border-radius: 100px; margin-bottom: 1rem;
+  border: 1px solid rgba(13,148,136,0.2);
+}
+.page-hero h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--ink); margin-bottom: 0.75rem; }
+.page-hero .meta { font-size: 13px; color: var(--muted); }
 
-    .nav-links a:hover { color: #fff; }
+.ad-wrap { display: flex; justify-content: center; padding: 1.5rem; background: white; border-bottom: 1px solid var(--border); }
+.ad-slot { background: var(--bg); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; }
+.ad-leaderboard { height: 90px; width: 100%; max-width: 728px; }
 
-    /* ── Page header ── */
-    .page-header {
-      background: var(--navy-mid);
-      padding: 2.75rem 1.5rem 2.5rem;
-      text-align: center;
-      border-bottom: 1px solid #334155;
-    }
+.content-wrap { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem; }
 
-    .page-header .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(22,163,74,.15);
-      color: #4ade80;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-bottom: 1rem;
-    }
+.policy-section { margin-bottom: 2.25rem; }
+.policy-section h2 { font-size: 1.2rem; color: var(--ink); margin-bottom: 0.6rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--teal-light); }
+.policy-section p { font-size: 14.5px; color: var(--ink2); margin-bottom: 0.65rem; }
+.policy-section ul { padding-left: 1.25rem; margin-bottom: 0.65rem; }
+.policy-section ul li { font-size: 14.5px; color: var(--ink2); margin-bottom: 0.35rem; }
+.policy-section a { color: var(--teal); }
 
-    .page-header .badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #4ade80;
-    }
+.compliance-strip {
+  background: white; border: 1px solid var(--border); border-radius: 10px;
+  padding: 1rem 1.5rem; margin-bottom: 2rem;
+  display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;
+}
+.compliance-badge {
+  font-size: 11px; font-weight: 700; padding: 0.25rem 0.6rem;
+  border-radius: 100px; letter-spacing: 0.3px;
+}
+.badge-adsense { background: #fef3c7; color: #92400e; }
+.badge-gdpr    { background: #dbeafe; color: #1e40af; }
+.badge-ccpa    { background: #dcfce7; color: #166534; }
+.badge-caloppa { background: #f3e8ff; color: #6b21a8; }
+.compliance-label { font-size: 12px; color: var(--muted); }
 
-    .page-header h1 {
-      font-size: clamp(1.6rem, 4vw, 2.25rem);
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.6rem;
-      line-height: 1.25;
-    }
+footer {
+  background: #111827; color: rgba(255,255,255,0.55);
+  padding: 2rem 1.5rem; font-size: 12.5px; text-align: center; line-height: 1.8;
+}
+footer a { color: rgba(255,255,255,0.7); }
+footer strong { color: rgba(255,255,255,0.9); }
 
-    .page-header .meta {
-      font-size: 0.8rem;
-      color: var(--text-faint);
-    }
-
-    /* ── Layout ── */
-    .container {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    /* ── TOC card ── */
-    .toc-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem 1.75rem;
-      margin: 2rem auto;
-      max-width: var(--max);
-    }
-
-    .toc-card .card-label {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      margin-bottom: 0.85rem;
-    }
-
-    .toc-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 0.3rem 1.5rem;
-      list-style: none;
-      counter-reset: toc;
-    }
-
-    .toc-grid li {
-      counter-increment: toc;
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      font-size: 0.85rem;
-    }
-
-    .toc-grid li::before {
-      content: counter(toc, decimal-leading-zero);
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: var(--green);
-      flex-shrink: 0;
-    }
-
-    .toc-grid a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color .15s;
-    }
-
-    .toc-grid a:hover { color: var(--green-dark); }
-
-    /* ── Content ── */
-    .content {
-      max-width: var(--max);
-      margin: 0 auto 4rem;
-      padding: 0 1.25rem;
-    }
-
-    .content > p.intro {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-      margin-bottom: 2rem;
-    }
-
-    section {
-      margin-bottom: 2.5rem;
-    }
-
-    section + section {
-      border-top: 1px solid var(--border);
-      padding-top: 2.5rem;
-    }
-
-    .sec-num {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 0.35rem;
-    }
-
-    h2 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.9rem;
-      letter-spacing: -0.01em;
-    }
-
-    h3 {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin: 1.75rem 0 0.65rem;
-    }
-
-    p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 0.85rem;
-    }
-
-    p:last-child { margin-bottom: 0; }
-
-    ul, ol {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      padding-left: 1.4rem;
-      margin-bottom: 0.85rem;
-    }
-
-    li { margin-bottom: 0.3rem; }
-
-    a { color: var(--green-dark); text-decoration: underline; text-underline-offset: 2px; }
-    a:hover { text-decoration: none; }
-
-    strong { color: var(--text); font-weight: 500; }
-
-    /* ── Callout ── */
-    .callout {
-      background: var(--green-light);
-      border: 1px solid #bbf7d0;
-      border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-      margin: 1.25rem 0;
-    }
-
-    .callout p {
-      font-size: 0.88rem;
-      color: var(--green-text);
-      margin: 0;
-    }
-
-    .callout strong { color: var(--green-dark); }
-
-    /* ── Warning ── */
-    .warn-box {
-      background: #fffbeb;
-      border: 1px solid #fde68a;
-      border-radius: var(--radius);
-      padding: 0.9rem 1.2rem;
-      margin: 1.25rem 0;
-    }
-
-    .warn-box p {
-      font-size: 0.88rem;
-      color: #92400e;
-      margin: 0;
-    }
-
-    /* ── Table ── */
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.85rem;
-      margin: 1rem 0;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .data-table thead { background: #f1f5f9; }
-
-    .data-table th {
-      text-align: left;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      padding: 0.6rem 0.9rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .data-table td {
-      padding: 0.65rem 0.9rem;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-muted);
-      vertical-align: top;
-    }
-
-    .data-table tr:last-child td { border-bottom: none; }
-    .data-table td:first-child { font-weight: 500; color: var(--text); }
-
-    /* ── Footer ── */
-    footer {
-      background: var(--navy-mid);
-      border-top: 1px solid #334155;
-      padding: 2rem 1.5rem;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 0.78rem;
-      color: #64748b;
-      margin: 0;
-    }
-
-    footer a { color: #94a3b8; text-decoration: none; }
-    footer a:hover { color: #fff; }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-links a {
-      font-size: 0.78rem;
-      color: #64748b;
-    }
-
-    @media (max-width: 600px) {
-      .site-nav { padding: 0 1rem; }
-      .nav-links { display: none; }
-      .page-header { padding: 2rem 1rem; }
-      .toc-card { margin: 1.25rem 1rem; padding: 1.25rem; }
-      .content { padding: 0 1rem; }
-    }
-  </style>
+@media (max-width: 600px) { .nav-links { display: none; } }
+</style>
 </head>
 <body>
 
-<!-- ── Nav ── -->
-<nav class="site-nav">
-  <a href="https://www.ivfhelp.org/" class="logo">IVFdirectory</a>
-  <ul class="nav-links">
-    <li><a href="https://www.ivfhelp.org/">Home</a></li>
-    <li><a href="https://www.ivfhelp.org/clinics/">Find Clinics</a></li>
-    <li><a href="https://www.ivfhelp.org/ivf-cost/">Cost Guide</a></li>
-    <li><a href="https://www.ivfhelp.org/about/">About</a></li>
-  </ul>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-brand-dot"></div>
+    IVFdirectory
+  </a>
+  <div class="nav-links">
+    <a href="index.html#compare">Compare Prices</a>
+    <a href="index.html#breakdown">Cost Breakdown</a>
+    <a href="index.html#procedures">Procedures</a>
+    <a href="index.html#faq">FAQs</a>
+  </div>
+  <a href="index.html#get-quote" class="nav-cta">Get Free Quote</a>
 </nav>
 
-<!-- ── Page header ── -->
-<div class="page-header">
-  <div class="badge">Legal &amp; Transparency</div>
+<div class="ad-wrap">
+  <div class="ad-slot ad-leaderboard">
+    <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-ad-client="ca-pub-4593374584526064" data-ad-slot="AUTO" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="eyebrow">Legal</div>
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective: <time id="eff-date"></time> &nbsp;·&nbsp; Last updated: <time id="upd-date"></time></p>
+  <p class="meta">Last updated: 22 April 2025 &nbsp;·&nbsp; Effective: 22 April 2025</p>
 </div>
 
-<!-- ── TOC ── -->
-<div class="container">
-  <div class="toc-card">
-    <p class="card-label">Contents</p>
-    <ol class="toc-grid">
-      <li><a href="#s1">Information We Collect</a></li>
-      <li><a href="#s2">How We Use Information</a></li>
-      <li><a href="#s3">Google AdSense &amp; Advertising</a></li>
-      <li><a href="#s4">Cookies &amp; Tracking</a></li>
-      <li><a href="#s5">Third-Party Services</a></li>
-      <li><a href="#s6">Data Sharing &amp; Disclosure</a></li>
-      <li><a href="#s7">Your Rights &amp; Choices</a></li>
-      <li><a href="#s8">Data Retention</a></li>
-      <li><a href="#s9">Children's Privacy</a></li>
-      <li><a href="#s10">Security</a></li>
-      <li><a href="#s11">International Users</a></li>
-      <li><a href="#s12">Changes to This Policy</a></li>
-      <li><a href="#s13">Contact Us</a></li>
-    </ol>
+<div class="content-wrap">
+
+  <div class="compliance-strip">
+    <span class="compliance-label">This policy complies with:</span>
+    <span class="compliance-badge badge-adsense">Google AdSense</span>
+    <span class="compliance-badge badge-gdpr">GDPR</span>
+    <span class="compliance-badge badge-ccpa">CCPA</span>
+    <span class="compliance-badge badge-caloppa">CalOPPA</span>
   </div>
-</div>
 
-<!-- ── Body ── -->
-<div class="content">
+  <div class="policy-section">
+    <h2>1. Who we are</h2>
+    <p>IVFdirectory ("we", "us", "our") operates the website <strong>www.ivfdirectory.in</strong>. We are an independent information platform providing IVF treatment cost comparisons for patients in India. Our registered contact email is <a href="mailto:hello@ivfdirectory.in">hello@ivfdirectory.in</a>.</p>
+  </div>
 
-  <p class="intro">This Privacy Policy explains how IVF Help collects, uses, discloses, and safeguards your information when you visit <a href="https://www.ivfhelp.org">www.ivfhelp.org</a>. Please read this policy carefully. If you disagree with its terms, please discontinue use of the site.</p>
+  <div class="policy-section">
+    <h2>2. Information we collect</h2>
+    <p>We collect information in two ways:</p>
+    <p><strong>Information you provide voluntarily</strong> — When you submit our free quote request form, we collect your phone number, selected city, and treatment type. This data is submitted via Formspree and delivered to our email inbox. We do not store this data on our servers.</p>
+    <p><strong>Information collected automatically</strong> — When you visit our website, we automatically collect certain technical information including your IP address, browser type, device type, pages visited, time spent on pages, and referring URL. This is collected through Google Analytics 4 and standard server logs.</p>
+  </div>
 
-  <!-- 1 -->
-  <section id="s1">
-    <span class="sec-num">Section 01</span>
-    <h2>Information We Collect</h2>
-    <h3>Information You Provide Directly</h3>
-    <p>We may collect information you voluntarily provide, including:</p>
+  <div class="policy-section">
+    <h2>3. Cookies and tracking</h2>
+    <p>Our website uses cookies — small text files stored on your device. We use the following types:</p>
     <ul>
-      <li>Name and email address (if you submit a contact form or request a quote)</li>
-      <li>City and treatment preference (if you use the free quote tool)</li>
-      <li>Comments or messages you send us</li>
+      <li><strong>Analytics cookies</strong> — Google Analytics 4 uses cookies to track visitor behaviour and generate aggregated usage statistics. These cookies do not identify you personally.</li>
+      <li><strong>Advertising cookies</strong> — Google AdSense uses cookies to display relevant advertisements based on your browsing history. These are third-party cookies set by Google.</li>
+      <li><strong>Functional cookies</strong> — We do not use functional or session cookies beyond standard browser behaviour.</li>
     </ul>
-    <h3>Information Collected Automatically</h3>
-    <p>When you visit our site, the following is collected automatically by us and third-party services (including Google AdSense):</p>
+    <p>You can control cookies through your browser settings or opt out of Google advertising cookies at <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">google.com/settings/ads</a>.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>4. How we use your information</h2>
+    <p>We use the information we collect to:</p>
     <ul>
-      <li><strong>Device and browser data:</strong> IP address, browser type and version, operating system, device identifiers</li>
-      <li><strong>Usage data:</strong> pages visited, time on page, referring URLs, links clicked</li>
-      <li><strong>Approximate location:</strong> derived from your IP address</li>
-      <li><strong>Cookies and tracking identifiers:</strong> described in Section 4</li>
+      <li>Respond to free quote requests submitted via our lead form</li>
+      <li>Understand how visitors use our website and improve our content</li>
+      <li>Display relevant advertisements through Google AdSense</li>
+      <li>Monitor website performance and diagnose technical issues</li>
+      <li>Comply with legal obligations</li>
     </ul>
-  </section>
+    <p>We do not use your personal information for automated decision-making or profiling.</p>
+  </div>
 
-  <!-- 2 -->
-  <section id="s2">
-    <span class="sec-num">Section 02</span>
-    <h2>How We Use Your Information</h2>
-    <p>We use collected information to:</p>
+  <div class="policy-section">
+    <h2>5. Google AdSense and advertising</h2>
+    <p>We use Google AdSense to display advertisements on this website. Google AdSense uses the DoubleClick cookie to serve ads based on your prior visits to our website and other websites on the internet. You may opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google's Ad Settings</a>.</p>
+    <p>Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to this site and other sites on the internet. Google's privacy policy is available at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+    <p>We comply with Google AdSense programme policies. We do not place ads on pages with content that violates Google's policies.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>6. Third-party services</h2>
+    <p>We use the following third-party services, each governed by their own privacy policies:</p>
     <ul>
-      <li>Operate, maintain, and improve the website</li>
-      <li>Display relevant advertisements via Google AdSense and partners</li>
-      <li>Send requested cost estimates and clinic information</li>
-      <li>Analyse usage trends and understand visitor behaviour</li>
-      <li>Respond to enquiries and provide support</li>
-      <li>Comply with applicable legal obligations</li>
-      <li>Detect and prevent fraud or security threats</li>
+      <li><strong>Google Analytics 4</strong> — visitor analytics. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><strong>Google AdSense</strong> — advertising. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><strong>Formspree</strong> — form submission processing. <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Formspree Privacy Policy</a></li>
+      <li><strong>Google Fonts</strong> — typography. Fonts are loaded from Google's servers.</li>
+      <li><strong>Netlify</strong> — website hosting. <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">Netlify Privacy Policy</a></li>
     </ul>
-  </section>
+  </div>
 
-  <!-- 3 -->
-  <section id="s3">
-    <span class="sec-num">Section 03</span>
-    <h2>Google AdSense &amp; Advertising</h2>
-
-    <div class="callout">
-      <p><strong>Required AdSense disclosure:</strong> Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. Google's use of advertising cookies enables it and its partners to serve ads based on your visits to this site and/or other sites on the Internet.</p>
-    </div>
-
-    <p>We use Google AdSense to display advertisements. As part of this service:</p>
+  <div class="policy-section">
+    <h2>7. Data sharing and disclosure</h2>
+    <p>We do not sell, trade, or rent your personal information to third parties. We may share information only in the following circumstances:</p>
     <ul>
-      <li>Google and its partners use cookies and similar technologies to collect data about your visits to show relevant ads.</li>
-      <li>Google may use the DoubleClick cookie and other identifiers to serve interest-based (personalised) ads.</li>
-      <li>Google may share information with advertising partners per <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
-      <li>We do not control Google's data collection. Their practices are governed by their own policies.</li>
+      <li>With service providers who help us operate this website (listed above), under data processing agreements</li>
+      <li>When required by law, court order, or government authority</li>
+      <li>To protect the rights, property, or safety of IVFdirectory, our users, or the public</li>
     </ul>
+  </div>
 
-    <h3>Opt out of personalised advertising</h3>
+  <div class="policy-section">
+    <h2>8. Data retention</h2>
+    <p>Lead form submissions are retained in our email inbox for up to 12 months, after which they are deleted. Google Analytics data is retained for 14 months per our GA4 settings. We do not maintain a separate database of personal information.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>9. Your rights (GDPR)</h2>
+    <p>If you are located in the European Economic Area, you have the following rights regarding your personal data:</p>
     <ul>
-      <li>Visit <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a> to manage your preferences.</li>
-      <li>Visit <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a> to opt out of interest-based advertising from participating networks.</li>
-      <li>If in the EEA, visit <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener">youronlinechoices.eu</a>.</li>
-      <li>Install the <a href="https://support.google.com/ads/answer/7395996" target="_blank" rel="noopener">Google Analytics opt-out add-on</a>.</li>
+      <li><strong>Right to access</strong> — request a copy of data we hold about you</li>
+      <li><strong>Right to rectification</strong> — request correction of inaccurate data</li>
+      <li><strong>Right to erasure</strong> — request deletion of your data</li>
+      <li><strong>Right to restrict processing</strong> — request we limit how we use your data</li>
+      <li><strong>Right to data portability</strong> — request your data in a portable format</li>
+      <li><strong>Right to object</strong> — object to processing based on legitimate interests</li>
     </ul>
+    <p>To exercise any of these rights, contact us at <a href="mailto:hello@ivfdirectory.in">hello@ivfdirectory.in</a>.</p>
+  </div>
 
-    <h3>Data collected by Google AdSense</h3>
-    <table class="data-table">
-      <thead>
-        <tr><th>Data type</th><th>Purpose</th><th>Retention</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Cookies &amp; identifiers</td><td>Ad targeting, frequency capping, fraud prevention</td><td>Up to 13 months (Google-controlled)</td></tr>
-        <tr><td>IP address</td><td>Approximate geolocation for regional targeting</td><td>Anonymised after 9 months</td></tr>
-        <tr><td>Device &amp; browser info</td><td>Ad rendering, compatibility</td><td>Session / short-term</td></tr>
-        <tr><td>Pages visited &amp; interactions</td><td>Interest-based ad profiling</td><td>Up to 13 months (Google-controlled)</td></tr>
-      </tbody>
-    </table>
-    <p>See <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">How Google uses information from sites that use their services</a>.</p>
-  </section>
+  <div class="policy-section">
+    <h2>10. California privacy rights (CCPA / CalOPPA)</h2>
+    <p>California residents have the right to know what personal information we collect, the right to request deletion, and the right to opt out of the sale of personal information. We do not sell personal information. California residents may submit requests to <a href="mailto:hello@ivfdirectory.in">hello@ivfdirectory.in</a>.</p>
+    <p>Per CalOPPA, we agree to the following: users can visit our site anonymously; we will notify users of any privacy policy changes on this page; users are able to change their personal information by contacting us.</p>
+  </div>
 
-  <!-- 4 -->
-  <section id="s4">
-    <span class="sec-num">Section 04</span>
-    <h2>Cookies &amp; Tracking Technologies</h2>
-    <p>Our website uses cookies — small text files placed on your device — to enable site functionality and serve relevant ads.</p>
+  <div class="policy-section">
+    <h2>11. Children's privacy</h2>
+    <p>Our website is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately at <a href="mailto:hello@ivfdirectory.in">hello@ivfdirectory.in</a>.</p>
+  </div>
 
-    <table class="data-table">
-      <thead>
-        <tr><th>Cookie type</th><th>Who sets it</th><th>Purpose</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Strictly necessary</td><td>IVF Help</td><td>Essential site functions; cannot be disabled</td></tr>
-        <tr><td>Analytics</td><td>Google Analytics</td><td>Measuring traffic and usage patterns</td></tr>
-        <tr><td>Advertising</td><td>Google AdSense / DoubleClick</td><td>Personalised ads, remarketing, fraud detection</td></tr>
-        <tr><td>Preference</td><td>IVF Help / third parties</td><td>Remembering your selections (city, treatment)</td></tr>
-      </tbody>
-    </table>
+  <div class="policy-section">
+    <h2>12. Security</h2>
+    <p>We implement reasonable security measures to protect against unauthorised access to your personal information. Our website is served over HTTPS. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+  </div>
 
-    <h3>Managing cookies</h3>
-    <p>You can delete cookies or block them from being set in your browser settings. If you block all cookies, some features may not work correctly. Cookie settings guides:</p>
+  <div class="policy-section">
+    <h2>13. Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last updated" date at the top of this page. Continued use of our website after changes are posted constitutes your acceptance of the updated policy.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>14. Contact us</h2>
+    <p>If you have any questions about this Privacy Policy, please contact us:</p>
     <ul>
-      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
-      <li><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank" rel="noopener">Mozilla Firefox</a></li>
-      <li><a href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Apple Safari</a></li>
-      <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
+      <li>Email: <a href="mailto:hello@ivfdirectory.in">hello@ivfdirectory.in</a></li>
+      <li>Website: <a href="https://www.ivfdirectory.in">www.ivfdirectory.in</a></li>
+      <li>Location: Mumbai, Maharashtra, India</li>
     </ul>
-  </section>
-
-  <!-- 5 -->
-  <section id="s5">
-    <span class="sec-num">Section 05</span>
-    <h2>Third-Party Links &amp; Services</h2>
-    <p>Our website links to third-party sites (clinics, aggregators, booking platforms). We do not control those sites and are not responsible for their privacy practices.</p>
-    <p>Third-party services used on this site:</p>
-    <ul>
-      <li><strong>Google AdSense</strong> — advertising (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>)</li>
-      <li><strong>Google Analytics</strong> — web analytics (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>)</li>
-    </ul>
-  </section>
-
-  <!-- 6 -->
-  <section id="s6">
-    <span class="sec-num">Section 06</span>
-    <h2>Data Sharing &amp; Disclosure</h2>
-    <p>We do not sell, rent, or trade your personal information. We may share information only in these circumstances:</p>
-    <ul>
-      <li><strong>Advertising partners:</strong> Data shared with Google and partners for ad delivery (Section 3).</li>
-      <li><strong>Service providers:</strong> Hosting, analytics vendors under confidentiality obligations.</li>
-      <li><strong>Legal requirements:</strong> Where required by law or court order.</li>
-      <li><strong>Business transfers:</strong> In connection with a merger or sale of assets.</li>
-      <li><strong>Protection of rights:</strong> To prevent illegal activity, fraud, or safety threats.</li>
-    </ul>
-  </section>
-
-  <!-- 7 -->
-  <section id="s7">
-    <span class="sec-num">Section 07</span>
-    <h2>Your Rights &amp; Choices</h2>
-
-    <table class="data-table">
-      <thead>
-        <tr><th>Right</th><th>Description</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Access</td><td>Request a copy of personal data we hold about you</td></tr>
-        <tr><td>Correction</td><td>Request that inaccurate data is corrected</td></tr>
-        <tr><td>Deletion</td><td>Request erasure of your personal data</td></tr>
-        <tr><td>Restriction</td><td>Request we limit processing in certain circumstances</td></tr>
-        <tr><td>Portability</td><td>Receive your data in a structured, machine-readable format</td></tr>
-        <tr><td>Objection</td><td>Object to processing for marketing or profiling</td></tr>
-        <tr><td>Withdraw consent</td><td>Withdraw consent where processing is consent-based</td></tr>
-      </tbody>
-    </table>
-
-    <h3>California residents (CCPA / CPRA)</h3>
-    <p>California residents have specific rights under CCPA/CPRA: the right to know what data is collected, the right to delete personal information, and the right to opt out of data sale. We do not sell personal information. Contact us to exercise your rights.</p>
-
-    <h3>European residents (GDPR)</h3>
-    <p>If you are in the EEA, UK, or Switzerland, you have rights under the GDPR. Our legal bases for processing include legitimate interests, legal obligations, and consent. To exercise your rights, contact us using the details in Section 13.</p>
-  </section>
-
-  <!-- 8 -->
-  <section id="s8">
-    <span class="sec-num">Section 08</span>
-    <h2>Data Retention</h2>
-    <p>We retain personal information only as long as necessary for the purposes described in this policy or to meet legal requirements. When no longer needed, data is securely deleted or anonymised.</p>
-    <p>Google AdSense and Analytics retain data per their own retention schedules, which we do not directly control.</p>
-  </section>
-
-  <!-- 9 -->
-  <section id="s9">
-    <span class="sec-num">Section 09</span>
-    <h2>Children's Privacy</h2>
-    <p>Our website is not directed at children under 13 (or 16 in certain jurisdictions). We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
-  </section>
-
-  <!-- 10 -->
-  <section id="s10">
-    <span class="sec-num">Section 10</span>
-    <h2>Security</h2>
-    <p>We use administrative, technical, and physical safeguards to protect your information from unauthorised access, alteration, or disclosure. However, no internet transmission or electronic storage is 100% secure. You provide information at your own risk.</p>
-  </section>
-
-  <!-- 11 -->
-  <section id="s11">
-    <span class="sec-num">Section 11</span>
-    <h2>International Users</h2>
-    <p>IVF Help is operated from India. If you access the site from outside India — including the EU, UK, or the US — your information may be transferred to and processed in countries with different data protection laws.</p>
-    <p>By using our website, you consent to such transfer. Where required by law, we will put appropriate safeguards in place.</p>
-  </section>
-
-  <!-- 12 -->
-  <section id="s12">
-    <span class="sec-num">Section 12</span>
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy periodically. We will revise the "Last updated" date at the top of this page when we do. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
-  </section>
-
-  <!-- 13 -->
-  <section id="s13">
-    <span class="sec-num">Section 13</span>
-    <h2>Contact Us</h2>
-    <p>For questions, requests, or concerns about this Privacy Policy or your personal data:</p>
-    <div class="callout">
-      <p>
-        <strong>IVF Help</strong><br />
-        Email: <a href="mailto:contact@ivfhelp.org">contact@ivfhelp.org</a><br />
-        Website: <a href="https://www.ivfhelp.org">www.ivfhelp.org</a>
-      </p>
-    </div>
-    <p>We aim to respond to all legitimate enquiries within 30 days. You may also have the right to lodge a complaint with your local data protection authority.</p>
-  </section>
+  </div>
 
 </div>
 
-<!-- ── Footer ── -->
 <footer>
-  <div class="footer-links">
-    <a href="https://www.ivfhelp.org/">Home</a>
-    <a href="https://www.ivfhelp.org/clinics/">Find Clinics</a>
-    <a href="https://www.ivfhelp.org/ivf-cost/">Cost Guide</a>
-    <a href="https://www.ivfhelp.org/about/">About</a>
-    <a href="https://www.ivfhelp.org/privacy/">Privacy Policy</a>
-  </div>
-  <p>
-    &copy; <span id="yr"></span> IVF Help &nbsp;·&nbsp;
-    This policy complies with Google AdSense requirements, GDPR, CCPA, and CalOPPA.
-  </p>
+  <strong>IVFdirectory India</strong> — India's IVF price discovery platform<br>
+  © 2025 IVF Help · This policy complies with Google AdSense requirements, GDPR, CCPA, and CalOPPA.<br><br>
+  <a href="index.html#compare">Find Clinics</a> · <a href="index.html#compare">Cost Guide</a> · <a href="index.html#breakdown">Cost Breakdown</a> · <a href="index.html#faq">FAQs</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a>
 </footer>
-
-<script>
-  (function(){
-    var now = new Date();
-    var fmt = now.toLocaleDateString('en-GB', { year:'numeric', month:'long', day:'numeric' });
-    ['eff-date','upd-date'].forEach(function(id){
-      var el = document.getElementById(id);
-      if(el) el.textContent = fmt;
-    });
-    document.getElementById('yr').textContent = now.getFullYear();
-  })();
-</script>
 
 </body>
 </html>
