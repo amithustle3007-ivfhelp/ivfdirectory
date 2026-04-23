@@ -396,8 +396,9 @@ function rSP(n){
 }
 function so(k,v,btn){sS[k]=v;btn.closest('.og').querySelectorAll('.opt').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');}
 function sNext(n){
+  // Validate what was just answered on step n (not what's coming next)
   const g={2:'amh',3:'diag',4:'prevpreg',5:'priorIVF',6:'bmi'};
-  if(g[n+1]&&sS[g[n+1]]===null){alert('Please make a selection');return;}
+  if(g[n]&&sS[g[n]]===null){alert('Please make a selection');return;}
   document.getElementById('ss-'+n).classList.remove('active');
   sC=n+1;
   const nx=document.getElementById('ss-'+sC);
@@ -486,10 +487,14 @@ function rCP(n){
 }
 function co(k,v,btn){cS[k]=v;btn.closest('.og').querySelectorAll('.opt').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');}
 function cNext(n){
-  const req={1:'city',2:'proc',3:'clinic',5:'cycles'};
+  // Validate what was just answered on step n
+  const req={1:'city',2:'proc',3:'clinic'};
   if(req[n]&&!cS[req[n]]){alert('Please make a selection');return;}
+  // Step 4 is toggles — no validation needed, go to step 5
   document.getElementById('cs-'+n).classList.remove('active');
-  cC=n+1;document.getElementById('cs-'+cC).classList.add('active');rCP(cC);
+  cC=n+1;
+  const nx=document.getElementById('cs-'+cC);
+  if(nx){nx.classList.add('active');rCP(cC);}
 }
 function cPrev(n){document.getElementById('cs-'+n).classList.remove('active');cC=n-1;document.getElementById('cs-'+cC).classList.add('active');rCP(cC);}
 
@@ -506,6 +511,9 @@ function fi(n){return '₹'+n.toLocaleString('en-IN');}
 function fs(n){return n>=100000?'₹'+(n/100000).toFixed(1).replace('.0','')+'L':'₹'+(n/1000).toFixed(0)+'K';}
 
 function calcC(){
+  if(!cS.city){alert('Please go back and select a city');return;}
+  if(!cS.proc){alert('Please go back and select a procedure');return;}
+  if(!cS.clinic){alert('Please go back and select a clinic type');return;}
   if(!cS.cycles){alert('Please select number of cycles');return;}
   const addons={pgt:document.getElementById('c-pgt').checked,freeze:document.getElementById('c-freeze').checked,hatch:document.getElementById('c-hatch').checked,hystero:document.getElementById('c-hystero').checked};
   const base=BP[cS.proc][cS.clinic];
