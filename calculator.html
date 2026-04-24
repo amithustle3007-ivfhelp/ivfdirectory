@@ -1,1 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IVF Cost Calculator India 2025 — Free Budget Estimator</title>
+<meta name="description" content="Free IVF cost calculator for India. Get a personalised itemised budget estimate for IVF, IUI, ICSI, FET across Mumbai, Delhi and Bangalore clinics.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.ivfhelp.org/calculator.html">
 
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JBW0NLD3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1JBW0NLD3Y');
+  function gaEvent(n, p){ try{ gtag('event', n, p||{}); }catch(e){} }
+</script>
+
+<!-- AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4593374584526064" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --teal: #0d9488; --teal-light: #f0fdfa; --teal-dark: #0f766e;
+  --ink: #111827; --ink2: #374151; --muted: #6b7280;
+  --border: #e5e7eb; --bg: #f9fafb; --white: #fff;
+  --green: #059669; --green-light: #ecfdf5;
+  --amber: #d97706; --amber-light: #fffbeb;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+h1, h2, h3 { font-family: 'DM Serif Display', serif; line-height: 1.25; }
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); height: 56px; padding: 0 1.5rem; display: flex; align-items: center; gap: 1.5rem; }
+.nav-brand { font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 0.5rem; }
+.dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; }
+.nav-links { display: flex; gap: 0.2rem; flex: 1; }
+.nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); padding: 0.35rem 0.65rem; border-radius: 6px; }
+.nav-links a:hover, .nav-links a.here { color: var(--teal); background: var(--teal-light); }
+.nav-cta { margin-left: auto; background: var(--teal); color: white; font-size: 13px; font-weight: 600; padding: 0.45rem 1rem; border-radius: 7px; }
+@media(max-width:600px){ .nav-links { display: none; } }
+
+/* HERO */
+.hero { background: white; border-bottom: 1px solid var(--border); padding: 2.5rem 1.5rem 2rem; text-align: center; }
+.eyebrow { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--teal); background: var(--teal-light); padding: 0.3rem 0.8rem; border-radius: 100px; margin-bottom: 1rem; border: 1px solid rgba(13,148,136,0.2); }
+.hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 0.5rem; }
+.hero h1 em { font-style: italic; color: var(--teal); }
+.hero p { font-size: 0.9rem; color: var(--muted); max-width: 460px; margin: 0 auto; }
+
+/* AD WRAP */
+.ad-wrap { display: flex; justify-content: center; padding: 1rem 1.5rem; background: white; border-bottom: 1px solid var(--border); }
+
+/* MAIN WRAP */
+.main { max-width: 720px; margin: 2rem auto; padding: 0 1.5rem 3rem; }
+
+/* PROGRESS */
+.progress { display: flex; gap: 0.4rem; margin-bottom: 0.6rem; }
+.prog-bar { flex: 1; height: 4px; background: var(--border); border-radius: 2px; transition: background 0.3s; }
+.prog-bar.active { background: var(--teal); }
+.prog-label { font-size: 12px; color: var(--muted); text-align: right; margin-bottom: 1.25rem; }
+
+/* STEP */
+.step { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; display: none; }
+.step.show { display: block; }
+.step-title { font-size: 1.15rem; color: var(--ink); margin-bottom: 0.3rem; }
+.step-hint { font-size: 12.5px; color: var(--muted); margin-bottom: 1.4rem; line-height: 1.5; }
+
+/* OPTION CARDS */
+.cards { display: grid; gap: 0.65rem; }
+.cards.two { grid-template-columns: 1fr 1fr; }
+.cards.three { grid-template-columns: 1fr 1fr 1fr; }
+@media(max-width:500px){ .cards.two, .cards.three { grid-template-columns: 1fr; } }
+
+.card { border: 2px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; background: white; cursor: pointer; text-align: left; font-family: inherit; display: flex; align-items: flex-start; gap: 0.7rem; transition: border-color 0.12s, background 0.12s; }
+.card:hover { border-color: var(--teal); background: var(--teal-light); }
+.card.picked { border-color: var(--teal); background: var(--teal-light); }
+.card-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
+.card-body strong { display: block; font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.card-body small { font-size: 11.5px; color: var(--muted); line-height: 1.4; }
+
+/* TOGGLES */
+.toggles { display: flex; flex-direction: column; gap: 0.55rem; }
+.toggle-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 9px; padding: 0.85rem 1rem; }
+.toggle-text strong { display: block; font-size: 13px; font-weight: 600; color: var(--ink); }
+.toggle-text small { font-size: 11.5px; color: var(--muted); }
+.switch { position: relative; width: 40px; height: 22px; flex-shrink: 0; }
+.switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+.switch-track { position: absolute; inset: 0; background: #d1d5db; border-radius: 11px; cursor: pointer; transition: background 0.2s; }
+.switch-track::before { content: ''; position: absolute; width: 16px; height: 16px; top: 3px; left: 3px; background: white; border-radius: 50%; transition: transform 0.2s; }
+.switch input:checked + .switch-track { background: var(--teal); }
+.switch input:checked + .switch-track::before { transform: translateX(18px); }
+
+/* BUTTONS */
+.btn-row { display: flex; gap: 0.65rem; margin-top: 1.4rem; }
+.btn-primary { flex: 1; background: var(--teal); color: white; border: none; border-radius: 9px; padding: 0.75rem 1.5rem; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; transition: opacity 0.15s; }
+.btn-primary:hover { opacity: 0.87; }
+.btn-secondary { background: white; color: var(--muted); border: 1.5px solid var(--border); border-radius: 9px; padding: 0.75rem 1.1rem; font-size: 14px; cursor: pointer; font-family: inherit; }
+.btn-secondary:hover { border-color: var(--ink2); color: var(--ink2); }
+
+/* RESULT */
+.result { display: none; }
+
+.result-header { background: linear-gradient(135deg, var(--teal-dark), var(--teal)); border-radius: 12px; padding: 2rem; color: white; text-align: center; margin-bottom: 1.25rem; }
+.result-header h2 { font-size: 1.2rem; opacity: 0.9; margin-bottom: 0.5rem; }
+.result-total { font-family: 'DM Serif Display', serif; font-size: 2.8rem; line-height: 1; margin-bottom: 0.35rem; }
+.result-range { font-size: 13px; opacity: 0.75; }
+
+.result-card { background: white; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 1rem; }
+.result-card-title { padding: 1rem 1.25rem 0.5rem; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); border-bottom: 1px solid var(--border); }
+.line-items { padding: 0.25rem 0; }
+.line-item { display: flex; justify-content: space-between; align-items: center; padding: 0.7rem 1.25rem; border-bottom: 1px solid var(--border); }
+.line-item:last-child { border-bottom: none; }
+.line-item-label { font-size: 13.5px; color: var(--ink2); display: flex; align-items: center; gap: 0.5rem; }
+.line-item-price { font-size: 13.5px; font-weight: 600; color: var(--ink); white-space: nowrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 4px; }
+.tag-core { background: var(--green-light); color: var(--green); }
+.tag-addon { background: #ede9fe; color: #5b21b6; }
+.subtotal-row { display: flex; justify-content: space-between; padding: 0.85rem 1.25rem; background: var(--bg); border-top: 2px solid var(--border); font-weight: 700; font-size: 14px; }
+.total-row { display: flex; justify-content: space-between; padding: 0.85rem 1.25rem; background: var(--teal-light); border-top: 2px solid var(--teal); font-weight: 700; font-size: 15px; color: var(--teal-dark); }
+
+.tip-box { background: var(--amber-light); border: 1px solid rgba(217,119,6,0.25); border-radius: 10px; padding: 1rem 1.25rem; font-size: 13px; color: #92400e; line-height: 1.6; margin-bottom: 1rem; }
+
+.lead-box { background: linear-gradient(135deg, #0f172a, #1e293b); border-radius: 12px; padding: 1.5rem; color: white; margin-bottom: 1rem; }
+.lead-box h3 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 0.25rem; }
+.lead-box p { font-size: 12px; opacity: 0.7; margin-bottom: 1rem; }
+.lead-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+@media(max-width:480px){ .lead-inputs { grid-template-columns: 1fr; } }
+.lead-input { padding: 0.65rem 0.9rem; border: none; border-radius: 7px; font-family: inherit; font-size: 13px; color: var(--ink); width: 100%; outline: none; }
+.lead-submit { grid-column: 1 / -1; padding: 0.7rem; background: var(--teal); color: white; border: none; border-radius: 7px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit; width: 100%; }
+.lead-trust { font-size: 11px; opacity: 0.55; text-align: center; margin-top: 0.5rem; }
+.lead-done { display: none; text-align: center; font-size: 13px; opacity: 0.85; padding: 0.5rem; }
+
+.btn-restart { display: block; width: 100%; background: white; border: 2px solid var(--teal); color: var(--teal); border-radius: 9px; padding: 0.75rem; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; }
+
+/* FOOTER */
+footer { background: #111827; color: rgba(255,255,255,0.5); padding: 2rem 1.5rem; font-size: 12.5px; text-align: center; line-height: 1.8; }
+footer a { color: rgba(255,255,255,0.7); }
+footer strong { color: rgba(255,255,255,0.9); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><div class="dot"></div>IVFdirectory</a>
+  <div class="nav-links">
+    <a href="index.html#compare">Compare Prices</a>
+    <a href="index.html#breakdown">Cost Breakdown</a>
+    <a href="calculator.html" class="here">Calculator</a>
+    <a href="index.html#faq">FAQs</a>
+  </div>
+  <a href="index.html#get-quote" class="nav-cta">Get Free Quote</a>
+</nav>
+
+<!-- TOP AD -->
+<div class="ad-wrap">
+  <ins class="adsbygoogle"
+    style="display:inline-block;width:728px;height:90px"
+    data-ad-client="ca-pub-4593374584526064"
+    data-ad-slot="AUTO"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow">Free Tool</div>
+  <h1>IVF Cost <em>Calculator</em></h1>
+  <p>Answer 5 questions and get a personalised itemised cost estimate for your city, procedure, and clinic type.</p>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- PROGRESS -->
+  <div class="progress" id="prog">
+    <div class="prog-bar active" id="pb1"></div>
+    <div class="prog-bar" id="pb2"></div>
+    <div class="prog-bar" id="pb3"></div>
+    <div class="prog-bar" id="pb4"></div>
+    <div class="prog-bar" id="pb5"></div>
+  </div>
+  <div class="prog-label" id="prog-label">Step 1 of 5</div>
+
+  <!-- STEP 1: CITY -->
+  <div class="step show" id="step1">
+    <div class="step-title">Which city are you planning treatment in?</div>
+    <div class="step-hint">Costs vary by 5–15% across cities due to real estate and operating differences.</div>
+    <div class="cards three" id="city-cards">
+      <button class="card" onclick="pick('city','Mumbai',this,'city-cards')">
+        <span class="card-icon">🏙️</span>
+        <div class="card-body"><strong>Mumbai</strong><small>Slightly higher costs. Top clinics in Bandra, Andheri</small></div>
+      </button>
+      <button class="card" onclick="pick('city','Delhi',this,'city-cards')">
+        <span class="card-icon">🏛️</span>
+        <div class="card-body"><strong>Delhi / NCR</strong><small>Wide range — Gurugram premium, Green Park affordable</small></div>
+      </button>
+      <button class="card" onclick="pick('city','Bangalore',this,'city-cards')">
+        <span class="card-icon">🌿</span>
+        <div class="card-body"><strong>Bangalore</strong><small>5–10% lower than Mumbai. Growing fertility hub</small></div>
+      </button>
+    </div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="goTo(2)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: PROCEDURE -->
+  <div class="step" id="step2">
+    <div class="step-title">Which procedure are you considering?</div>
+    <div class="step-hint">IVF with ICSI is the most common starting point for most couples in India.</div>
+    <div class="cards two" id="proc-cards">
+      <button class="card" onclick="pick('proc','IVF',this,'proc-cards')">
+        <span class="card-icon">🧬</span>
+        <div class="card-body"><strong>IVF — standard</strong><small>Eggs and sperm combined in lab</small></div>
+      </button>
+      <button class="card" onclick="pick('proc','ICSI',this,'proc-cards')">
+        <span class="card-icon">🔬</span>
+        <div class="card-body"><strong>IVF + ICSI</strong><small>Single sperm injected into each egg. Recommended for male factor</small></div>
+      </button>
+      <button class="card" onclick="pick('proc','FET',this,'proc-cards')">
+        <span class="card-icon">❄️</span>
+        <div class="card-body"><strong>Frozen Embryo Transfer</strong><small>Using embryos from a previous cycle. Much cheaper</small></div>
+      </button>
+      <button class="card" onclick="pick('proc','DonorEgg',this,'proc-cards')">
+        <span class="card-icon">🌸</span>
+        <div class="card-body"><strong>Donor Egg IVF</strong><small>Using eggs from an anonymous donor. Recommended over 40</small></div>
+      </button>
+      <button class="card" onclick="pick('proc','IUI',this,'proc-cards')">
+        <span class="card-icon">💧</span>
+        <div class="card-body"><strong>IUI</strong><small>Least invasive. Usually tried before IVF</small></div>
+      </button>
+    </div>
+    <div class="btn-row">
+      <button class="btn-secondary" onclick="goTo(1)">← Back</button>
+      <button class="btn-primary" onclick="goTo(3)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: CLINIC TYPE -->
+  <div class="step" id="step3">
+    <div class="step-title">What type of clinic are you considering?</div>
+    <div class="step-hint">Budget and premium clinics can differ by 40–80% for the same procedure.</div>
+    <div class="cards three" id="clinic-cards">
+      <button class="card" onclick="pick('clinic','budget',this,'clinic-cards')">
+        <span class="card-icon">💚</span>
+        <div class="card-body"><strong>Budget-friendly</strong><small>Indira IVF, Crysta, Risaa — high volume, good outcomes</small></div>
+      </button>
+      <button class="card" onclick="pick('clinic','mid',this,'clinic-cards')">
+        <span class="card-icon">💛</span>
+        <div class="card-body"><strong>Mid-range</strong><small>Nova IVF, Cloudnine, Milann — established chains</small></div>
+      </button>
+      <button class="card" onclick="pick('clinic','premium',this,'clinic-cards')">
+        <span class="card-icon">💎</span>
+        <div class="card-body"><strong>Premium</strong><small>Birla Fertility, Bloom IVF, Hinduja — top facilities</small></div>
+      </button>
+    </div>
+    <div class="btn-row">
+      <button class="btn-secondary" onclick="goTo(2)">← Back</button>
+      <button class="btn-primary" onclick="goTo(4)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: ADD-ONS -->
+  <div class="step" id="step4">
+    <div class="step-title">Which add-ons are you likely to need?</div>
+    <div class="step-hint">Toggle what applies — these significantly affect total cost.</div>
+    <div class="toggles">
+      <div class="toggle-row">
+        <div class="toggle-text">
+          <strong>PGT — Genetic testing of embryos</strong>
+          <small>Recommended if 38+, prior failed cycles, or family genetic history (+₹50K–₹1L)</small>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="t-pgt">
+          <span class="switch-track"></span>
+        </label>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-text">
+          <strong>Embryo freezing</strong>
+          <small>Freeze unused embryos for future cycles (+₹15K–₹35K)</small>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="t-freeze" checked>
+          <span class="switch-track"></span>
+        </label>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-text">
+          <strong>Assisted hatching</strong>
+          <small>Laser technique to help embryo implant (+₹8K–₹20K)</small>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="t-hatch">
+          <span class="switch-track"></span>
+        </label>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-text">
+          <strong>Hysteroscopy (pre-IVF check)</strong>
+          <small>Uterine assessment — often required for first IVF (+₹15K–₹35K)</small>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="t-hystero" checked>
+          <span class="switch-track"></span>
+        </label>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn-secondary" onclick="goTo(3)">← Back</button>
+      <button class="btn-primary" onclick="goTo(5)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- STEP 5: CYCLES -->
+  <div class="step" id="step5">
+    <div class="step-title">How many cycles are you budgeting for?</div>
+    <div class="step-hint">Most patients plan for 2–3 cycles. FET cycles from cycle 1 cost far less than fresh cycles.</div>
+    <div class="cards three" id="cycle-cards">
+      <button class="card" onclick="pick('cycles','1',this,'cycle-cards')">
+        <span class="card-icon">1️⃣</span>
+        <div class="card-body"><strong>1 cycle</strong><small>Starting out — will reassess after results</small></div>
+      </button>
+      <button class="card" onclick="pick('cycles','2',this,'cycle-cards')">
+        <span class="card-icon">2️⃣</span>
+        <div class="card-body"><strong>2 cycles</strong><small>Recommended planning buffer for most patients</small></div>
+      </button>
+      <button class="card" onclick="pick('cycles','3',this,'cycle-cards')">
+        <span class="card-icon">3️⃣</span>
+        <div class="card-body"><strong>3 cycles</strong><small>Conservative budget for best overall probability</small></div>
+      </button>
+    </div>
+    <div class="btn-row">
+      <button class="btn-secondary" onclick="goTo(4)">← Back</button>
+      <button class="btn-primary" onclick="showResult()">Calculate My Budget →</button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result" id="result-section">
+
+    <div class="result-header">
+      <h2>Your Personalised IVF Cost Estimate</h2>
+      <div class="result-total" id="r-total">—</div>
+      <div class="result-range" id="r-range">Estimated midpoint</div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-card-title">Cost Breakdown — per cycle</div>
+      <div class="line-items" id="r-lines"></div>
+      <div class="subtotal-row">
+        <span>Per cycle subtotal</span>
+        <span id="r-subtotal">—</span>
+      </div>
+    </div>
+
+    <div class="result-card" id="r-total-card" style="display:none;">
+      <div class="total-row">
+        <span id="r-cycles-label">Total for X cycles</span>
+        <span id="r-grand-total">—</span>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      💡 <strong>Always ask for an itemised written quote</strong> from your clinic before committing. Stimulation medications (₹35K–₹1L) are almost always billed separately from the base price. Prices based on published clinic data, April 2025.
+    </div>
+
+    <!-- MID AD — safe placement outside hidden divs -->
+    <div style="display:flex;justify-content:center;margin-bottom:1.25rem;">
+      <ins class="adsbygoogle"
+        style="display:inline-block;width:336px;height:280px"
+        data-ad-client="ca-pub-4593374584526064"
+        data-ad-slot="AUTO"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="lead-box">
+      <h3>Get Actual Clinic Quotes</h3>
+      <p>Tell us your details — we'll send real quotes from matching clinics within 2 hours.</p>
+      <div id="lead-form">
+        <div class="lead-inputs">
+          <input class="lead-input" id="lead-phone" type="tel" placeholder="Phone / WhatsApp number">
+          <input class="lead-input" id="lead-name" type="text" placeholder="Your name">
+          <button class="lead-submit" onclick="submitLead()">Send Me Clinic Quotes →</button>
+        </div>
+        <div class="lead-trust">100% free · No spam · Response within 2 hours</div>
+      </div>
+      <div class="lead-done" id="lead-done">🎉 Received! We'll WhatsApp you clinic quotes shortly.</div>
+    </div>
+
+    <button class="btn-restart" onclick="restart()">← Start over with different inputs</button>
+
+  </div><!-- end result -->
+
+</div><!-- end main -->
+
+<!-- BOTTOM AD -->
+<div class="ad-wrap" style="padding: 1.5rem; border-top: 1px solid var(--border);">
+  <ins class="adsbygoogle"
+    style="display:inline-block;width:728px;height:90px"
+    data-ad-client="ca-pub-4593374584526064"
+    data-ad-slot="AUTO"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer>
+  <strong>IVFdirectory India</strong> — India's IVF price discovery platform<br>
+  Estimates are indicative ranges based on published clinic data. Always obtain a written quote from your clinic.<br>
+  This tool does not constitute medical or financial advice.<br><br>
+  <a href="index.html#compare">Compare Prices</a> · <a href="calculator.html">Calculator</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a>
+</footer>
+
+<script>
+// ─── STATE — simple plain object, all strings ───
+var answers = {
+  city:   '',
+  proc:   '',
+  clinic: '',
+  cycles: ''
+};
+
+// ─── PRICING TABLES ───
+var PRICES = {
+  IVF: {
+    budget:  { pMin: 90000,  pMax: 130000, mMin: 35000, mMax: 100000 },
+    mid:     { pMin: 140000, pMax: 185000, mMin: 35000, mMax: 100000 },
+    premium: { pMin: 180000, pMax: 250000, mMin: 35000, mMax: 100000 }
+  },
+  ICSI: {
+    budget:  { pMin: 110000, pMax: 155000, mMin: 35000, mMax: 100000 },
+    mid:     { pMin: 160000, pMax: 210000, mMin: 35000, mMax: 100000 },
+    premium: { pMin: 210000, pMax: 290000, mMin: 35000, mMax: 100000 }
+  },
+  FET: {
+    budget:  { pMin: 28000,  pMax: 48000,  mMin: 12000, mMax: 25000 },
+    mid:     { pMin: 40000,  pMax: 68000,  mMin: 12000, mMax: 25000 },
+    premium: { pMin: 60000,  pMax: 95000,  mMin: 12000, mMax: 25000 }
+  },
+  DonorEgg: {
+    budget:  { pMin: 220000, pMax: 300000, mMin: 15000, mMax: 40000 },
+    mid:     { pMin: 270000, pMax: 370000, mMin: 15000, mMax: 40000 },
+    premium: { pMin: 340000, pMax: 450000, mMin: 15000, mMax: 40000 }
+  },
+  IUI: {
+    budget:  { pMin: 4000,  pMax: 9000,  mMin: 5000, mMax: 18000 },
+    mid:     { pMin: 7000,  pMax: 14000, mMin: 5000, mMax: 18000 },
+    premium: { pMin: 12000, pMax: 20000, mMin: 5000, mMax: 18000 }
+  }
+};
+
+var CITY_ADJ = { Mumbai: 1.05, Delhi: 1.0, Bangalore: 0.95 };
+
+var ADDONS = {
+  pgt:    { label: 'PGT — Genetic testing',         min: 50000, max: 100000 },
+  freeze: { label: 'Embryo freezing + 1yr storage', min: 15000, max: 35000  },
+  hatch:  { label: 'Assisted hatching',             min: 8000,  max: 20000  },
+  hystero:{ label: 'Hysteroscopy (pre-IVF)',        min: 15000, max: 35000  }
+};
+
+var PROC_LABELS = {
+  IVF: 'IVF base procedure',
+  ICSI: 'IVF + ICSI procedure',
+  FET: 'Frozen embryo transfer',
+  DonorEgg: 'Donor egg IVF',
+  IUI: 'IUI procedure'
+};
+
+var CLINIC_LABELS = {
+  budget: 'Budget clinic',
+  mid: 'Mid-range clinic',
+  premium: 'Premium clinic'
+};
+
+// ─── HELPERS ───
+function fmt(n) {
+  if (n >= 100000) return '₹' + (n / 100000).toFixed(1).replace('.0', '') + 'L';
+  return '₹' + (n / 1000).toFixed(0) + 'K';
+}
+
+function fmtFull(n) {
+  return '₹' + n.toLocaleString('en-IN');
+}
+
+// ─── PICK — select an option card ───
+function pick(key, value, btn, groupId) {
+  answers[key] = value;
+  var group = document.getElementById(groupId);
+  var cards = group.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].classList.remove('picked');
+  }
+  btn.classList.add('picked');
+}
+
+// ─── NAVIGATION ───
+var REQUIRED = { 1: 'city', 2: 'proc', 3: 'clinic', 5: 'cycles' };
+var REQUIRED_NAMES = { city: 'a city', proc: 'a procedure', clinic: 'a clinic type', cycles: 'number of cycles' };
+
+function goTo(stepNum) {
+  // Validate current step before moving forward
+  var currentStep = getCurrentStep();
+  if (stepNum > currentStep) {
+    var requiredKey = REQUIRED[currentStep];
+    if (requiredKey && !answers[requiredKey]) {
+      alert('Please select ' + REQUIRED_NAMES[requiredKey] + ' before continuing.');
+      return;
+    }
+  }
+
+  // Hide all steps
+  for (var i = 1; i <= 5; i++) {
+    document.getElementById('step' + i).classList.remove('show');
+  }
+
+  // Show target step
+  document.getElementById('step' + stepNum).classList.add('show');
+
+  // Update progress bars
+  for (var j = 1; j <= 5; j++) {
+    var bar = document.getElementById('pb' + j);
+    if (j <= stepNum) {
+      bar.classList.add('active');
+    } else {
+      bar.classList.remove('active');
+    }
+  }
+  document.getElementById('prog-label').textContent = 'Step ' + stepNum + ' of 5';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function getCurrentStep() {
+  for (var i = 1; i <= 5; i++) {
+    if (document.getElementById('step' + i).classList.contains('show')) return i;
+  }
+  return 1;
+}
+
+// ─── CALCULATE ───
+function showResult() {
+  // Final validation
+  if (!answers.city)   { alert('Please go back and select a city.');        return; }
+  if (!answers.proc)   { alert('Please go back and select a procedure.');    return; }
+  if (!answers.clinic) { alert('Please go back and select a clinic type.');  return; }
+  if (!answers.cycles) { alert('Please select number of cycles.');           return; }
+
+  var p = PRICES[answers.proc][answers.clinic];
+  var adj = CITY_ADJ[answers.city];
+  var cycles = parseInt(answers.cycles);
+
+  var pMin = Math.round(p.pMin * adj);
+  var pMax = Math.round(p.pMax * adj);
+  var mMin = p.mMin;
+  var mMax = p.mMax;
+
+  // Add-ons
+  var aMin = 0, aMax = 0;
+  var addonRows = [];
+  var addonKeys = ['pgt', 'freeze', 'hatch', 'hystero'];
+  for (var i = 0; i < addonKeys.length; i++) {
+    var k = addonKeys[i];
+    var el = document.getElementById('t-' + k);
+    if (el && el.checked) {
+      aMin += ADDONS[k].min;
+      aMax += ADDONS[k].max;
+      addonRows.push(ADDONS[k]);
+    }
+  }
+
+  var subtotalMin = pMin + mMin + aMin;
+  var subtotalMax = pMax + mMax + aMax;
+  var totalMin = subtotalMin * cycles;
+  var totalMax = subtotalMax * cycles;
+  var midpoint = Math.round((totalMin + totalMax) / 2);
+
+  // Build line items HTML
+  var html = '';
+
+  // Procedure row
+  html += '<div class="line-item">' +
+    '<span class="line-item-label">' + PROC_LABELS[answers.proc] +
+    ' &nbsp;<span class="tag tag-core">core</span>' +
+    '<br><small style="color:var(--muted);font-size:11px;">' + CLINIC_LABELS[answers.clinic] + ' · ' + answers.city + '</small></span>' +
+    '<span class="line-item-price">' + fmt(pMin) + ' – ' + fmt(pMax) + '</span>' +
+    '</div>';
+
+  // Medications row
+  html += '<div class="line-item">' +
+    '<span class="line-item-label">Stimulation medications &nbsp;<span class="tag tag-core">core</span></span>' +
+    '<span class="line-item-price">' + fmt(mMin) + ' – ' + fmt(mMax) + '</span>' +
+    '</div>';
+
+  // Add-on rows
+  for (var j = 0; j < addonRows.length; j++) {
+    html += '<div class="line-item">' +
+      '<span class="line-item-label">' + addonRows[j].label + ' &nbsp;<span class="tag tag-addon">add-on</span></span>' +
+      '<span class="line-item-price">' + fmt(addonRows[j].min) + ' – ' + fmt(addonRows[j].max) + '</span>' +
+      '</div>';
+  }
+
+  // Populate DOM
+  document.getElementById('r-total').textContent = fmtFull(midpoint);
+  document.getElementById('r-range').textContent = fmt(totalMin) + ' – ' + fmt(totalMax) + ' estimated range · ' + cycles + ' cycle' + (cycles > 1 ? 's' : '');
+  document.getElementById('r-lines').innerHTML = html;
+  document.getElementById('r-subtotal').textContent = fmt(subtotalMin) + ' – ' + fmt(subtotalMax);
+
+  // Multi-cycle total row
+  if (cycles > 1) {
+    document.getElementById('r-total-card').style.display = 'block';
+    document.getElementById('r-cycles-label').textContent = 'Total for ' + cycles + ' cycles';
+    document.getElementById('r-grand-total').textContent = fmt(totalMin) + ' – ' + fmt(totalMax);
+  } else {
+    document.getElementById('r-total-card').style.display = 'none';
+  }
+
+  // Hide steps + progress, show result
+  for (var s = 1; s <= 5; s++) {
+    document.getElementById('step' + s).classList.remove('show');
+  }
+  document.getElementById('prog').style.display = 'none';
+  document.getElementById('prog-label').style.display = 'none';
+  document.getElementById('result-section').style.display = 'block';
+
+  gaEvent('cost_calculated', {
+    city: answers.city,
+    proc: answers.proc,
+    clinic: answers.clinic,
+    cycles: answers.cycles
+  });
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── LEAD SUBMIT ───
+async function submitLead() {
+  var phone = document.getElementById('lead-phone').value.trim();
+  var name  = document.getElementById('lead-name').value.trim();
+  if (!phone) { alert('Please enter your phone number.'); return; }
+
+  try {
+    await fetch('https://formspree.io/f/mgorwgvk', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _replyto:  'amithustle3007@gmail.com',
+        _subject:  'New IVF Lead — Cost Calculator · ' + answers.city + ' · ' + answers.proc,
+        name:      name,
+        phone:     phone,
+        city:      answers.city,
+        procedure: answers.proc,
+        clinic_type: answers.clinic,
+        cycles:    answers.cycles,
+        source:    'cost_calculator'
+      })
+    });
+  } catch(e) {
+    console.warn('Formspree error', e);
+  }
+
+  gaEvent('lead_submitted', { city: answers.city, proc: answers.proc });
+
+  var msg = encodeURIComponent(
+    'Hi IVFdirectory \uD83D\uDC4B\n' +
+    'I used the IVF cost calculator.\n' +
+    'Name: ' + (name || '—') + '\n' +
+    'Phone: ' + phone + '\n' +
+    'City: ' + answers.city + '\n' +
+    'Procedure: ' + answers.proc + '\n' +
+    'Clinic type: ' + answers.clinic + '\n' +
+    'Cycles: ' + answers.cycles + '\n' +
+    'Please send me clinic quotes. Thank you!'
+  );
+  window.open('https://wa.me/919560663800?text=' + msg, '_blank');
+
+  document.getElementById('lead-form').style.display = 'none';
+  document.getElementById('lead-done').style.display = 'block';
+}
+
+// ─── RESTART ───
+function restart() {
+  answers = { city: '', proc: '', clinic: '', cycles: '' };
+
+  // Uncheck toggles to defaults
+  document.getElementById('t-pgt').checked    = false;
+  document.getElementById('t-freeze').checked  = true;
+  document.getElementById('t-hatch').checked   = false;
+  document.getElementById('t-hystero').checked = true;
+
+  // Clear all picked cards
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].classList.remove('picked');
+  }
+
+  // Reset lead form
+  document.getElementById('lead-phone').value = '';
+  document.getElementById('lead-name').value = '';
+  document.getElementById('lead-form').style.display = 'block';
+  document.getElementById('lead-done').style.display = 'none';
+
+  // Hide result, show progress
+  document.getElementById('result-section').style.display = 'none';
+  document.getElementById('prog').style.display = 'flex';
+  document.getElementById('prog-label').style.display = 'block';
+
+  // Go to step 1
+  goTo(1);
+}
+</script>
+
+</body>
+</html>
