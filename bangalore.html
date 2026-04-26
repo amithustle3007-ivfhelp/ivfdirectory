@@ -514,7 +514,7 @@ var FAQS = [
  {q:'Are IVF medications included in Bangalore clinic prices?',a:'Almost never. Bangalore clinics quote a base price excluding stimulation injections which add Rs35,000-Rs1,00,000. Always ask for a total all-inclusive written quote before comparing clinics.'},
  {q:'What is the cost of IUI in Bangalore in 2026?',a:'IUI in Bangalore costs Rs5,500-Rs13,000 for the procedure, plus Rs5,000-Rs15,000 for medications. Total per cycle is Rs11,000-Rs23,000  -  slightly lower than Mumbai and Delhi.'},
  {q:'Does Indira IVF Bangalore offer 0% EMI?',a:'Yes  -  Indira IVF offers 0% interest EMI across all Bangalore branches. Nova IVF also offers EMI but not always interest-free. Milann Fertility offers standard EMI. Always confirm the exact terms and processing fees.'},
- {q:'What is the IVF success rate in Bangalore clinics?',a:'Published success rates: Nova IVF 55%, Indira IVF 55%, Milann Fertility 55% per cycle for women under 35. Milann has among India's most experienced teams  -  Dr. Kamini Rao is a pioneer in Indian reproductive medicine with 30+ years of practice.'}
+ {q:'What is the IVF success rate in Bangalore clinics?',a:'Published success rates: Nova IVF 55%, Indira IVF 55%, Milann Fertility 55% per cycle for women under 35. Milann has among India\\'s most experienced teams  -  Dr. Kamini Rao is a pioneer in Indian reproductive medicine with 30+ years of practice.'}
 ];
 
 var currentProc = 'IVF';
@@ -573,10 +573,10 @@ async function submitLead() {
  if(!phone){ alert('Please enter your phone number.'); return; }
  try {
  await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/formResponse', { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'},
- body: new URLSearchParams({'entry.1601953016':'Guest','entry.303215056':phone||'','entry.1898340488':city||'','entry.714389099':proc||'','entry.1786101561':'City page lead'}).toString()
+ body: new URLSearchParams({'entry.1601953016':'Guest','entry.303215056':phone||'','entry.1898340488':'Bangalore','entry.714389099':proc||'','entry.1786101561':'City page lead'}).toString()
  });
  } catch(e){}
- var msg = encodeURIComponent('Hi IVFdirectory! City: Bangalore\nTreatment: '+(proc||'Not specified')+'\nPhone: '+phone+'\nPlease send me clinic quotes. Thank you!');
+ var msg = encodeURIComponent('Hi IVFdirectory! City: Bangalore. Treatment: '+(proc||'Not specified')+'. Phone: '+phone+'. Please send me clinic quotes. Thank you!');
  window.open('https://wa.me/919560663800?text='+msg,'_blank');
  document.getElementById('lead-form').style.display='none';
  document.getElementById('lead-done').style.display='block';
