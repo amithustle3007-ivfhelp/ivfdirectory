@@ -247,8 +247,8 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Which country has the cheapest IVF in the world?","acceptedAnswer":{"@type":"Answer","text":"India has the cheapest high-quality IVF globally at $1,200 to $3,000 per cycle all-inclusive. This compares to $20,000 to $25,000 in the USA, $6,500 to $9,500 in the UK and $6,000 to $10,000 in Australia. India is 8 to 15 times cheaper than the USA while top Indian clinics report 50 to 65 percent success rates."}},
 {"@type":"Question","name":"How much does IVF cost in the USA in 2026?","acceptedAnswer":{"@type":"Answer","text":"IVF in the USA costs $20,000 to $25,000 per cycle all-inclusive with medications. With donor eggs the cost rises to $30,000 or more. Only 15 US states mandate some insurance coverage. The USA is the most expensive country globally for IVF treatment."}},
-{"@type":"Question","name":"Is IVF in India good quality?","acceptedAnswer":{"@type":"Answer","text":"Yes. Top Indian IVF clinics including Nova IVF, Birla Fertility, Bloom IVF and Milann report success rates of 50 to 65 percent per cycle for women under 35 — comparable to or better than clinics in many Western countries. India has ICMR-regulated ART clinics and internationally trained specialists."}},
-{"@type":"Question","name":"Which country has free IVF?","acceptedAnswer":{"@type":"Answer","text":"Israel has the most generous public IVF funding globally — unlimited cycles up to 2 live births, free for all citizens up to age 45. France covers 6 egg retrievals and 4 transfers for women under 43 through Securite Sociale. Nordic countries (Sweden, Denmark) fund 3 cycles. The UK NHS funds 1 to 3 cycles but only 27 percent of cycles are actually funded in practice."}}
+{"@type":"Question","name":"Is IVF in India good quality?","acceptedAnswer":{"@type":"Answer","text":"Yes. Top Indian IVF clinics including Nova IVF, Birla Fertility, Bloom IVF and Milann report success rates of 50 to 65 percent per cycle for women under 35  -  comparable to or better than clinics in many Western countries. India has ICMR-regulated ART clinics and internationally trained specialists."}},
+{"@type":"Question","name":"Which country has free IVF?","acceptedAnswer":{"@type":"Answer","text":"Israel has the most generous public IVF funding globally  -  unlimited cycles up to 2 live births, free for all citizens up to age 45. France covers 6 egg retrievals and 4 transfers for women under 43 through Securite Sociale. Nordic countries (Sweden, Denmark) fund 3 cycles. The UK NHS funds 1 to 3 cycles but only 27 percent of cycles are actually funded in practice."}}
 ]}
 </script>
 </head>
@@ -619,41 +619,41 @@ async function submitLead_globalcost() {
 <script>
 var COUNTRIES = [
  {flag:'IN',name:'India',lo:1200,hi:3000,color:'#0d9488',
- note:'Most affordable globally. ESIC covers free for eligible employees. Govt hospitals from $240–480.',
- insurance:'ESIC (free for eligible)',base:'$600–$1,800',rank:1},
+ note:'Most affordable globally. ESIC covers free for eligible employees. Govt hospitals from $240-480.',
+ insurance:'ESIC (free for eligible)',base:'$600-$1,800',rank:1},
  {flag:'TH',name:'Thailand',lo:3500,hi:6000,color:'#2E86AB',
  note:'Asia\'s second-largest IVF hub. High international patient volume. English-speaking clinics.',
- insurance:'Out of pocket',base:'$2,000–$4,000',rank:2},
+ insurance:'Out of pocket',base:'$2,000-$4,000',rank:2},
  {flag:'CZ',name:'Czech Rep.',lo:2500,hi:5000,color:'#5C6BC0',
  note:'Europe\'s most popular IVF tourism destination. Especially for donor egg IVF from Western Europe.',
- insurance:'Partial (state-funded up to 3 cycles)',base:'$1,500–$3,000',rank:3},
+ insurance:'Partial (state-funded up to 3 cycles)',base:'$1,500-$3,000',rank:3},
  {flag:'ES',name:'Spain',lo:4000,hi:7000,color:'#E76F51',
  note:'Top choice for donor egg IVF from UK and Northern Europe. Anonymous donation legal.',
- insurance:'Partial (regional varies)',base:'$2,500–$5,000',rank:4},
+ insurance:'Partial (regional varies)',base:'$2,500-$5,000',rank:4},
  {flag:'CN',name:'China',lo:4200,hi:7000,color:'#E63946',
- note:'Insurance now covers 50%+ in Beijing/Shanghai since 2023. Private ¥30K–¥150K.',
- insurance:'Partial (50%+ in major cities)',base:'$2,000–$4,500',rank:5},
+ note:'Insurance now covers 50%+ in Beijing/Shanghai since 2023. Private  30K- 150K.',
+ insurance:'Partial (50%+ in major cities)',base:'$2,000-$4,500',rank:5},
  {flag:'IL',name:'Israel',lo:5000,hi:8000,color:'#457B9D',
- note:'Most generous public funding globally — unlimited cycles up to 2 live births. Private also available.',
- insurance:'Full (state-funded, unlimited)',base:'$0 publicly / $5K–$8K privately',rank:6},
+ note:'Most generous public funding globally  -  unlimited cycles up to 2 live births. Private also available.',
+ insurance:'Full (state-funded, unlimited)',base:'$0 publicly / $5K-$8K privately',rank:6},
  {flag:'DE',name:'Germany',lo:5000,hi:9000,color:'#6D6875',
  note:'Restrictive laws (PGT limited). Up to 3 cycles subsidised 50% for married couples under 40.',
- insurance:'50% subsidy (married, under 40)',base:'$3,000–$5,000',rank:7},
+ insurance:'50% subsidy (married, under 40)',base:'$3,000-$5,000',rank:7},
  {flag:'FR',name:'France',lo:1500,hi:4000,color:'#8338EC',
- note:'Fully covered by Sécurité Sociale for women under 43 (6 retrievals, 4 transfers).',
- insurance:'Full (state-funded)',base:'$0 publicly / $1.5K–$4K privately',rank:8},
+ note:'Fully covered by S curit  Sociale for women under 43 (6 retrievals, 4 transfers).',
+ insurance:'Full (state-funded)',base:'$0 publicly / $1.5K-$4K privately',rank:8},
  {flag:'AU',name:'Australia',lo:6000,hi:10000,color:'#F77F00',
- note:'Medicare rebates $2,500–$5,000 per cycle. Out-of-pocket AUD $5,000–$8,000 after rebate.',
- insurance:'Partial (Medicare rebate)',base:'$3,500–$6,000',rank:9},
+ note:'Medicare rebates $2,500-$5,000 per cycle. Out-of-pocket AUD $5,000-$8,000 after rebate.',
+ insurance:'Partial (Medicare rebate)',base:'$3,500-$6,000',rank:9},
  {flag:'UK',name:'UK',lo:6500,hi:9500,color:'#1A535C',
- note:'NHS funds 1–3 cycles (postcode lottery, only 27% of cycles funded). Private true cost £4,890–£7,377.',
- insurance:'Partial (NHS, very limited)',base:'$4,000–$6,000',rank:10},
+ note:'NHS funds 1-3 cycles (postcode lottery, only 27% of cycles funded). Private true cost  4,890- 7,377.',
+ insurance:'Partial (NHS, very limited)',base:'$4,000-$6,000',rank:10},
  {flag:'CA',name:'Canada',lo:10000,hi:18000,color:'#C1121F',
  note:'Ontario funds 1 cycle. Most provinces no funding. Medication costs especially high.',
- insurance:'Partial (Ontario only)',base:'$7,000–$12,000',rank:11},
+ insurance:'Partial (Ontario only)',base:'$7,000-$12,000',rank:11},
  {flag:'US',name:'USA',lo:20000,hi:25000,color:'#8B1A1A',
  note:'Most expensive globally. $30,000+ with donor eggs. 15 states mandate some insurance cover.',
- insurance:'Varies (15 states mandate cover)',base:'$12,000–$18,000',rank:12}
+ insurance:'Varies (15 states mandate cover)',base:'$12,000-$18,000',rank:12}
 ];
 
 var MAX_VAL = 25000;
@@ -666,7 +666,7 @@ function renderChart() {
  var midVal = Math.round((c.lo + c.hi) / 2);
  var pct = (midVal / MAX_VAL) * 100;
  var isIndia = c.name === 'India';
- var displayRange = '$' + (c.lo >= 1000 ? (c.lo/1000).toFixed(0)+'K' : c.lo) + ' – $' + (c.hi/1000).toFixed(0)+'K';
+ var displayRange = '$' + (c.lo >= 1000 ? (c.lo/1000).toFixed(0)+'K' : c.lo) + ' - $' + (c.hi/1000).toFixed(0)+'K';
  html += '<div class="bar-row" style="'+(isIndia?'background:rgba(29,158,117,0.06);border-radius:8px;padding:4px 0;':'')+'">';
  html += '<span class="bar-flag">'+c.flag+'</span>';
  html += '<span class="bar-country" style="'+(isIndia?'color:var(--teal-dark);font-weight:700;':'')+'">'+c.name+'</span>';
@@ -697,7 +697,7 @@ function renderTable() {
  html += '<tr'+(isIndia?' class="highlight-india"':'')+' style="'+(isIndia?'font-weight:600;':'')+'"">';
  html += '<td><span class="rank-badge '+rankClass+'">'+(i+1)+'</span></td>';
  html += '<td>'+c.flag+' <strong>'+c.name+'</strong></td>';
- html += '<td style="font-family:var(--serif);font-size:1rem;">$'+c.lo.toLocaleString()+' – $'+c.hi.toLocaleString()+'</td>';
+ html += '<td style="font-family:var(--serif);font-size:1rem;">$'+c.lo.toLocaleString()+' - $'+c.hi.toLocaleString()+'</td>';
  html += '<td>'+c.base+'</td>';
  html += '<td>'+c.insurance+'</td>';
  html += '<td style="font-size:12px;color:var(--text-muted);">'+c.note+'</td>';

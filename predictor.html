@@ -582,13 +582,13 @@ var PRED_FAQS = [
  {q:"What is the IVF success rate in India for women under 35?",
  a:"Top Indian IVF clinics report 50-65% success rates per cycle for women under 35 with no major fertility issues. Success rates drop significantly with age: approximately 40-50% at 35-37, 30-40% at 38-40, and 15-25% for women over 40 using their own eggs. Donor egg IVF maintains 50-60% success regardless of recipient age."},
  {q:"How does AMH level affect IVF success?",
- a:"AMH (Anti-Mullerian Hormone) measures ovarian reserve. Higher AMH generally means more eggs can be retrieved. AMH above 2.0 ng/mL is considered good for IVF. AMH below 1.0 ng/mL indicates low ovarian reserve which reduces success rates. However AMH measures quantity not quality — egg quality drops with age regardless of AMH."},
+ a:"AMH (Anti-Mullerian Hormone) measures ovarian reserve. Higher AMH generally means more eggs can be retrieved. AMH above 2.0 ng/mL is considered good for IVF. AMH below 1.0 ng/mL indicates low ovarian reserve which reduces success rates. However AMH measures quantity not quality  -  egg quality drops with age regardless of AMH."},
  {q:"Does BMI affect IVF success rates?",
  a:"Yes significantly. Optimal BMI for IVF is 18.5-25. Women with BMI above 30 have 30-40% lower IVF success rates due to reduced response to stimulation, lower egg quality, and higher miscarriage risk. Most clinics recommend achieving a healthy BMI before starting IVF if possible."},
  {q:"How many prior failed IVF cycles affect my chances?",
- a:"One prior failed cycle does not significantly reduce future success rates — most patients need 2-3 cycles. However after 3 or more failed cycles with good quality embryos, doctors typically investigate uterine factors, immune issues, or genetic causes. Donor egg IVF often achieves success after multiple own-egg failures."},
+ a:"One prior failed cycle does not significantly reduce future success rates  -  most patients need 2-3 cycles. However after 3 or more failed cycles with good quality embryos, doctors typically investigate uterine factors, immune issues, or genetic causes. Donor egg IVF often achieves success after multiple own-egg failures."},
  {q:"What is the difference between pregnancy rate and live birth rate?",
- a:"Pregnancy rate measures positive hCG tests after embryo transfer, including pregnancies that later miscarry. Live birth rate measures babies actually born. Live birth rate is typically 15-25% lower than pregnancy rate due to early pregnancy loss. Always ask clinics for their live birth rate — not just pregnancy rate — when comparing success statistics."}
+ a:"Pregnancy rate measures positive hCG tests after embryo transfer, including pregnancies that later miscarry. Live birth rate measures babies actually born. Live birth rate is typically 15-25% lower than pregnancy rate due to early pregnancy loss. Always ask clinics for their live birth rate  -  not just pregnancy rate  -  when comparing success statistics."}
 ];
 (function(){
  var html='';
@@ -618,7 +618,7 @@ function togglePFaq(el){
 </footer>
 
 <script>
-// ─── STATE ───
+//     STATE    
 var answers = {
  age: 32,
  amh: '',
@@ -628,7 +628,7 @@ var answers = {
  bmi: ''
 };
 
-// ─── REQUIRED FIELDS PER STEP ───
+//     REQUIRED FIELDS PER STEP    
 var REQUIRED = {
  2: 'amh',
  3: 'diag',
@@ -644,7 +644,7 @@ var REQUIRED_NAMES = {
  bmi: 'your BMI range'
 };
 
-// ─── PICK ───
+//     PICK    
 function pick(key, value, btn, groupId) {
  answers[key] = value;
  var group = document.getElementById(groupId);
@@ -655,7 +655,7 @@ function pick(key, value, btn, groupId) {
  btn.classList.add('picked');
 }
 
-// ─── NAVIGATION ───
+//     NAVIGATION    
 function goTo(stepNum) {
  var current = getCurrentStep();
 
@@ -696,12 +696,12 @@ function getCurrentStep() {
  return 1;
 }
 
-// ─── LOGISTIC REGRESSION MODEL ───
+//     LOGISTIC REGRESSION MODEL    
 // Coefficients calibrated to published Indian IVF data + SART methodology
 function calcLogit() {
  var age = answers.age;
 
- // Age — primary predictor
+ // Age  -  primary predictor
  var ageLogit;
  if (age < 30) ageLogit = 1.20;
  else if (age < 35) ageLogit = 0.85;
@@ -733,7 +733,7 @@ function calcLogit() {
  return ageLogit + amhVal + diagVal + pregVal + ivfVal + bmiVal;
 }
 
-// ─── SHOW RESULT ───
+//     SHOW RESULT    
 function showResult() {
  // Validate all fields
  if (!answers.amh) { alert('Please go back and select your AMH level.'); return; }
@@ -764,12 +764,12 @@ function showResult() {
  if (pct >= 50) band = 'Good prognosis';
  else if (pct >= 35) band = 'Moderate prognosis';
  else if (pct >= 20) band = 'Guarded prognosis';
- else band = 'Challenging — specialist consultation strongly recommended';
+ else band = 'Challenging  -  specialist consultation strongly recommended';
 
  // Populate gauge
  document.getElementById('r-pct').textContent = pct + '%';
  document.getElementById('r-pct').style.color = colour;
- document.getElementById('r-band').textContent = band + ' · Based on published Indian fertility data';
+ document.getElementById('r-band').textContent = band + ' . Based on published Indian fertility data';
  document.getElementById('r-bar').style.width = pct + '%';
  document.getElementById('r-bar').style.background = colour;
 
@@ -779,37 +779,37 @@ function showResult() {
  lbl: 'Age',
  val: answers.age + ' years',
  imp: answers.age < 35 ? 'pos' : answers.age < 38 ? 'neu' : 'neg',
- note: answers.age < 35 ? '↑ Favourable' : answers.age < 38 ? '→ Moderate impact' : '↓ Reduces success rate'
+ note: answers.age < 35 ? '  Favourable' : answers.age < 38 ? '  Moderate impact' : '  Reduces success rate'
  },
  {
  lbl: 'AMH / Ovarian reserve',
- val: { high:'High (>3.0 ng/mL)', normal:'Normal (1–3.0)', low:'Low (<1.0 ng/mL)', unknown:'Not tested' }[answers.amh] || '—',
+ val: { high:'High (>3.0 ng/mL)', normal:'Normal (1-3.0)', low:'Low (<1.0 ng/mL)', unknown:'Not tested' }[answers.amh] || ' - ',
  imp: answers.amh === 'high' ? 'pos' : answers.amh === 'low' ? 'neg' : 'neu',
- note: answers.amh === 'high' ? '↑ Favourable' : answers.amh === 'low' ? '↓ Reduces success' : '→ Average'
+ note: answers.amh === 'high' ? '  Favourable' : answers.amh === 'low' ? '  Reduces success' : '  Average'
  },
  {
  lbl: 'Diagnosis',
- val: { tubal:'Tubal factor', male:'Male factor', pcos:'PCOS', endo:'Endometriosis', diminished:'Dim. ovarian reserve', unexplained:'Unexplained' }[answers.diag] || '—',
+ val: { tubal:'Tubal factor', male:'Male factor', pcos:'PCOS', endo:'Endometriosis', diminished:'Dim. ovarian reserve', unexplained:'Unexplained' }[answers.diag] || ' - ',
  imp: (answers.diag==='tubal'||answers.diag==='male'||answers.diag==='pcos') ? 'pos' : answers.diag==='diminished' ? 'neg' : 'neu',
- note: (answers.diag==='tubal'||answers.diag==='male'||answers.diag==='pcos') ? '↑ Good prognosis' : answers.diag==='diminished' ? '↓ More challenging' : '→ Moderate'
+ note: (answers.diag==='tubal'||answers.diag==='male'||answers.diag==='pcos') ? '  Good prognosis' : answers.diag==='diminished' ? '  More challenging' : '  Moderate'
  },
  {
  lbl: 'Prior pregnancy',
- val: { none:'None', yes_live:'Prior live birth', yes_loss:'Prior loss/miscarriage' }[answers.prevpreg] || '—',
+ val: { none:'None', yes_live:'Prior live birth', yes_loss:'Prior loss/miscarriage' }[answers.prevpreg] || ' - ',
  imp: answers.prevpreg === 'yes_live' ? 'pos' : 'neu',
- note: answers.prevpreg === 'yes_live' ? '↑ Positive indicator' : '→ Neutral'
+ note: answers.prevpreg === 'yes_live' ? '  Positive indicator' : '  Neutral'
  },
  {
  lbl: 'Prior IVF cycles',
- val: { '0':'None (first IVF)', '1':'1 prior cycle', '2':'2+ prior cycles' }[answers.priorIVF] || '—',
+ val: { '0':'None (first IVF)', '1':'1 prior cycle', '2':'2+ prior cycles' }[answers.priorIVF] || ' - ',
  imp: answers.priorIVF === '0' ? 'neu' : 'neg',
- note: answers.priorIVF === '0' ? '→ Neutral' : answers.priorIVF === '1' ? '↓ Slight reduction' : '↓ Warrants investigation'
+ note: answers.priorIVF === '0' ? '  Neutral' : answers.priorIVF === '1' ? '  Slight reduction' : '  Warrants investigation'
  },
  {
  lbl: 'BMI range',
- val: { under:'Underweight', normal:'Normal (18.5–25)', over:'Overweight (25–30)', obese:'Obese (30+)' }[answers.bmi] || '—',
+ val: { under:'Underweight', normal:'Normal (18.5-25)', over:'Overweight (25-30)', obese:'Obese (30+)' }[answers.bmi] || ' - ',
  imp: answers.bmi === 'normal' ? 'pos' : answers.bmi === 'obese' ? 'neg' : 'neu',
- note: answers.bmi === 'normal' ? '↑ Optimal range' : answers.bmi === 'obese' ? '↓ May reduce success' : '→ Mild impact'
+ note: answers.bmi === 'normal' ? '  Optimal range' : answers.bmi === 'obese' ? '  May reduce success' : '  Mild impact'
  }
  ];
 
@@ -833,7 +833,7 @@ function showResult() {
  // Age-specific note
  var ageNote = document.getElementById('r-age-note');
  if (answers.age >= 40) {
- ageNote.innerHTML = ' <strong>Note on age 40+:</strong> Donor egg IVF typically achieves 50–60% live birth rates — significantly higher than own-egg IVF at this age. This is worth discussing with your specialist.';
+ ageNote.innerHTML = ' <strong>Note on age 40+:</strong> Donor egg IVF typically achieves 50-60% live birth rates  -  significantly higher than own-egg IVF at this age. This is worth discussing with your specialist.';
  ageNote.style.display = 'block';
  } else if (answers.amh === 'low') {
  ageNote.innerHTML = ' <strong>Note on low AMH:</strong> With diminished ovarian reserve, many doctors recommend "banking" embryos over multiple stimulation cycles before transfer, to maximise the number of embryos available.';
@@ -854,7 +854,7 @@ function showResult() {
  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ─── LEAD SUBMIT ───
+//     LEAD SUBMIT    
 async function submitLead() {
  var phone = document.getElementById('lead-phone').value.trim();
  var name = document.getElementById('lead-name').value.trim();
@@ -876,11 +876,11 @@ async function submitLead() {
  var msg = encodeURIComponent(
  'Hi IVFdirectory \n' +
  'I used the IVF success predictor.\n' +
- 'Name: ' + (name || '—') + '\n' +
+ 'Name: ' + (name || ' - ') + '\n' +
  'Phone: ' + phone + '\n' +
  'Age: ' + answers.age + '\n' +
- 'AMH: ' + (answers.amh || '—') + '\n' +
- 'Diagnosis: ' + (answers.diag || '—') + '\n' +
+ 'AMH: ' + (answers.amh || ' - ') + '\n' +
+ 'Diagnosis: ' + (answers.diag || ' - ') + '\n' +
  'Please recommend clinics for my profile. Thank you!'
  );
  window.open('https://wa.me/919560663800?text=' + msg, '_blank');
@@ -889,7 +889,7 @@ async function submitLead() {
  document.getElementById('lead-done').style.display = 'block';
 }
 
-// ─── RESTART ───
+//     RESTART    
 function restart() {
  answers = { age: 32, amh: '', diag: '', prevpreg: '', priorIVF: '', bmi: '' };
 

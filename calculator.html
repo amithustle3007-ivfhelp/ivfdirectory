@@ -247,7 +247,7 @@ footer strong { color: rgba(255,255,255,0.9); }
 {"@type":"Question","name":"How much does IVF cost in India in 2026?","acceptedAnswer":{"@type":"Answer","text":"IVF in India costs Rs1,10,000 to Rs4,20,000 per cycle all-inclusive. The base procedure starts from Rs1.1L but stimulation medications add Rs35,000 to Rs1,00,000 on top. Budget chain clinics like Indira IVF start from Rs1.1L while premium clinics like Birla Fertility or Bloom IVF charge Rs2.5L to Rs4.2L all-in."}},
 {"@type":"Question","name":"What is included in the IVF cost calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"The IVFdirectory cost calculator includes the base IVF procedure, estimated medication cost based on your clinic tier, ICSI add-on if selected, embryo freezing if selected, and monitoring scan estimates. It does not include PGT genetic testing, donor egg costs, or surrogacy costs."}},
 {"@type":"Question","name":"How many IVF cycles should I budget for?","acceptedAnswer":{"@type":"Answer","text":"Most fertility specialists recommend budgeting for 2 to 3 cycles. Success rates per single cycle are 45 to 65 percent for women under 35 and drop with age. Planning financially for multiple cycles removes the pressure of making medical decisions based on money mid-treatment."}},
-{"@type":"Question","name":"Is IVF cheaper in Bangalore than Mumbai or Delhi?","acceptedAnswer":{"@type":"Answer","text":"Yes. Bangalore is typically 5 to 10 percent cheaper than Mumbai and Delhi for equivalent clinic quality due to lower operating costs. However clinic tier matters more than city — a budget chain in Mumbai is cheaper than a premium clinic in Bangalore."}}
+{"@type":"Question","name":"Is IVF cheaper in Bangalore than Mumbai or Delhi?","acceptedAnswer":{"@type":"Answer","text":"Yes. Bangalore is typically 5 to 10 percent cheaper than Mumbai and Delhi for equivalent clinic quality due to lower operating costs. However clinic tier matters more than city  -  a budget chain in Mumbai is cheaper than a premium clinic in Bangalore."}}
 ]}
 </script>
 </head>
@@ -566,8 +566,8 @@ var CALC_FAQS = [
  a:"Almost all clinics exclude stimulation medications (Rs35K-Rs1L), ICSI micromanipulation (+Rs15K-Rs30K), embryo freezing (+Rs15K-Rs35K), monitoring scans beyond the package, and PGT genetic testing (+Rs50K-Rs1L). Always ask for a total all-inclusive written estimate."},
  {q:"How many IVF cycles should I budget for?",
  a:"Most specialists recommend budgeting for 2 to 3 cycles. Success rates per cycle are 45-65% for women under 35 and drop with age. Planning for multiple cycles removes financial pressure from medical decisions mid-treatment."},
- {q:"Which city is cheapest for IVF — Mumbai, Delhi or Bangalore?",
- a:"Bangalore is typically 5-10% cheaper than Mumbai and Delhi for equivalent clinic quality. However clinic tier matters more than city — Indira IVF in Mumbai is cheaper than Birla Fertility in Bangalore. Budget chains in any city are 40-60% cheaper than premium clinics in the same city."},
+ {q:"Which city is cheapest for IVF  -  Mumbai, Delhi or Bangalore?",
+ a:"Bangalore is typically 5-10% cheaper than Mumbai and Delhi for equivalent clinic quality. However clinic tier matters more than city  -  Indira IVF in Mumbai is cheaper than Birla Fertility in Bangalore. Budget chains in any city are 40-60% cheaper than premium clinics in the same city."},
  {q:"Does 0% EMI exist for IVF in India?",
  a:"Yes. Indira IVF, Risaa IVF and Birla Fertility all offer 0% EMI schemes. Nova IVF and Cloudnine offer EMI with interest. Always confirm the exact terms and any processing fees before signing."}
 ];
@@ -599,7 +599,7 @@ function toggleCFaq(el){
 </footer>
 
 <script>
-// ─── STATE — simple plain object, all strings ───
+//     STATE  -  simple plain object, all strings    
 var answers = {
  city: '',
  proc: '',
@@ -607,7 +607,7 @@ var answers = {
  cycles: ''
 };
 
-// ─── PRICING TABLES ───
+//     PRICING TABLES    
 var PRICES = {
  IVF: {
  budget: { pMin: 90000, pMax: 130000, mMin: 35000, mMax: 100000 },
@@ -639,7 +639,7 @@ var PRICES = {
 var CITY_ADJ = { Mumbai: 1.05, Delhi: 1.0, Bangalore: 0.95 };
 
 var ADDONS = {
- pgt: { label: 'PGT — Genetic testing', min: 50000, max: 100000 },
+ pgt: { label: 'PGT  -  Genetic testing', min: 50000, max: 100000 },
  freeze: { label: 'Embryo freezing + 1yr storage', min: 15000, max: 35000 },
  hatch: { label: 'Assisted hatching', min: 8000, max: 20000 },
  hystero:{ label: 'Hysteroscopy (pre-IVF)', min: 15000, max: 35000 }
@@ -659,17 +659,17 @@ var CLINIC_LABELS = {
  premium: 'Premium clinic'
 };
 
-// ─── HELPERS ───
+//     HELPERS    
 function fmt(n) {
- if (n >= 100000) return '₹' + (n / 100000).toFixed(1).replace('.0', '') + 'L';
- return '₹' + (n / 1000).toFixed(0) + 'K';
+ if (n >= 100000) return 'Rs' + (n / 100000).toFixed(1).replace('.0', '') + 'L';
+ return 'Rs' + (n / 1000).toFixed(0) + 'K';
 }
 
 function fmtFull(n) {
- return '₹' + n.toLocaleString('en-IN');
+ return 'Rs' + n.toLocaleString('en-IN');
 }
 
-// ─── PICK — select an option card ───
+//     PICK  -  select an option card    
 function pick(key, value, btn, groupId) {
  answers[key] = value;
  var group = document.getElementById(groupId);
@@ -680,7 +680,7 @@ function pick(key, value, btn, groupId) {
  btn.classList.add('picked');
 }
 
-// ─── NAVIGATION ───
+//     NAVIGATION    
 var REQUIRED = { 1: 'city', 2: 'proc', 3: 'clinic', 5: 'cycles' };
 var REQUIRED_NAMES = { city: 'a city', proc: 'a procedure', clinic: 'a clinic type', cycles: 'number of cycles' };
 
@@ -724,7 +724,7 @@ function getCurrentStep() {
  return 1;
 }
 
-// ─── CALCULATE ───
+//     CALCULATE    
 function showResult() {
  // Final validation
  if (!answers.city) { alert('Please go back and select a city.'); return; }
@@ -768,35 +768,35 @@ function showResult() {
  html += '<div class="line-item">' +
  '<span class="line-item-label">' + PROC_LABELS[answers.proc] +
  ' &nbsp;<span class="tag tag-core">core</span>' +
- '<br><small style="color:var(--muted);font-size:11px;">' + CLINIC_LABELS[answers.clinic] + ' · ' + answers.city + '</small></span>' +
- '<span class="line-item-price">' + fmt(pMin) + ' – ' + fmt(pMax) + '</span>' +
+ '<br><small style="color:var(--muted);font-size:11px;">' + CLINIC_LABELS[answers.clinic] + ' . ' + answers.city + '</small></span>' +
+ '<span class="line-item-price">' + fmt(pMin) + ' - ' + fmt(pMax) + '</span>' +
  '</div>';
 
  // Medications row
  html += '<div class="line-item">' +
  '<span class="line-item-label">Stimulation medications &nbsp;<span class="tag tag-core">core</span></span>' +
- '<span class="line-item-price">' + fmt(mMin) + ' – ' + fmt(mMax) + '</span>' +
+ '<span class="line-item-price">' + fmt(mMin) + ' - ' + fmt(mMax) + '</span>' +
  '</div>';
 
  // Add-on rows
  for (var j = 0; j < addonRows.length; j++) {
  html += '<div class="line-item">' +
  '<span class="line-item-label">' + addonRows[j].label + ' &nbsp;<span class="tag tag-addon">add-on</span></span>' +
- '<span class="line-item-price">' + fmt(addonRows[j].min) + ' – ' + fmt(addonRows[j].max) + '</span>' +
+ '<span class="line-item-price">' + fmt(addonRows[j].min) + ' - ' + fmt(addonRows[j].max) + '</span>' +
  '</div>';
  }
 
  // Populate DOM
  document.getElementById('r-total').textContent = fmtFull(midpoint);
- document.getElementById('r-range').textContent = fmt(totalMin) + ' – ' + fmt(totalMax) + ' estimated range · ' + cycles + ' cycle' + (cycles > 1 ? 's' : '');
+ document.getElementById('r-range').textContent = fmt(totalMin) + ' - ' + fmt(totalMax) + ' estimated range . ' + cycles + ' cycle' + (cycles > 1 ? 's' : '');
  document.getElementById('r-lines').innerHTML = html;
- document.getElementById('r-subtotal').textContent = fmt(subtotalMin) + ' – ' + fmt(subtotalMax);
+ document.getElementById('r-subtotal').textContent = fmt(subtotalMin) + ' - ' + fmt(subtotalMax);
 
  // Multi-cycle total row
  if (cycles > 1) {
  document.getElementById('r-total-card').style.display = 'block';
  document.getElementById('r-cycles-label').textContent = 'Total for ' + cycles + ' cycles';
- document.getElementById('r-grand-total').textContent = fmt(totalMin) + ' – ' + fmt(totalMax);
+ document.getElementById('r-grand-total').textContent = fmt(totalMin) + ' - ' + fmt(totalMax);
  } else {
  document.getElementById('r-total-card').style.display = 'none';
  }
@@ -819,7 +819,7 @@ function showResult() {
  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ─── LEAD SUBMIT ───
+//     LEAD SUBMIT    
 async function submitLead() {
  var phone = document.getElementById('lead-phone').value.trim();
  var name = document.getElementById('lead-name').value.trim();
@@ -841,7 +841,7 @@ async function submitLead() {
  var msg = encodeURIComponent(
  'Hi IVFdirectory \n' +
  'I used the IVF cost calculator.\n' +
- 'Name: ' + (name || '—') + '\n' +
+ 'Name: ' + (name || ' - ') + '\n' +
  'Phone: ' + phone + '\n' +
  'City: ' + answers.city + '\n' +
  'Procedure: ' + answers.proc + '\n' +
@@ -855,7 +855,7 @@ async function submitLead() {
  document.getElementById('lead-done').style.display = 'block';
 }
 
-// ─── RESTART ───
+//     RESTART    
 function restart() {
  answers = { city: '', proc: '', clinic: '', cycles: '' };
 

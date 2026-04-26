@@ -89,12 +89,12 @@
  "@context": "https://schema.org",
  "@type": "FAQPage",
  "mainEntity": [
- {"@type":"Question","name":"What is the cost of IVF in Mumbai in 2026?","acceptedAnswer":{"@type":"Answer","text":"IVF in Mumbai costs between ₹1,10,000 and ₹3,50,000 per cycle depending on the clinic and protocol. Budget clinics like Indira IVF start from ₹1.1L while premium centres like Bloom IVF at Lilavati Hospital charge up to ₹3.5L including medications."}},
- {"@type":"Question","name":"What is the cost of IVF in Delhi in 2026?","acceptedAnswer":{"@type":"Answer","text":"IVF in Delhi ranges from ₹1,20,000 to ₹3,80,000 per cycle. Affordable options include Risaa IVF at ₹1.2L–₹1.8L. Premium Gurugram centres like Birla Fertility start from ₹1,71,100 and can reach ₹4.17L with medications."}},
- {"@type":"Question","name":"What is the cost of IVF in Bangalore in 2026?","acceptedAnswer":{"@type":"Answer","text":"IVF in Bangalore typically costs ₹1,10,000 to ₹3,10,000 per cycle — generally 5–10% lower than Mumbai and Delhi. Indira IVF offers packages from ₹1.1L while Milann Fertility (Dr. Kamini Rao) charges ₹1.25L–₹2.6L."}},
- {"@type":"Question","name":"Are IVF medications included in the quoted price?","acceptedAnswer":{"@type":"Answer","text":"Usually NOT. Most clinics quote a base price that excludes stimulation injections. Medications add ₹35,000–₹1,00,000 to the total cost. Always ask for an all-inclusive quote before comparing clinics."}},
- {"@type":"Question","name":"What is the difference between IVF and ICSI cost?","acceptedAnswer":{"@type":"Answer","text":"ICSI (Intracytoplasmic Sperm Injection) is usually priced as IVF base + an add-on of ₹15,000–₹30,000. Some clinics bundle ICSI into their standard IVF package. ICSI is recommended when male factor infertility is involved."}},
- {"@type":"Question","name":"What is the cost of a frozen embryo transfer (FET) in India?","acceptedAnswer":{"@type":"Answer","text":"FET costs ₹32,000–₹80,000 for the procedure itself, plus ₹15,000–₹25,000 for medications. It is significantly cheaper than a fresh IVF cycle since no egg retrieval is needed."}}
+ {"@type":"Question","name":"What is the cost of IVF in Mumbai in 2026?","acceptedAnswer":{"@type":"Answer","text":"IVF in Mumbai costs between Rs1,10,000 and Rs3,50,000 per cycle depending on the clinic and protocol. Budget clinics like Indira IVF start from Rs1.1L while premium centres like Bloom IVF at Lilavati Hospital charge up to Rs3.5L including medications."}},
+ {"@type":"Question","name":"What is the cost of IVF in Delhi in 2026?","acceptedAnswer":{"@type":"Answer","text":"IVF in Delhi ranges from Rs1,20,000 to Rs3,80,000 per cycle. Affordable options include Risaa IVF at Rs1.2L-Rs1.8L. Premium Gurugram centres like Birla Fertility start from Rs1,71,100 and can reach Rs4.17L with medications."}},
+ {"@type":"Question","name":"What is the cost of IVF in Bangalore in 2026?","acceptedAnswer":{"@type":"Answer","text":"IVF in Bangalore typically costs Rs1,10,000 to Rs3,10,000 per cycle  -  generally 5-10% lower than Mumbai and Delhi. Indira IVF offers packages from Rs1.1L while Milann Fertility (Dr. Kamini Rao) charges Rs1.25L-Rs2.6L."}},
+ {"@type":"Question","name":"Are IVF medications included in the quoted price?","acceptedAnswer":{"@type":"Answer","text":"Usually NOT. Most clinics quote a base price that excludes stimulation injections. Medications add Rs35,000-Rs1,00,000 to the total cost. Always ask for an all-inclusive quote before comparing clinics."}},
+ {"@type":"Question","name":"What is the difference between IVF and ICSI cost?","acceptedAnswer":{"@type":"Answer","text":"ICSI (Intracytoplasmic Sperm Injection) is usually priced as IVF base + an add-on of Rs15,000-Rs30,000. Some clinics bundle ICSI into their standard IVF package. ICSI is recommended when male factor infertility is involved."}},
+ {"@type":"Question","name":"What is the cost of a frozen embryo transfer (FET) in India?","acceptedAnswer":{"@type":"Answer","text":"FET costs Rs32,000-Rs80,000 for the procedure itself, plus Rs15,000-Rs25,000 for medications. It is significantly cheaper than a fresh IVF cycle since no egg retrieval is needed."}}
  ]
 }
 </script>
@@ -921,72 +921,72 @@ function toggleDrawer(){
 </footer>
 
 <script>
-// ── DATA ──
+//    DATA   
 const CLINICS = [
- { id:'nova_mumbai', name:'Nova IVF — Andheri West', chain:'Nova IVF Fertility', city:'Mumbai', accred:'ICMR', rating:4.8, success:58, emi:true, emi_free:false,
+ { id:'nova_mumbai', name:'Nova IVF  -  Andheri West', chain:'Nova IVF Fertility', city:'Mumbai', accred:'ICMR', rating:4.8, success:58, emi:true, emi_free:false,
  IVF:{base_min:150000,base_max:175000,med_min:200000,med_max:250000,conf:'HIGH'},
  IUI:{base_min:8000,base_max:15000,med_min:15000,med_max:25000,conf:'MEDIUM'},
  ICSI:{base_min:165000,base_max:200000,med_min:220000,med_max:275000,conf:'MEDIUM'},
  FET:{base_min:40000,base_max:65000,med_min:55000,med_max:85000,conf:'MEDIUM'},
  EggFreezing:{base_min:90000,base_max:130000,med_min:140000,med_max:200000,conf:'MEDIUM'},
  DonorEgg:{base_min:280000,base_max:350000,med_min:280000,med_max:350000,conf:'LOW'}},
- { id:'indira_mumbai', name:'Indira IVF — Mumbai', chain:'Indira IVF', city:'Mumbai', accred:'ISO', rating:4.4, success:50, emi:true, emi_free:true,
+ { id:'indira_mumbai', name:'Indira IVF  -  Mumbai', chain:'Indira IVF', city:'Mumbai', accred:'ISO', rating:4.4, success:50, emi:true, emi_free:true,
  IVF:{base_min:110000,base_max:160000,med_min:170000,med_max:260000,conf:'HIGH'},
  IUI:{base_min:6000,base_max:12000,med_min:12000,med_max:22000,conf:'MEDIUM'},
  ICSI:{base_min:130000,base_max:180000,med_min:190000,med_max:260000,conf:'MEDIUM'},
  FET:{base_min:35000,base_max:55000,med_min:50000,med_max:75000,conf:'MEDIUM'},
  EggFreezing:{base_min:80000,base_max:120000,med_min:130000,med_max:190000,conf:'MEDIUM'},
  DonorEgg:{base_min:250000,base_max:320000,med_min:250000,med_max:320000,conf:'LOW'}},
- { id:'bloom_mumbai', name:'Bloom IVF — Lilavati, Bandra', chain:'Bloom IVF', city:'Mumbai', accred:'NABH', rating:4.7, success:60, emi:true, emi_free:false,
+ { id:'bloom_mumbai', name:'Bloom IVF  -  Lilavati, Bandra', chain:'Bloom IVF', city:'Mumbai', accred:'NABH', rating:4.7, success:60, emi:true, emi_free:false,
  IVF:{base_min:150000,base_max:200000,med_min:210000,med_max:350000,conf:'HIGH'},
  IUI:{base_min:8000,base_max:15000,med_min:15000,med_max:28000,conf:'MEDIUM'},
  ICSI:{base_min:170000,base_max:220000,med_min:230000,med_max:350000,conf:'MEDIUM'},
  FET:{base_min:45000,base_max:70000,med_min:60000,med_max:95000,conf:'MEDIUM'},
  EggFreezing:{base_min:100000,base_max:150000,med_min:160000,med_max:230000,conf:'MEDIUM'},
  DonorEgg:{base_min:300000,base_max:400000,med_min:300000,med_max:400000,conf:'LOW'}},
- { id:'nova_delhi', name:'Nova IVF — Rajouri Garden', chain:'Nova IVF Fertility', city:'Delhi', accred:'ICMR', rating:4.7, success:57, emi:true, emi_free:false,
+ { id:'nova_delhi', name:'Nova IVF  -  Rajouri Garden', chain:'Nova IVF Fertility', city:'Delhi', accred:'ICMR', rating:4.7, success:57, emi:true, emi_free:false,
  IVF:{base_min:150000,base_max:175000,med_min:200000,med_max:250000,conf:'HIGH'},
  IUI:{base_min:8000,base_max:15000,med_min:15000,med_max:25000,conf:'MEDIUM'},
  ICSI:{base_min:170000,base_max:200000,med_min:220000,med_max:275000,conf:'MEDIUM'},
  FET:{base_min:40000,base_max:65000,med_min:55000,med_max:85000,conf:'MEDIUM'},
  EggFreezing:{base_min:90000,base_max:130000,med_min:140000,med_max:200000,conf:'MEDIUM'},
  DonorEgg:{base_min:270000,base_max:350000,med_min:270000,med_max:350000,conf:'LOW'}},
- { id:'birla_delhi', name:'Birla Fertility & IVF — Gurugram', chain:'Birla Fertility & IVF', city:'Delhi', accred:'NABH', rating:4.6, success:60, emi:true, emi_free:true,
+ { id:'birla_delhi', name:'Birla Fertility & IVF  -  Gurugram', chain:'Birla Fertility & IVF', city:'Delhi', accred:'NABH', rating:4.6, success:60, emi:true, emi_free:true,
  IVF:{base_min:171100,base_max:250000,med_min:230000,med_max:350000,conf:'HIGH'},
  IUI:{base_min:8000,base_max:16000,med_min:16000,med_max:30000,conf:'MEDIUM'},
  ICSI:{base_min:190000,base_max:250000,med_min:250000,med_max:380000,conf:'MEDIUM'},
  FET:{base_min:50000,base_max:80000,med_min:65000,med_max:105000,conf:'MEDIUM'},
  EggFreezing:{base_min:110000,base_max:160000,med_min:170000,med_max:250000,conf:'MEDIUM'},
  DonorEgg:{base_min:300000,base_max:420000,med_min:300000,med_max:420000,conf:'MEDIUM'}},
- { id:'cloudnine_delhi', name:'Cloudnine Fertility — Punjabi Bagh', chain:'Cloudnine Fertility', city:'Delhi', accred:'NABH', rating:4.5, success:55, emi:true, emi_free:false,
+ { id:'cloudnine_delhi', name:'Cloudnine Fertility  -  Punjabi Bagh', chain:'Cloudnine Fertility', city:'Delhi', accred:'NABH', rating:4.5, success:55, emi:true, emi_free:false,
  IVF:{base_min:120000,base_max:180000,med_min:180000,med_max:280000,conf:'HIGH'},
  IUI:{base_min:7000,base_max:13000,med_min:13000,med_max:25000,conf:'MEDIUM'},
  ICSI:{base_min:140000,base_max:200000,med_min:200000,med_max:290000,conf:'MEDIUM'},
  FET:{base_min:40000,base_max:65000,med_min:55000,med_max:85000,conf:'MEDIUM'},
  EggFreezing:{base_min:85000,base_max:125000,med_min:135000,med_max:195000,conf:'MEDIUM'},
  DonorEgg:{base_min:260000,base_max:340000,med_min:260000,med_max:340000,conf:'LOW'}},
- { id:'risaa_delhi', name:'Risaa IVF — Green Park', chain:'Risaa IVF', city:'Delhi', accred:'ISO', rating:4.8, success:65, emi:true, emi_free:true,
+ { id:'risaa_delhi', name:'Risaa IVF  -  Green Park', chain:'Risaa IVF', city:'Delhi', accred:'ISO', rating:4.8, success:65, emi:true, emi_free:true,
  IVF:{base_min:120000,base_max:180000,med_min:170000,med_max:250000,conf:'HIGH'},
  IUI:{base_min:5000,base_max:10000,med_min:10000,med_max:20000,conf:'MEDIUM'},
  ICSI:{base_min:135000,base_max:185000,med_min:185000,med_max:250000,conf:'MEDIUM'},
  FET:{base_min:35000,base_max:55000,med_min:50000,med_max:75000,conf:'MEDIUM'},
  EggFreezing:{base_min:80000,base_max:120000,med_min:130000,med_max:190000,conf:'MEDIUM'},
  DonorEgg:{base_min:240000,base_max:320000,med_min:240000,med_max:320000,conf:'LOW'}},
- { id:'nova_blr', name:'Nova IVF — Bangalore', chain:'Nova IVF Fertility', city:'Bangalore', accred:'ICMR', rating:4.7, success:55, emi:true, emi_free:false,
+ { id:'nova_blr', name:'Nova IVF  -  Bangalore', chain:'Nova IVF Fertility', city:'Bangalore', accred:'ICMR', rating:4.7, success:55, emi:true, emi_free:false,
  IVF:{base_min:140000,base_max:175000,med_min:190000,med_max:240000,conf:'MEDIUM'},
  IUI:{base_min:7000,base_max:13000,med_min:13000,med_max:22000,conf:'MEDIUM'},
  ICSI:{base_min:155000,base_max:195000,med_min:210000,med_max:265000,conf:'MEDIUM'},
  FET:{base_min:38000,base_max:60000,med_min:52000,med_max:80000,conf:'MEDIUM'},
  EggFreezing:{base_min:85000,base_max:125000,med_min:135000,med_max:195000,conf:'MEDIUM'},
  DonorEgg:{base_min:250000,base_max:330000,med_min:250000,med_max:330000,conf:'LOW'}},
- { id:'indira_blr', name:'Indira IVF — Bangalore', chain:'Indira IVF', city:'Bangalore', accred:'ISO', rating:4.3, success:55, emi:true, emi_free:true,
+ { id:'indira_blr', name:'Indira IVF  -  Bangalore', chain:'Indira IVF', city:'Bangalore', accred:'ISO', rating:4.3, success:55, emi:true, emi_free:true,
  IVF:{base_min:110000,base_max:160000,med_min:150000,med_max:260000,conf:'HIGH'},
  IUI:{base_min:5500,base_max:11000,med_min:11000,med_max:20000,conf:'MEDIUM'},
  ICSI:{base_min:130000,base_max:175000,med_min:180000,med_max:245000,conf:'MEDIUM'},
  FET:{base_min:32000,base_max:52000,med_min:47000,med_max:70000,conf:'MEDIUM'},
  EggFreezing:{base_min:75000,base_max:115000,med_min:125000,med_max:185000,conf:'MEDIUM'},
  DonorEgg:{base_min:235000,base_max:310000,med_min:235000,med_max:310000,conf:'LOW'}},
- { id:'milann_blr', name:'Milann Fertility — Kumara Park', chain:'Milann Fertility', city:'Bangalore', accred:'ISO', rating:4.7, success:55, emi:true, emi_free:false,
+ { id:'milann_blr', name:'Milann Fertility  -  Kumara Park', chain:'Milann Fertility', city:'Bangalore', accred:'ISO', rating:4.7, success:55, emi:true, emi_free:false,
  IVF:{base_min:125000,base_max:175000,med_min:175000,med_max:260000,conf:'MEDIUM'},
  IUI:{base_min:7000,base_max:13000,med_min:13000,med_max:23000,conf:'MEDIUM'},
  ICSI:{base_min:145000,base_max:190000,med_min:200000,med_max:270000,conf:'MEDIUM'},
@@ -996,10 +996,10 @@ const CLINICS = [
 ];
 
 const PROC_META = {
- IVF: { label:'IVF', icon:'', bg:'#f0fdfa', desc:'Standard in vitro fertilisation — eggs retrieved, fertilised in lab, embryo transferred.' },
- IUI: { label:'IUI', icon:'', bg:'#eff6ff', desc:'Intrauterine insemination — processed sperm placed directly into uterus. Least invasive.' },
+ IVF: { label:'IVF', icon:'', bg:'#f0fdfa', desc:'Standard in vitro fertilisation  -  eggs retrieved, fertilised in lab, embryo transferred.' },
+ IUI: { label:'IUI', icon:'', bg:'#eff6ff', desc:'Intrauterine insemination  -  processed sperm placed directly into uterus. Least invasive.' },
  ICSI: { label:'ICSI', icon:'', bg:'#faf5ff', desc:'Single sperm injected into each egg. Add-on to IVF for male factor infertility.' },
- FET: { label:'FET', icon:'', bg:'#f0f9ff', desc:'Frozen embryo transfer — previously frozen embryo thawed and transferred. No egg retrieval.' },
+ FET: { label:'FET', icon:'', bg:'#f0f9ff', desc:'Frozen embryo transfer  -  previously frozen embryo thawed and transferred. No egg retrieval.' },
  EggFreezing:{ label:'Egg Freezing', icon:'', bg:'#ecfdf5', desc:'Eggs retrieved and vitrified for future use. Popular for fertility preservation.' },
  DonorEgg: { label:'Donor Egg IVF', icon:'', bg:'#fdf4ff', desc:'IVF using eggs from an anonymous donor. Recommended for poor ovarian reserve or advanced age.' }
 };
@@ -1009,43 +1009,43 @@ const BREAKDOWN = [
  { label:'Embryology lab (fertilisation + culture)', min:25000, max:50000, maxVal:100000, color:'#0891b2' },
  { label:'Egg retrieval (OPU) procedure', min:15000, max:30000, maxVal:100000, color:'#7c3aed' },
  { label:'Embryo transfer', min:8000, max:20000, maxVal:100000, color:'#059669' },
- { label:'Monitoring scans (4–6 ultrasounds)', min:4000, max:12000, maxVal:100000, color:'#d97706' },
+ { label:'Monitoring scans (4-6 ultrasounds)', min:4000, max:12000, maxVal:100000, color:'#d97706' },
  { label:'Anaesthesia', min:5000, max:12000, maxVal:100000, color:'#6b7280' },
  { label:'Consultation + workup', min:5000, max:15000, maxVal:100000, color:'#be185d' }
 ];
 
 const FAQS = [
- { q:'What is the cost of IVF in Mumbai in 2026?', a:'IVF in Mumbai costs between ₹1,10,000 and ₹3,50,000 per cycle depending on the clinic and protocol. Budget chains like Indira IVF start from ₹1.1L while premium centres like Bloom IVF at Lilavati can reach ₹3.5L including medications. The typical all-inclusive cost with medications is ₹1.7L–₹2.8L.' },
- { q:'What is the cost of IVF in Delhi in 2026?', a:'IVF in Delhi ranges from ₹1,20,000 to ₹3,80,000 per cycle. Affordable options include Risaa IVF (₹1.2L–₹1.8L base) and Cloudnine (₹1.2L–₹1.8L). Premium Gurugram clinics like Birla Fertility start from ₹1,71,100 and can reach ₹4.17L with medications.' },
- { q:'What is the cost of IVF in Bangalore in 2026?', a:'IVF in Bangalore typically costs ₹1,10,000 to ₹3,10,000 per cycle — generally 5–10% lower than Mumbai and Delhi. Indira IVF offers packages from ₹1.1L; Milann Fertility charges ₹1.25L–₹2.6L.' },
- { q:'Are IVF medications included in the quoted price?', a:'Usually NOT. Most clinics quote a base price that excludes stimulation injections (gonadotropins). These medications add ₹35,000–₹1,00,000 to the total cost depending on the protocol. Always ask for an all-inclusive quote before comparing.' },
- { q:'What is the cost of IUI treatment in India?', a:'IUI is significantly cheaper than IVF. Base procedure costs ₹5,000–₹16,000. With mild stimulation medications and monitoring scans, the total per cycle is ₹10,000–₹30,000. Multiple cycles (3–6) are often recommended before moving to IVF.' },
- { q:'How much does ICSI cost compared to IVF?', a:'ICSI is usually priced as IVF base + ₹15,000–₹30,000 add-on for the micromanipulation procedure. Some clinics bundle ICSI into their standard IVF package. ICSI is recommended for male factor infertility, low sperm count, or previous IVF fertilisation failure.' },
- { q:'What does a frozen embryo transfer (FET) cost?', a:'FET costs ₹32,000–₹80,000 for the procedure itself, plus ₹15,000–₹25,000 for endometrial preparation medications. It is significantly cheaper than a fresh IVF cycle since no egg retrieval is needed. FET is commonly done using embryos remaining from a previous IVF cycle.' },
- { q:'How much does egg freezing cost in India?', a:'Egg freezing (oocyte cryopreservation) costs ₹75,000–₹1,60,000 for the retrieval cycle excluding medications. Add ₹35,000–₹1,00,000 for stimulation injections and ₹10,000–₹25,000 per year for storage. Total first-year cost is typically ₹1.3L–₹2.5L.' },
- { q:'Is 0% EMI available for IVF treatment?', a:'Yes. Indira IVF, Risaa IVF, and Birla Fertility offer 0% interest EMI plans. Other chains like Nova IVF and Bloom IVF offer EMI but may charge interest. Always confirm the exact EMI terms — some schemes require a medical loan through a partner NBFC.' },
+ { q:'What is the cost of IVF in Mumbai in 2026?', a:'IVF in Mumbai costs between Rs1,10,000 and Rs3,50,000 per cycle depending on the clinic and protocol. Budget chains like Indira IVF start from Rs1.1L while premium centres like Bloom IVF at Lilavati can reach Rs3.5L including medications. The typical all-inclusive cost with medications is Rs1.7L-Rs2.8L.' },
+ { q:'What is the cost of IVF in Delhi in 2026?', a:'IVF in Delhi ranges from Rs1,20,000 to Rs3,80,000 per cycle. Affordable options include Risaa IVF (Rs1.2L-Rs1.8L base) and Cloudnine (Rs1.2L-Rs1.8L). Premium Gurugram clinics like Birla Fertility start from Rs1,71,100 and can reach Rs4.17L with medications.' },
+ { q:'What is the cost of IVF in Bangalore in 2026?', a:'IVF in Bangalore typically costs Rs1,10,000 to Rs3,10,000 per cycle  -  generally 5-10% lower than Mumbai and Delhi. Indira IVF offers packages from Rs1.1L; Milann Fertility charges Rs1.25L-Rs2.6L.' },
+ { q:'Are IVF medications included in the quoted price?', a:'Usually NOT. Most clinics quote a base price that excludes stimulation injections (gonadotropins). These medications add Rs35,000-Rs1,00,000 to the total cost depending on the protocol. Always ask for an all-inclusive quote before comparing.' },
+ { q:'What is the cost of IUI treatment in India?', a:'IUI is significantly cheaper than IVF. Base procedure costs Rs5,000-Rs16,000. With mild stimulation medications and monitoring scans, the total per cycle is Rs10,000-Rs30,000. Multiple cycles (3-6) are often recommended before moving to IVF.' },
+ { q:'How much does ICSI cost compared to IVF?', a:'ICSI is usually priced as IVF base + Rs15,000-Rs30,000 add-on for the micromanipulation procedure. Some clinics bundle ICSI into their standard IVF package. ICSI is recommended for male factor infertility, low sperm count, or previous IVF fertilisation failure.' },
+ { q:'What does a frozen embryo transfer (FET) cost?', a:'FET costs Rs32,000-Rs80,000 for the procedure itself, plus Rs15,000-Rs25,000 for endometrial preparation medications. It is significantly cheaper than a fresh IVF cycle since no egg retrieval is needed. FET is commonly done using embryos remaining from a previous IVF cycle.' },
+ { q:'How much does egg freezing cost in India?', a:'Egg freezing (oocyte cryopreservation) costs Rs75,000-Rs1,60,000 for the retrieval cycle excluding medications. Add Rs35,000-Rs1,00,000 for stimulation injections and Rs10,000-Rs25,000 per year for storage. Total first-year cost is typically Rs1.3L-Rs2.5L.' },
+ { q:'Is 0% EMI available for IVF treatment?', a:'Yes. Indira IVF, Risaa IVF, and Birla Fertility offer 0% interest EMI plans. Other chains like Nova IVF and Bloom IVF offer EMI but may charge interest. Always confirm the exact EMI terms  -  some schemes require a medical loan through a partner NBFC.' },
  { q:'Does health insurance cover IVF in India?', a:'Generally no. Most group health and individual insurance policies in India exclude IVF as it is classified as an elective procedure. However, some insurers have begun offering fertility riders. Indira IVF has partnered with SafeTree for India\'s first IVF-specific insurance product covering 2 IVF and 2 IUI cycles after a 24-month waiting period.' }
 ];
 
 const SIDEBAR_PRICES = [
- { label:'IVF — Mumbai', range:'₹1.1L – ₹3.5L' },
- { label:'IVF — Delhi', range:'₹1.2L – ₹3.8L' },
- { label:'IVF — Bangalore', range:'₹1.1L – ₹3.1L' },
- { label:'IUI — All cities', range:'₹10K – ₹30K' },
- { label:'ICSI add-on', range:'₹15K – ₹30K' },
- { label:'FET', range:'₹47K – ₹1.05L' },
- { label:'Egg Freezing', range:'₹1.3L – ₹2.5L' },
- { label:'Donor Egg IVF', range:'₹2.35L – ₹4.2L' }
+ { label:'IVF  -  Mumbai', range:'Rs1.1L - Rs3.5L' },
+ { label:'IVF  -  Delhi', range:'Rs1.2L - Rs3.8L' },
+ { label:'IVF  -  Bangalore', range:'Rs1.1L - Rs3.1L' },
+ { label:'IUI  -  All cities', range:'Rs10K - Rs30K' },
+ { label:'ICSI add-on', range:'Rs15K - Rs30K' },
+ { label:'FET', range:'Rs47K - Rs1.05L' },
+ { label:'Egg Freezing', range:'Rs1.3L - Rs2.5L' },
+ { label:'Donor Egg IVF', range:'Rs2.35L - Rs4.2L' }
 ];
 
-// ── STATE ──
+//    STATE   
 let currentCity = 'Mumbai';
 let currentProc = 'IVF';
 
 function fmt(n) {
- if (n >= 100000) return '₹' + (n/100000).toFixed(n%100000===0?0:1) + 'L';
- if (n >= 1000) return '₹' + (n/1000).toFixed(0) + 'K';
- return '₹' + n;
+ if (n >= 100000) return 'Rs' + (n/100000).toFixed(n%100000===0?0:1) + 'L';
+ if (n >= 1000) return 'Rs' + (n/1000).toFixed(0) + 'K';
+ return 'Rs' + n;
 }
 
 function setFilter(type, value, btn) {
@@ -1053,7 +1053,7 @@ function setFilter(type, value, btn) {
  if (type === 'proc') { currentProc = value; document.querySelectorAll('[data-filter="proc"]').forEach(b => b.classList.remove('active')); }
  btn.classList.add('active');
  renderTable();
- // GA4 — track which city/procedure users compare most
+ // GA4  -  track which city/procedure users compare most
  gaEvent('filter_selected', { filter_type: type, filter_value: value, city: currentCity, procedure: currentProc });
 }
 
@@ -1083,11 +1083,11 @@ function renderTable() {
  </div>
  </td>
  <td class="price-cell">
- <div class="price-base">${fmt(p.base_min)} – ${fmt(p.base_max)}</div>
+ <div class="price-base">${fmt(p.base_min)} - ${fmt(p.base_max)}</div>
  <div class="price-with-meds">Excl. medications</div>
  </td>
  <td class="price-cell">
- <div class="price-base">${fmt(p.med_min)} – ${fmt(p.med_max)}</div>
+ <div class="price-base">${fmt(p.med_min)} - ${fmt(p.med_max)}</div>
  <div class="price-with-meds">Incl. medications (est.)</div>
  </td>
  <td>
@@ -1110,7 +1110,7 @@ function renderBreakdown() {
  <div class="breakdown-bar-bg">
  <div class="breakdown-bar-fill" style="width:${Math.round((b.max/b.maxVal)*100)}%;background:${b.color}"></div>
  </div>
- <div class="breakdown-range">${fmt(b.min)} – ${fmt(b.max)}</div>
+ <div class="breakdown-range">${fmt(b.min)} - ${fmt(b.max)}</div>
  </div>`).join('');
 }
 
@@ -1164,7 +1164,7 @@ function toggleFaq(el) {
  if (!open) {
  ans.classList.add('open');
  el.classList.add('open');
- // GA4 — track which FAQ questions get opened
+ // GA4  -  track which FAQ questions get opened
  gaEvent('faq_opened', { question: el.querySelector('span').textContent.trim().substring(0, 80) });
  }
 }
@@ -1184,7 +1184,7 @@ async function submitLead() {
  // 1. Send to Formspree (email delivery to your inbox)
  const sent = await sendToFormspree({
  _replyto: 'amithustle3007@gmail.com',
- _subject: 'New IVF Lead — ' + (city || 'Unknown city') + ' · ' + (proc || 'Unknown procedure'),
+ _subject: 'New IVF Lead  -  ' + (city || 'Unknown city') + ' . ' + (proc || 'Unknown procedure'),
  phone: phone,
  city: city || 'Not specified',
  procedure: proc || 'Not specified',
@@ -1192,7 +1192,7 @@ async function submitLead() {
  timestamp: new Date().toISOString()
  });
 
- // 2. GA4 — track lead submission (most valuable conversion event)
+ // 2. GA4  -  track lead submission (most valuable conversion event)
  gaEvent('lead_submitted', {
  city: city || 'unspecified',
  procedure: proc || 'unspecified',
@@ -1213,14 +1213,14 @@ async function submitLead() {
  document.getElementById('lead-success').style.display = 'block';
 }
 
-// ── INIT ──
+//    INIT   
 renderTable();
 renderBreakdown();
 renderProcCards();
 renderFAQ();
 renderSidebarPrices();
 
-// GA4 — log initial city/procedure view
+// GA4  -  log initial city/procedure view
 gaEvent('page_view_tool', { default_city: currentCity, default_procedure: currentProc });
 </script>
 </body>
