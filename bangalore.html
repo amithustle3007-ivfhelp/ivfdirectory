@@ -142,7 +142,7 @@ footer strong{color:rgba(255,255,255,0.9);}
     <a href="predictor.html">Success Predictor</a>
     <a href="index.html#faq">FAQs</a>
   </div>
-  <a href="#get-quote" class="nav-cta">Get Free Quote</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="nav-cta">Get Free Quote</a>
 </nav>
 
 <div class="ad-wrap">
@@ -422,9 +422,8 @@ async function submitLead() {
   var proc = document.getElementById('lead-proc').value;
   if(!phone){ alert('Please enter your phone number.'); return; }
   try {
-    await fetch('https://formspree.io/f/mgorwgvk', {
-      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify({ _replyto:'amithustle3007@gmail.com', _subject:'New IVF Lead — Bangalore · '+proc, phone:phone, city:'Bangalore', procedure:proc, source:'bangalore_page' })
+    await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/formResponse', { method:'POST', mode:'no-cors', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({'entry.1601953016':'Guest','entry.303215056':phone||'','entry.1898340488':city||'','entry.714389099':proc||'','entry.1786101561':'City page lead'}).toString()
     });
   } catch(e){}
   var msg = encodeURIComponent('Hi IVFdirectory \uD83D\uDC4B\nCity: Bangalore\nTreatment: '+(proc||'Not specified')+'\nPhone: '+phone+'\nPlease send me clinic quotes. Thank you!');

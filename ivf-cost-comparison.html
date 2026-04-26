@@ -159,7 +159,7 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
       <li><a href="insurance.html">Insurance</a></li>
       <li><a href="doctors.html">Find a Doctor</a></li>
     </ul>
-    <a href="index.html#get-quote" class="nav-cta">Get Free Quote</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="nav-cta">Get Free Quote</a>
   </div>
 </nav>
 
@@ -416,6 +416,58 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
 
+
+<div id="lead-box-globalcost" style="background:linear-gradient(135deg,#0f766e,#0d9488);border-radius:12px;padding:1.75rem;color:white;margin:2rem auto;max-width:680px;">
+  <h3 style="font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:0.3rem;">Ready to Start IVF in India?</h3>
+  <p style="font-size:13px;opacity:0.78;margin-bottom:1.25rem;">Get personalised quotes from top clinics in Mumbai, Delhi or Bangalore — free within 2 hours.</p>
+  <div id="lf-globalcost">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.6rem;">
+      <input id="ln-globalcost" type="text"  placeholder="Your name"         style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;">
+      <input id="lp-globalcost" type="tel"   placeholder="Phone / WhatsApp"  style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;">
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.9rem;">
+      <select id="lc-globalcost" style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;background:white;">
+        <option value="">Select city</option>
+        <option>Mumbai</option><option>Delhi</option><option>Bangalore</option><option>Other</option>
+      </select>
+      <select id="lq-globalcost" style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;background:white;">
+        <option value="IVF Cost Query">IVF Cost Query</option>
+        <option>IVF</option><option>IUI</option><option>ICSI</option>
+        <option>Donor Egg IVF</option><option>Surrogacy Query</option>
+        <option>Insurance Query</option><option>General Query</option>
+      </select>
+    </div>
+    <button onclick="submitLead_globalcost()" style="width:100%;padding:0.75rem;background:white;color:#0f766e;border:none;border-radius:7px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;">Talk to a Fertility Expert Free &rarr;</button>
+    <p style="font-size:11px;opacity:0.6;text-align:center;margin-top:0.5rem;">Free &middot; No spam &middot; Response within 2 hours</p>
+  </div>
+  <div id="ls-globalcost" style="display:none;text-align:center;padding:0.75rem;font-size:14px;">&#127881; Received! We will WhatsApp you shortly.</div>
+</div>
+<script>
+async function submitLead_globalcost() {
+  var name  = document.getElementById('ln-globalcost').value.trim();
+  var phone = document.getElementById('lp-globalcost').value.trim();
+  var city  = document.getElementById('lc-globalcost').value;
+  var query = document.getElementById('lq-globalcost').value;
+  if (!phone) { alert('Please enter your phone number.'); return; }
+  try {
+    await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/formResponse', {
+      method: 'POST', mode: 'no-cors',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({
+        'entry.1601953016':  name  || 'Guest',
+        'entry.303215056': phone,
+        'entry.1898340488':  city  || 'Not specified',
+        'entry.714389099': query || 'IVF Cost Query',
+        'entry.1786101561': 'Source: globalcost page'
+      }).toString()
+    });
+  } catch(e) { console.warn('Form error', e); }
+  var msg = encodeURIComponent('Hi IVFdirectory! Name: ' + (name||'Guest') + '. Phone: ' + phone + '. City: ' + (city||'Not specified') + '. Query: ' + (query||'IVF Cost Query') + '. Please help me. Thank you!');
+  window.open('https://wa.me/919560663800?text=' + msg, '_blank');
+  document.getElementById('lf-globalcost').style.display = 'none';
+  document.getElementById('ls-globalcost').style.display = 'block';
+}
+</script>
 <footer>
   <div class="footer-logo"><a href="index.html">IVFdirectory</a></div>
   <p>India's IVF price discovery platform</p>

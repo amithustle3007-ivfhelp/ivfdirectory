@@ -179,7 +179,7 @@ footer strong { color: rgba(255,255,255,0.9); }
     <a href="predictor.html" class="here">Success Predictor</a>
     <a href="index.html#faq">FAQs</a>
   </div>
-  <a href="index.html#get-quote" class="nav-cta">Get Free Quote</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="nav-cta">Get Free Quote</a>
 </nav>
 
 <!-- TOP AD -->
@@ -690,21 +690,11 @@ async function submitLead() {
   if (!phone) { alert('Please enter your phone number.'); return; }
 
   try {
-    await fetch('https://formspree.io/f/mgorwgvk', {
+    await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/formResponse', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        _replyto:  'amithustle3007@gmail.com',
-        _subject:  'New IVF Lead — Success Predictor · Age ' + answers.age + ' · ' + (answers.diag || 'unknown'),
-        name:      name,
-        phone:     phone,
-        age:       answers.age,
-        amh:       answers.amh,
-        diagnosis: answers.diag,
-        prior_ivf: answers.priorIVF,
-        bmi:       answers.bmi,
-        source:    'success_predictor'
-      })
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({'entry.1601953016':nm||'Guest','entry.303215056':ph||'','entry.1898340488':String(answers.age||''),'entry.714389099':answers.diag||'','entry.1786101561':'AMH:'+answers.amh+' BMI:'+answers.bmi}).toString()
     });
   } catch(e) {
     console.warn('Formspree error', e);
