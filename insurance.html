@@ -165,25 +165,208 @@ footer{background:var(--gray-900);color:rgba(255,255,255,0.55);padding:2.5rem 2r
 footer a{color:rgba(255,255,255,0.7);}
 footer .footer-logo{font-family:var(--serif);font-size:1.4rem;color:white;margin-bottom:0.5rem;}
 footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem auto 0;}
+
+/* ═══════════════════════════════
+   UNIVERSAL NAV — Mobile First
+   ═══════════════════════════════ */
+.unav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.08);font-family:'DM Sans',sans-serif;}
+.unav-top{max-width:1100px;margin:0 auto;padding:0 1.25rem;height:56px;display:flex;align-items:center;gap:0.75rem;}
+.unav-brand{display:flex;align-items:center;gap:0.45rem;font-weight:700;font-size:15px;color:#111827;text-decoration:none;flex-shrink:0;}
+.unav-brand-dot{width:8px;height:8px;background:#0d9488;border-radius:50%;}
+.unav-desktop{display:flex;align-items:center;gap:0.1rem;flex:1;margin-left:0.35rem;}
+.unav-group{position:relative;}
+.unav-group-btn{display:flex;align-items:center;gap:0.3rem;font-size:13px;font-weight:500;color:#6b7280;padding:0.38rem 0.65rem;border-radius:7px;background:none;border:none;cursor:pointer;font-family:inherit;transition:all 0.15s;white-space:nowrap;}
+.unav-group-btn:hover{color:#0d9488;background:#f0fdfa;}
+.unav-group-btn .chev{font-size:9px;transition:transform 0.2s;margin-top:1px;}
+.unav-group:hover .chev{transform:rotate(180deg);}
+.unav-direct{font-size:13px;font-weight:500;color:#6b7280;padding:0.38rem 0.65rem;border-radius:7px;text-decoration:none;transition:all 0.15s;white-space:nowrap;}
+.unav-direct:hover,.unav-direct.here{color:#0d9488;background:#f0fdfa;}
+.unav-dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid rgba(0,0,0,0.1);border-radius:10px;min-width:210px;box-shadow:0 8px 24px rgba(0,0,0,0.12);padding:0.35rem;z-index:300;}
+.unav-group:hover .unav-dropdown{display:block;}
+.unav-dropdown a{display:flex;align-items:flex-start;gap:0.6rem;padding:0.55rem 0.7rem;border-radius:7px;font-size:13px;color:#374151;text-decoration:none;transition:background 0.1s;}
+.unav-dropdown a:hover{background:#f0fdfa;color:#0d9488;}
+.unav-dropdown a .ico{font-size:14px;flex-shrink:0;margin-top:1px;}
+.unav-dropdown a .lbl{font-weight:500;display:block;}
+.unav-dropdown a .sub{font-size:11px;color:#9ca3af;display:block;margin-top:1px;}
+.unav-cta{margin-left:auto;flex-shrink:0;background:#0d9488;color:white;font-size:12.5px;font-weight:600;padding:0.45rem 1rem;border-radius:7px;text-decoration:none;white-space:nowrap;transition:background 0.15s;}
+.unav-cta:hover{background:#0f766e;color:white;}
+.unav-burger{display:none;flex-direction:column;gap:4.5px;background:none;border:none;cursor:pointer;padding:4px;margin-left:auto;flex-shrink:0;}
+.unav-burger span{display:block;width:22px;height:2px;background:#374151;border-radius:2px;transition:all 0.25s;}
+.unav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.unav-burger.open span:nth-child(2){opacity:0;}
+.unav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.unav-drawer{display:none;max-height:0;overflow:hidden;transition:max-height 0.35s ease;background:white;border-top:1px solid #f3f4f6;}
+.unav-drawer.open{max-height:700px;}
+.unav-drawer-inner{padding:0.75rem 1.25rem 1.25rem;}
+.unav-mob-section{margin-bottom:0.9rem;}
+.unav-mob-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9ca3af;margin-bottom:0.4rem;}
+.unav-mob-links{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.unav-mob-links a{font-size:13px;font-weight:500;color:#374151;background:#f9fafb;border:1px solid #e5e7eb;padding:0.38rem 0.85rem;border-radius:20px;text-decoration:none;transition:all 0.12s;}
+.unav-mob-links a:hover,.unav-mob-links a.here{background:#f0fdfa;color:#0d9488;border-color:#0d9488;}
+.unav-mob-cta{width:100%;padding:0.85rem;margin-top:0.5rem;background:#0d9488;color:white;border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;display:block;text-align:center;}
+.unav-mob-cta:hover{background:#0f766e;color:white;}
+@media(max-width:860px){.unav-desktop{display:none;}.unav-cta{display:none;}.unav-burger{display:flex;}.unav-drawer{display:block;}}
+
+
+/* ═══════════════════════════════════════
+   MOBILE FIXES — Added April 2026
+   ═══════════════════════════════════════ */
+
+/* 1. Sidebar collapses on mobile */
+@media(max-width:900px){
+  .page-wrap{grid-template-columns:1fr!important;}
+  .sidebar{display:none!important;}
+}
+
+/* 2. Two-column layouts stack on mobile */
+@media(max-width:640px){
+  [style*="grid-template-columns:1fr 300px"],
+  [style*="grid-template-columns: 1fr 300px"]{
+    grid-template-columns:1fr!important;
+  }
+  .grid-2,.grid-3{grid-template-columns:1fr!important;}
+  .hero-stats{flex-direction:column;gap:0.75rem!important;align-items:flex-start!important;}
+  .hero h1{font-size:1.6rem!important;}
+  .filter-tabs,.filter-row,.proc-nav{gap:0.35rem!important;}
+  .ftab,.pnav-pill{font-size:11.5px!important;padding:0.3rem 0.65rem!important;}
+  table{font-size:12px!important;}
+  thead th{padding:0.5rem 0.6rem!important;font-size:10px!important;}
+  tbody td{padding:0.65rem 0.6rem!important;}
+  .tbl-wrap{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;}
+  .doc-grid{grid-template-columns:1fr!important;}
+  .savings-grid,.stat-row{grid-template-columns:1fr 1fr!important;}
+  .hero-stat{min-width:auto!important;}
+  .lead-card{padding:1.25rem!important;}
+  .consult-row{flex-direction:column!important;gap:0.75rem!important;align-items:flex-start!important;}
+  .book-btn{width:100%!important;}
+  .bar-country{min-width:60px!important;font-size:11px!important;}
+  .bar-track{height:26px!important;}
+  .bar-value{font-size:10px!important;}
+  .tabs-nav{flex-wrap:wrap!important;gap:4px!important;}
+  .tab-btn{font-size:12px!important;padding:7px 12px!important;}
+  .unav-top{height:52px!important;}
+  .plan-table{font-size:12px!important;}
+  .plan-table th{font-size:10px!important;padding:0.5rem 0.6rem!important;}
+  .plan-table td{padding:0.6rem!important;}
+  .employer-card{flex-direction:column!important;gap:0.5rem!important;}
+  .step{gap:0.65rem!important;}
+  .doc-meta{gap:0.5rem!important;}
+  .doc-top{gap:0.65rem!important;}
+  .doc-avatar{width:48px!important;height:48px!important;font-size:0.9rem!important;}
+}
+
+/* 3. Very small screens */
+@media(max-width:380px){
+  .hero h1{font-size:1.4rem!important;}
+  .ftab,.pnav-pill{font-size:11px!important;}
+  .bar-country{min-width:50px!important;font-size:10px!important;}
+}
+
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">IVFdirectory</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="calculator.html">Cost Calculator</a></li>
-      <li><a href="doctors.html">Find a Doctor</a></li>
-      <li><a href="surrogacy.html">Surrogacy</a></li>
-    </ul>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="nav-cta">Get Free Quote</a>
+<nav class="unav">
+  <div class="unav-top">
+    <a href="index.html" class="unav-brand"><div class="unav-brand-dot"></div>IVFdirectory</a>
+    <div class="unav-desktop">
+      <div class="unav-group">
+        <button class="unav-group-btn">Compare Prices <span class="chev">&#9660;</span></button>
+        <div class="unav-dropdown">
+          <a href="index.html#compare"><span class="ico">📊</span><span><span class="lbl">All Clinics</span><span class="sub">Side-by-side comparison</span></span></a>
+          <a href="mumbai.html"><span class="ico">🏙️</span><span><span class="lbl">Mumbai</span><span class="sub">Nova, Bloom, Indira IVF</span></span></a>
+          <a href="delhi.html"><span class="ico">🏛️</span><span><span class="lbl">Delhi / NCR</span><span class="sub">Risaa, Birla, Gaudium</span></span></a>
+          <a href="bangalore.html"><span class="ico">🌿</span><span><span class="lbl">Bangalore</span><span class="sub">Milann, Nova, Cloudnine</span></span></a>
+        </div>
+      </div>
+      <div class="unav-group">
+        <button class="unav-group-btn">Procedures <span class="chev">&#9660;</span></button>
+        <div class="unav-dropdown">
+          <a href="ivf.html"><span class="ico">🧬</span><span><span class="lbl">IVF Cost Guide</span><span class="sub">From &#8377;1.1L per cycle</span></span></a>
+          <a href="iui.html"><span class="ico">💧</span><span><span class="lbl">IUI Cost Guide</span><span class="sub">From &#8377;5K per cycle</span></span></a>
+          <a href="icsi.html"><span class="ico">🔬</span><span><span class="lbl">ICSI Cost Guide</span><span class="sub">From &#8377;1.3L per cycle</span></span></a>
+          <a href="donor-egg-ivf.html"><span class="ico">🌸</span><span><span class="lbl">Donor Egg IVF</span><span class="sub">From &#8377;2.35L per cycle</span></span></a>
+        </div>
+      </div>
+      <a href="doctors.html" class="unav-direct">Find a Doctor</a>
+      <div class="unav-group">
+        <button class="unav-group-btn">Tools <span class="chev">&#9660;</span></button>
+        <div class="unav-dropdown">
+          <a href="calculator.html"><span class="ico">💰</span><span><span class="lbl">Cost Calculator</span><span class="sub">Estimate your total budget</span></span></a>
+          <a href="predictor.html"><span class="ico">📊</span><span><span class="lbl">Success Predictor</span><span class="sub">Your personalised odds</span></span></a>
+          <a href="ivf-cost-comparison.html"><span class="ico">🌍</span><span><span class="lbl">Global Cost Comparison</span><span class="sub">India vs 12 countries</span></span></a>
+        </div>
+      </div>
+      <div class="unav-group">
+        <button class="unav-group-btn">Resources <span class="chev">&#9660;</span></button>
+        <div class="unav-dropdown">
+          <a href="insurance.html"><span class="ico">📋</span><span><span class="lbl">IVF Insurance Guide</span><span class="sub">ESIC, employer plans</span></span></a>
+          <a href="surrogacy.html"><span class="ico">⚖️</span><span><span class="lbl">Surrogacy &amp; ART Laws</span><span class="sub">ART Act 2021 explained</span></span></a>
+        </div>
+      </div>
+    </div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="unav-cta">Get Free Quote</a>
+    <button class="unav-burger" id="unav-burger" onclick="toggleDrawer()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="unav-drawer" id="unav-drawer">
+    <div class="unav-drawer-inner">
+      <div class="unav-mob-section">
+        <div class="unav-mob-label">Compare Prices</div>
+        <div class="unav-mob-links">
+          <a href="mumbai.html">🏙️ Mumbai</a>
+          <a href="delhi.html">🏛️ Delhi</a>
+          <a href="bangalore.html">🌿 Bangalore</a>
+        </div>
+      </div>
+      <div class="unav-mob-section">
+        <div class="unav-mob-label">Procedures</div>
+        <div class="unav-mob-links">
+          <a href="ivf.html">🧬 IVF</a>
+          <a href="iui.html">💧 IUI</a>
+          <a href="icsi.html">🔬 ICSI</a>
+          <a href="donor-egg-ivf.html">🌸 Donor Egg IVF</a>
+        </div>
+      </div>
+      <div class="unav-mob-section">
+        <div class="unav-mob-label">Doctors &amp; Tools</div>
+        <div class="unav-mob-links">
+          <a href="doctors.html">👩‍⚕️ Find a Doctor</a>
+          <a href="calculator.html">💰 Cost Calculator</a>
+          <a href="predictor.html">📊 Success Predictor</a>
+        </div>
+      </div>
+      <div class="unav-mob-section">
+        <div class="unav-mob-label">Resources</div>
+        <div class="unav-mob-links">
+          <a href="insurance.html" class="here">📋 Insurance</a>
+          <a href="surrogacy.html">⚖️ Surrogacy &amp; ART</a>
+          <a href="ivf-cost-comparison.html">🌍 Global Costs</a>
+        </div>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="unav-mob-cta">Get Free Quote &rarr;</a>
+    </div>
   </div>
 </nav>
 
+<script>
+function toggleDrawer(){
+  var d=document.getElementById('unav-drawer');
+  var b=document.getElementById('unav-burger');
+  d.classList.toggle('open');
+  b.classList.toggle('open');
+}
+</script>
+
+
 <div class="ad-banner">
-  <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-4593374584526064" data-ad-slot="AUTO"></ins>
+  <ins class="adsbygoogle"
+     style="display:block;min-height:280px;width:100%"
+     data-ad-client="ca-pub-4593374584526064"
+     data-ad-slot="8822475018"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
 
@@ -211,7 +394,7 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
   </div>
 
   <!-- OVERVIEW -->
-  <div class="panel active" id="panel-overview">
+  <div class="panel active" id="panel-overview"><h2 style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:#111827;margin-bottom:1.25rem;">IVF Insurance Coverage in India — Overview</h2>
     <div class="alert alert-amber">
       <strong>The honest reality:</strong> In India, the vast majority of standard health insurance plans do NOT cover IVF or fertility treatments. IVF is typically classified as an "elective" or "infertility" treatment, which most policies explicitly exclude. However, options do exist — and are expanding.
     </div>
@@ -297,7 +480,7 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
   </div>
 
   <!-- INSURANCE PLANS -->
-  <div class="panel" id="panel-plans">
+  <div class="panel" id="panel-plans"><h2 style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:#111827;margin-bottom:1.25rem;">Health Insurance Plans with Fertility Coverage</h2>
     <div class="alert alert-amber">
       <strong>Important:</strong> Insurance products change frequently. Always verify current plan terms directly with the insurer before purchasing. Sub-limits, waiting periods and exclusions change with each policy year.
     </div>
@@ -397,7 +580,7 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
   </div>
 
   <!-- ESIC -->
-  <div class="panel" id="panel-esic">
+  <div class="panel" id="panel-esic"><h2 style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:#111827;margin-bottom:1.25rem;">ESIC IVF Coverage — Free Treatment for Eligible Employees</h2>
     <div class="alert alert-teal">
       <strong>The best-kept secret in Indian fertility care:</strong> ESIC (Employees State Insurance Corporation) covers IVF treatment completely free for eligible insured employees and their spouses at designated ESIC hospitals. If you qualify, this is far better than any private insurance.
     </div>
@@ -477,7 +660,7 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
   </div>
 
   <!-- EMPLOYER -->
-  <div class="panel" id="panel-employer">
+  <div class="panel" id="panel-employer"><h2 style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:#111827;margin-bottom:1.25rem;">Employer Fertility Benefits in India</h2>
     <div class="alert alert-blue">
       <strong>Growing fast:</strong> Employer-sponsored fertility benefits have expanded significantly in India since 2022. Large tech, startup and FMCG companies now offer ₹1L–₹3L per cycle through specialised fertility benefit platforms. This is often better than insurance.
     </div>
@@ -539,7 +722,7 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
   </div>
 
   <!-- HOW TO CLAIM -->
-  <div class="panel" id="panel-claim">
+  <div class="panel" id="panel-claim"><h2 style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:#111827;margin-bottom:1.25rem;">How to Claim IVF Insurance in India</h2>
     <p class="section-label">If you have a fertility insurance rider — step by step</p>
     <div class="card" style="margin-bottom:1.5rem;">
       <div class="steps">
@@ -602,7 +785,7 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
   </div>
 
   <!-- FAQ -->
-  <div class="panel" id="panel-faq">
+  <div class="panel" id="panel-faq"><h2 style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:#111827;margin-bottom:1.25rem;">Frequently Asked Questions — IVF Insurance</h2>
     <div class="card" style="padding:1.5rem;">
       <div class="faq-item">
         <div class="faq-q" onclick="tFaq(this)"><span>Does health insurance cover IVF in India?</span><span class="faq-chev">&#9660;</span></div>
@@ -643,7 +826,12 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
 </main>
 
 <div class="ad-banner" style="border-top:1px solid var(--border);">
-  <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-4593374584526064" data-ad-slot="AUTO"></ins>
+  <ins class="adsbygoogle"
+     style="display:block;width:100%;max-width:100%"
+     data-ad-client="ca-pub-4593374584526064"
+     data-ad-slot="3761720023"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
 

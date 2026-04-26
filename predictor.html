@@ -166,28 +166,210 @@ input[type="range"] { width: 100%; accent-color: var(--teal); cursor: pointer; }
 footer { background: #111827; color: rgba(255,255,255,0.5); padding: 2rem 1.5rem; font-size: 12.5px; text-align: center; line-height: 1.8; }
 footer a { color: rgba(255,255,255,0.7); }
 footer strong { color: rgba(255,255,255,0.9); }
+
+/* ═══════════════════════════════
+   UNIVERSAL NAV — Mobile First
+   ═══════════════════════════════ */
+.unav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.08);font-family:'DM Sans',sans-serif;}
+.unav-top{max-width:1100px;margin:0 auto;padding:0 1.25rem;height:56px;display:flex;align-items:center;gap:0.75rem;}
+.unav-brand{display:flex;align-items:center;gap:0.45rem;font-weight:700;font-size:15px;color:#111827;text-decoration:none;flex-shrink:0;}
+.unav-brand-dot{width:8px;height:8px;background:#0d9488;border-radius:50%;}
+.unav-desktop{display:flex;align-items:center;gap:0.1rem;flex:1;margin-left:0.35rem;}
+.unav-group{position:relative;}
+.unav-group-btn{display:flex;align-items:center;gap:0.3rem;font-size:13px;font-weight:500;color:#6b7280;padding:0.38rem 0.65rem;border-radius:7px;background:none;border:none;cursor:pointer;font-family:inherit;transition:all 0.15s;white-space:nowrap;}
+.unav-group-btn:hover{color:#0d9488;background:#f0fdfa;}
+.unav-group-btn .chev{font-size:9px;transition:transform 0.2s;margin-top:1px;}
+.unav-group:hover .chev{transform:rotate(180deg);}
+.unav-direct{font-size:13px;font-weight:500;color:#6b7280;padding:0.38rem 0.65rem;border-radius:7px;text-decoration:none;transition:all 0.15s;white-space:nowrap;}
+.unav-direct:hover,.unav-direct.here{color:#0d9488;background:#f0fdfa;}
+.unav-dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid rgba(0,0,0,0.1);border-radius:10px;min-width:210px;box-shadow:0 8px 24px rgba(0,0,0,0.12);padding:0.35rem;z-index:300;}
+.unav-group:hover .unav-dropdown{display:block;}
+.unav-dropdown a{display:flex;align-items:flex-start;gap:0.6rem;padding:0.55rem 0.7rem;border-radius:7px;font-size:13px;color:#374151;text-decoration:none;transition:background 0.1s;}
+.unav-dropdown a:hover{background:#f0fdfa;color:#0d9488;}
+.unav-dropdown a .ico{font-size:14px;flex-shrink:0;margin-top:1px;}
+.unav-dropdown a .lbl{font-weight:500;display:block;}
+.unav-dropdown a .sub{font-size:11px;color:#9ca3af;display:block;margin-top:1px;}
+.unav-cta{margin-left:auto;flex-shrink:0;background:#0d9488;color:white;font-size:12.5px;font-weight:600;padding:0.45rem 1rem;border-radius:7px;text-decoration:none;white-space:nowrap;transition:background 0.15s;}
+.unav-cta:hover{background:#0f766e;color:white;}
+.unav-burger{display:none;flex-direction:column;gap:4.5px;background:none;border:none;cursor:pointer;padding:4px;margin-left:auto;flex-shrink:0;}
+.unav-burger span{display:block;width:22px;height:2px;background:#374151;border-radius:2px;transition:all 0.25s;}
+.unav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.unav-burger.open span:nth-child(2){opacity:0;}
+.unav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.unav-drawer{display:none;max-height:0;overflow:hidden;transition:max-height 0.35s ease;background:white;border-top:1px solid #f3f4f6;}
+.unav-drawer.open{max-height:700px;}
+.unav-drawer-inner{padding:0.75rem 1.25rem 1.25rem;}
+.unav-mob-section{margin-bottom:0.9rem;}
+.unav-mob-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9ca3af;margin-bottom:0.4rem;}
+.unav-mob-links{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.unav-mob-links a{font-size:13px;font-weight:500;color:#374151;background:#f9fafb;border:1px solid #e5e7eb;padding:0.38rem 0.85rem;border-radius:20px;text-decoration:none;transition:all 0.12s;}
+.unav-mob-links a:hover,.unav-mob-links a.here{background:#f0fdfa;color:#0d9488;border-color:#0d9488;}
+.unav-mob-cta{width:100%;padding:0.85rem;margin-top:0.5rem;background:#0d9488;color:white;border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;display:block;text-align:center;}
+.unav-mob-cta:hover{background:#0f766e;color:white;}
+@media(max-width:860px){.unav-desktop{display:none;}.unav-cta{display:none;}.unav-burger{display:flex;}.unav-drawer{display:block;}}
+
+
+/* ═══════════════════════════════════════
+   MOBILE FIXES — Added April 2026
+   ═══════════════════════════════════════ */
+
+/* 1. Sidebar collapses on mobile */
+@media(max-width:900px){
+  .page-wrap{grid-template-columns:1fr!important;}
+  .sidebar{display:none!important;}
+}
+
+/* 2. Two-column layouts stack on mobile */
+@media(max-width:640px){
+  [style*="grid-template-columns:1fr 300px"],
+  [style*="grid-template-columns: 1fr 300px"]{
+    grid-template-columns:1fr!important;
+  }
+  .grid-2,.grid-3{grid-template-columns:1fr!important;}
+  .hero-stats{flex-direction:column;gap:0.75rem!important;align-items:flex-start!important;}
+  .hero h1{font-size:1.6rem!important;}
+  .filter-tabs,.filter-row,.proc-nav{gap:0.35rem!important;}
+  .ftab,.pnav-pill{font-size:11.5px!important;padding:0.3rem 0.65rem!important;}
+  table{font-size:12px!important;}
+  thead th{padding:0.5rem 0.6rem!important;font-size:10px!important;}
+  tbody td{padding:0.65rem 0.6rem!important;}
+  .tbl-wrap{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;}
+  .doc-grid{grid-template-columns:1fr!important;}
+  .savings-grid,.stat-row{grid-template-columns:1fr 1fr!important;}
+  .hero-stat{min-width:auto!important;}
+  .lead-card{padding:1.25rem!important;}
+  .consult-row{flex-direction:column!important;gap:0.75rem!important;align-items:flex-start!important;}
+  .book-btn{width:100%!important;}
+  .bar-country{min-width:60px!important;font-size:11px!important;}
+  .bar-track{height:26px!important;}
+  .bar-value{font-size:10px!important;}
+  .tabs-nav{flex-wrap:wrap!important;gap:4px!important;}
+  .tab-btn{font-size:12px!important;padding:7px 12px!important;}
+  .unav-top{height:52px!important;}
+  .plan-table{font-size:12px!important;}
+  .plan-table th{font-size:10px!important;padding:0.5rem 0.6rem!important;}
+  .plan-table td{padding:0.6rem!important;}
+  .employer-card{flex-direction:column!important;gap:0.5rem!important;}
+  .step{gap:0.65rem!important;}
+  .doc-meta{gap:0.5rem!important;}
+  .doc-top{gap:0.65rem!important;}
+  .doc-avatar{width:48px!important;height:48px!important;font-size:0.9rem!important;}
+}
+
+/* 3. Very small screens */
+@media(max-width:380px){
+  .hero h1{font-size:1.4rem!important;}
+  .ftab,.pnav-pill{font-size:11px!important;}
+  .bar-country{min-width:50px!important;font-size:10px!important;}
+}
+
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="nav">
-  <a href="index.html" class="nav-brand"><div class="dot"></div>IVFdirectory</a>
-  <div class="nav-links">
-    <a href="index.html#compare">Compare Prices</a>
-    <a href="calculator.html">Cost Calculator</a>
-    <a href="predictor.html" class="here">Success Predictor</a>
-    <a href="index.html#faq">FAQs</a>
+<nav class="unav">
+  <div class="unav-top">
+    <a href="index.html" class="unav-brand"><div class="unav-brand-dot"></div>IVFdirectory</a>
+    <div class="unav-desktop">
+      <div class="unav-group">
+        <button class="unav-group-btn">Compare Prices <span class="chev">&#9660;</span></button>
+        <div class="unav-dropdown">
+          <a href="index.html#compare"><span class="ico">📊</span><span><span class="lbl">All Clinics</span><span class="sub">Side-by-side comparison</span></span></a>
+          <a href="mumbai.html"><span class="ico">🏙️</span><span><span class="lbl">Mumbai</span><span class="sub">Nova, Bloom, Indira IVF</span></span></a>
+          <a href="delhi.html"><span class="ico">🏛️</span><span><span class="lbl">Delhi / NCR</span><span class="sub">Risaa, Birla, Gaudium</span></span></a>
+          <a href="bangalore.html"><span class="ico">🌿</span><span><span class="lbl">Bangalore</span><span class="sub">Milann, Nova, Cloudnine</span></span></a>
+        </div>
+      </div>
+      <div class="unav-group">
+        <button class="unav-group-btn">Procedures <span class="chev">&#9660;</span></button>
+        <div class="unav-dropdown">
+          <a href="ivf.html"><span class="ico">🧬</span><span><span class="lbl">IVF Cost Guide</span><span class="sub">From &#8377;1.1L per cycle</span></span></a>
+          <a href="iui.html"><span class="ico">💧</span><span><span class="lbl">IUI Cost Guide</span><span class="sub">From &#8377;5K per cycle</span></span></a>
+          <a href="icsi.html"><span class="ico">🔬</span><span><span class="lbl">ICSI Cost Guide</span><span class="sub">From &#8377;1.3L per cycle</span></span></a>
+          <a href="donor-egg-ivf.html"><span class="ico">🌸</span><span><span class="lbl">Donor Egg IVF</span><span class="sub">From &#8377;2.35L per cycle</span></span></a>
+        </div>
+      </div>
+      <a href="doctors.html" class="unav-direct">Find a Doctor</a>
+      <div class="unav-group">
+        <button class="unav-group-btn">Tools <span class="chev">&#9660;</span></button>
+        <div class="unav-dropdown">
+          <a href="calculator.html"><span class="ico">💰</span><span><span class="lbl">Cost Calculator</span><span class="sub">Estimate your total budget</span></span></a>
+          <a href="predictor.html"><span class="ico">📊</span><span><span class="lbl">Success Predictor</span><span class="sub">Your personalised odds</span></span></a>
+          <a href="ivf-cost-comparison.html"><span class="ico">🌍</span><span><span class="lbl">Global Cost Comparison</span><span class="sub">India vs 12 countries</span></span></a>
+        </div>
+      </div>
+      <div class="unav-group">
+        <button class="unav-group-btn">Resources <span class="chev">&#9660;</span></button>
+        <div class="unav-dropdown">
+          <a href="insurance.html"><span class="ico">📋</span><span><span class="lbl">IVF Insurance Guide</span><span class="sub">ESIC, employer plans</span></span></a>
+          <a href="surrogacy.html"><span class="ico">⚖️</span><span><span class="lbl">Surrogacy &amp; ART Laws</span><span class="sub">ART Act 2021 explained</span></span></a>
+        </div>
+      </div>
+    </div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="unav-cta">Get Free Quote</a>
+    <button class="unav-burger" id="unav-burger" onclick="toggleDrawer()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="nav-cta">Get Free Quote</a>
+  <div class="unav-drawer" id="unav-drawer">
+    <div class="unav-drawer-inner">
+      <div class="unav-mob-section">
+        <div class="unav-mob-label">Compare Prices</div>
+        <div class="unav-mob-links">
+          <a href="mumbai.html">🏙️ Mumbai</a>
+          <a href="delhi.html">🏛️ Delhi</a>
+          <a href="bangalore.html">🌿 Bangalore</a>
+        </div>
+      </div>
+      <div class="unav-mob-section">
+        <div class="unav-mob-label">Procedures</div>
+        <div class="unav-mob-links">
+          <a href="ivf.html">🧬 IVF</a>
+          <a href="iui.html">💧 IUI</a>
+          <a href="icsi.html">🔬 ICSI</a>
+          <a href="donor-egg-ivf.html">🌸 Donor Egg IVF</a>
+        </div>
+      </div>
+      <div class="unav-mob-section">
+        <div class="unav-mob-label">Doctors &amp; Tools</div>
+        <div class="unav-mob-links">
+          <a href="doctors.html">👩‍⚕️ Find a Doctor</a>
+          <a href="calculator.html">💰 Cost Calculator</a>
+          <a href="predictor.html" class="here">📊 Success Predictor</a>
+        </div>
+      </div>
+      <div class="unav-mob-section">
+        <div class="unav-mob-label">Resources</div>
+        <div class="unav-mob-links">
+          <a href="insurance.html">📋 Insurance</a>
+          <a href="surrogacy.html">⚖️ Surrogacy &amp; ART</a>
+          <a href="ivf-cost-comparison.html">🌍 Global Costs</a>
+        </div>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="unav-mob-cta">Get Free Quote &rarr;</a>
+    </div>
+  </div>
 </nav>
+
+<script>
+function toggleDrawer(){
+  var d=document.getElementById('unav-drawer');
+  var b=document.getElementById('unav-burger');
+  d.classList.toggle('open');
+  b.classList.toggle('open');
+}
+</script>
+
 
 <!-- TOP AD -->
 <div class="ad-wrap">
   <ins class="adsbygoogle"
-    style="display:inline-block;width:728px;height:90px"
-    data-ad-client="ca-pub-4593374584526064"
-    data-ad-slot="AUTO"></ins>
+     style="display:block;min-height:280px;width:100%"
+     data-ad-client="ca-pub-4593374584526064"
+     data-ad-slot="8822475018"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
@@ -398,9 +580,11 @@ footer strong { color: rgba(255,255,255,0.9); }
     <!-- MID AD — always visible when result shown -->
     <div style="display:flex;justify-content:center;margin-bottom:1.25rem;">
       <ins class="adsbygoogle"
-        style="display:inline-block;width:336px;height:280px"
-        data-ad-client="ca-pub-4593374584526064"
-        data-ad-slot="AUTO"></ins>
+     style="display:block;min-height:280px;width:100%"
+     data-ad-client="ca-pub-4593374584526064"
+     data-ad-slot="8822475018"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
@@ -433,12 +617,54 @@ footer strong { color: rgba(255,255,255,0.9); }
 <!-- BOTTOM AD -->
 <div class="ad-wrap" style="padding:1.5rem;border-top:1px solid var(--border);">
   <ins class="adsbygoogle"
-    style="display:inline-block;width:728px;height:90px"
-    data-ad-client="ca-pub-4593374584526064"
-    data-ad-slot="AUTO"></ins>
+     style="display:block;min-height:280px;width:100%"
+     data-ad-client="ca-pub-4593374584526064"
+     data-ad-slot="8822475018"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
+
+<div style="background:white;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;margin:2rem auto;max-width:860px;">
+  <div style="padding:1.25rem 1.5rem;border-bottom:1px solid #e5e7eb;">
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.2rem;color:#111827;">Frequently Asked Questions — IVF Success Rates</h2>
+  </div>
+  <div id="pred-faq-list"></div>
+</div>
+<script>
+var PRED_FAQS = [
+  {q:"What is the IVF success rate in India for women under 35?",
+   a:"Top Indian IVF clinics report 50-65% success rates per cycle for women under 35 with no major fertility issues. Success rates drop significantly with age: approximately 40-50% at 35-37, 30-40% at 38-40, and 15-25% for women over 40 using their own eggs. Donor egg IVF maintains 50-60% success regardless of recipient age."},
+  {q:"How does AMH level affect IVF success?",
+   a:"AMH (Anti-Mullerian Hormone) measures ovarian reserve. Higher AMH generally means more eggs can be retrieved. AMH above 2.0 ng/mL is considered good for IVF. AMH below 1.0 ng/mL indicates low ovarian reserve which reduces success rates. However AMH measures quantity not quality — egg quality drops with age regardless of AMH."},
+  {q:"Does BMI affect IVF success rates?",
+   a:"Yes significantly. Optimal BMI for IVF is 18.5-25. Women with BMI above 30 have 30-40% lower IVF success rates due to reduced response to stimulation, lower egg quality, and higher miscarriage risk. Most clinics recommend achieving a healthy BMI before starting IVF if possible."},
+  {q:"How many prior failed IVF cycles affect my chances?",
+   a:"One prior failed cycle does not significantly reduce future success rates — most patients need 2-3 cycles. However after 3 or more failed cycles with good quality embryos, doctors typically investigate uterine factors, immune issues, or genetic causes. Donor egg IVF often achieves success after multiple own-egg failures."},
+  {q:"What is the difference between pregnancy rate and live birth rate?",
+   a:"Pregnancy rate measures positive hCG tests after embryo transfer, including pregnancies that later miscarry. Live birth rate measures babies actually born. Live birth rate is typically 15-25% lower than pregnancy rate due to early pregnancy loss. Always ask clinics for their live birth rate — not just pregnancy rate — when comparing success statistics."}
+];
+(function(){
+  var html='';
+  for(var i=0;i<PRED_FAQS.length;i++){
+    html+='<div style="border-bottom:1px solid #e5e7eb;">'
+      +'<div onclick="togglePFaq(this)" style="padding:1rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:600;color:#111827;user-select:none;">'
+      +'<span>'+PRED_FAQS[i].q+'</span><span style="font-size:11px;color:#9ca3af;transition:transform 0.2s;flex-shrink:0;margin-left:1rem;">&#9660;</span></div>'
+      +'<div style="display:none;padding:0 1.5rem 1rem;font-size:13.5px;color:#374151;line-height:1.7;">'+PRED_FAQS[i].a+'</div>'
+      +'</div>';
+  }
+  document.getElementById('pred-faq-list').innerHTML=html;
+})();
+function togglePFaq(el){
+  var ans=el.nextElementSibling;
+  var chev=el.querySelector('span:last-child');
+  var isOpen=ans.style.display==='block';
+  document.querySelectorAll('#pred-faq-list .faq-ans-open').forEach(function(a){a.style.display='none';a.classList.remove('faq-ans-open');});
+  document.querySelectorAll('#pred-faq-list span[style*="rotate"]').forEach(function(s){s.style.transform='';});
+  if(!isOpen){ans.style.display='block';ans.classList.add('faq-ans-open');chev.style.transform='rotate(180deg)';}
+}
+</script>
 <footer>
   <strong>IVFdirectory India</strong> — India's IVF price discovery platform<br>
   Success predictions use a logistic regression model calibrated to Indian clinic data. Indicative only — not medical advice.<br>
