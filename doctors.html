@@ -857,11 +857,11 @@ var activeFilters = {city:'all', gender:'all'};
 var searchTerm = '';
 
 function setFilter(type, val, btn) {
- activeFilters[type] = val;
- var rows = document.querySelectorAll('[onclick*="setFilter(\'' + type + '\'"]');
- for(var i=0;i<rows.length;i++) rows[i].classList.remove('on');
- btn.classList.add('on');
- render();
+  activeFilters[type] = val;
+  var allBtns = document.querySelectorAll('.ftab');
+  for(var i=0;i<allBtns.length;i++) allBtns[i].classList.remove('on');
+  btn.classList.add('on');
+  render();
 }
 
 function doSearch(val) {
