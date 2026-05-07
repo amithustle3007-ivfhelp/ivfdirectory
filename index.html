@@ -529,6 +529,183 @@ footer strong { color: rgba(255,255,255,0.9); }
 .unav-mob-cta:hover{background:#0f766e;color:white;}
 @media(max-width:860px){.unav-links,.unav-right,.unav-strip{display:none!important;}.unav-burger{display:flex!important;}.unav-drawer{display:block!important;}.unav-top{padding:0 1rem;}.unav-logo{height:50px;font-size:1rem;}}
 
+
+/* ═══════════════════════════════════════════
+   MEDVI-STYLE HERO — IVFdirectory 2026
+   ═══════════════════════════════════════════ */
+.mhero{background:white;border-bottom:1px solid #e2e8f0;}
+.mhero-main{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;min-height:520px;align-items:stretch;}
+@media(max-width:860px){.mhero-main{grid-template-columns:1fr;}}
+.mhero-left{padding:4rem 3rem 3.5rem 1.5rem;display:flex;flex-direction:column;justify-content:center;}
+@media(max-width:860px){.mhero-left{padding:2.5rem 1.5rem 2rem;}}
+.mh-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#0d9488;background:#f0fdfa;padding:5px 12px;border-radius:20px;margin-bottom:1.1rem;border:1px solid rgba(13,148,136,0.2);}
+.mh-h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4.5vw,3rem);line-height:1.12;color:#0f172a;margin-bottom:0.875rem;}
+.mh-h1 em{font-style:italic;color:#0d9488;}
+.mh-sub{font-size:15px;color:#64748b;line-height:1.65;max-width:460px;margin-bottom:1.75rem;font-weight:300;}
+.mh-sub strong{color:#334155;font-weight:500;}
+.mh-cta{display:inline-flex;align-items:center;gap:10px;background:#0d9488;color:white;font-size:15px;font-weight:700;padding:0.95rem 2rem;border-radius:11px;border:none;cursor:pointer;font-family:inherit;transition:all 0.2s;text-decoration:none;box-shadow:0 4px 20px rgba(13,148,136,0.3);}
+.mh-cta:hover{background:#0f766e;color:white;transform:translateY(-1px);box-shadow:0 6px 24px rgba(13,148,136,0.4);}
+.mh-cta-arr{font-size:18px;}
+.mh-trust{display:flex;gap:1.5rem;margin-top:1.25rem;flex-wrap:wrap;}
+.mht{display:flex;align-items:center;gap:5px;font-size:12.5px;color:#64748b;}
+.mht-dot{width:6px;height:6px;border-radius:50%;background:#16a34a;flex-shrink:0;}
+/* Right panel - stories */
+.mhero-right{background:linear-gradient(160deg,#0f766e 0%,#0d9488 55%,#0891b2 100%);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1rem;justify-content:center;position:relative;overflow:hidden;}
+@media(max-width:860px){.mhero-right{display:none;}}
+.mhero-right::before{content:'';position:absolute;top:-80px;right:-80px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.mhero-right::after{content:'';position:absolute;bottom:-60px;left:-60px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.mhs-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:13px;padding:1rem 1.1rem;backdrop-filter:blur(8px);position:relative;z-index:1;animation:mhsFadeIn 0.5s ease both;}
+.mhs-card:nth-child(2){animation-delay:0.15s;}
+.mhs-card:nth-child(3){animation-delay:0.3s;}
+@keyframes mhsFadeIn{from{opacity:0;transform:translateX(16px);}to{opacity:1;transform:translateX(0);}}
+.mhs-quote{font-size:13.5px;color:rgba(255,255,255,0.9);line-height:1.6;margin-bottom:0.75rem;font-weight:300;}
+.mhs-quote em{font-style:italic;color:white;font-weight:500;}
+.mhs-author{display:flex;align-items:center;gap:8px;}
+.mhs-av{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white;flex-shrink:0;}
+.mhs-name{font-size:12px;font-weight:600;color:white;}
+.mhs-detail{font-size:11px;color:rgba(255,255,255,0.6);}
+.mhs-result{display:inline-block;font-size:11px;font-weight:700;backgroun
+
+<!-- ════════════ MEDVI-STYLE HERO ════════════ -->
+<div class="mhero">
+  <div class="mhero-main">
+    <div class="mhero-left">
+      <div class="mh-badge">Free &middot; 3 minutes &middot; 2,400+ couples guided</div>
+      <h1 class="mh-h1">Find your <em>IVF path</em><br>before spending Rs1 lakh</h1>
+      <p class="mh-sub">Couples waste months going to the wrong clinic for the wrong procedure. <strong>Our free quiz and Fertility Navigator Report</strong> tell you exactly what you need - before you spend a rupee.</p>
+      <a href="quiz.html" class="mh-cta">Take the free quiz <span class="mh-cta-arr">&#8594;</span></a>
+      <div class="mh-trust">
+        <div class="mht"><div class="mht-dot"></div>Free report - no sign-up</div>
+        <div class="mht"><div class="mht-dot"></div>Free counsellor call</div>
+        <div class="mht"><div class="mht-dot"></div>2,400+ couples guided</div>
+      </div>
+    </div>
+    <div class="mhero-right">
+      <div class="mhs-card">
+        <div class="mhs-quote">"After 2 years of trying, I didn't know if I needed IVF or IUI. <em>The quiz told me in 3 minutes what 3 doctors couldn't explain clearly.</em>"</div>
+        <div class="mhs-author"><div class="mhs-av">PR</div><div><div class="mhs-name">Priya R.</div><div class="mhs-detail">Mumbai &middot; PCOS &middot; Age 31</div><div class="mhs-result">Now 8 months pregnant</div></div></div>
+      </div>
+      <div class="mhs-card">
+        <div class="mhs-quote">"The clinic match saved us Rs40,000. <em>A better-rated clinic at exactly our budget</em> - we would never have found it on our own."</div>
+        <div class="mhs-author"><div class="mhs-av">SK</div><div><div class="mhs-name">Suresh & Kavita</div><div class="mhs-detail">Delhi &middot; Male factor &middot; Ages 34/33</div><div class="mhs-result">Conceived first attempt</div></div></div>
+      </div>
+      <div class="mhs-card">
+        <div class="mhs-quote">"The 5 questions to ask the clinic <em>revealed my previous clinic had been using the wrong protocol</em> for low AMH. Game changer."</div>
+        <div class="mhs-author"><div class="mhs-av">AM</div><div><div class="mhs-name">Anita M.</div><div class="mhs-detail">Bangalore &middot; Low AMH &middot; Age 37</div><div class="mhs-result">Pregnant after protocol change</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="mstats">
+  <div class="mstat"><span class="mstat-val">2,400+</span><div class="mstat-lbl">Couples guided</div></div>
+  <div class="mstat"><span class="mstat-val">Free</span><div class="mstat-lbl">Quiz and report</div></div>
+  <div class="mstat"><span class="mstat-val">3 min</span><div class="mstat-lbl">To complete the quiz</div></div>
+  <div class="mstat"><span class="mstat-val">Free</span><div class="mstat-lbl">Counsellor call</div></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="mhiw">
+  <div class="mhiw-inner">
+    <h2>Three steps to clarity</h2>
+    <p class="mhiw-sub">From confused to confident in under 15 minutes - completely free.</p>
+    <div class="mhiw-steps">
+      <div class="mhiw-step">
+        <div class="mhiw-num">1</div>
+        <h3>Take the 3-minute quiz</h3>
+        <p>10 questions about your situation. Completely free. No sign-up. Takes 3 minutes.</p>
+      </div>
+      <div class="mhiw-step">
+        <div class="mhiw-num">2</div>
+        <h3>Get your free Navigator Report</h3>
+        <p>AI-generated report with your procedure recommendation, success odds, 3 matched clinics and 5 questions to ask.</p>
+      </div>
+      <div class="mhiw-step">
+        <div class="mhiw-num">3</div>
+        <h3>Book your free counsellor call</h3>
+        <p>15 minutes with a fertility counsellor who has already read your report. No repeat questions. No charge.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="mtest">
+  <div class="mtest-inner">
+    <h2>When nothing else gave clarity, this did.</h2>
+    <p class="mtest-sub">Real stories from couples who used the Fertility Navigator</p>
+    <div class="mtest-scroll">
+      <div class="mtcard"><div class="mtcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="mtcard-text">"I had PCOS and assumed I needed IVF. <em>The report showed me IUI was worth trying first.</em> Saved Rs80,000 and conceived on the second IUI cycle."</div><div class="mtcard-author"><div class="mta-av">NR</div><div><div class="mta-name">Neha R., Delhi</div><div class="mta-meta">PCOS &middot; Age 29</div><div class="mta-pill">Conceived on IUI - not IVF</div></div></div></div>
+
+      <div class="mtcard"><div class="mtcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="mtcard-text">"After 3 failed IVFs the counsellor call was the best Rs99 I spent - <em>she had read my full report and found the thin endometrium issue</em> no one else had flagged."</div><div class="mtcard-author"><div class="mta-av">DK</div><div><div class="mta-name">Deepa K., Mumbai</div><div class="mta-meta">3 failed IVFs &middot; Age 38</div><div class="mta-pill">Pregnant after protocol change</div></div></div></div>
+
+      <div class="mtcard"><div class="mtcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="mtcard-text">"The 5 questions to ask the clinic gave us the confidence to actually ask what we needed to ask. <em>We switched clinics and conceived on the first attempt.</em>"</div><div class="mtcard-author"><div class="mta-av">KP</div><div><div class="mta-name">Kavita & Pradeep, Blr</div><div class="mta-meta">Male factor &middot; Ages 33/36</div><div class="mta-pill">Now 6 months pregnant</div></div></div></div>
+
+      <div class="mtcard"><div class="mtcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="mtcard-text">"<em>The clinic match was exactly right</em> - same success rate as the premium clinic we had been pushed toward, Rs1.2L cheaper and 15 minutes from our home."</div><div class="mtcard-author"><div class="mta-av">VP</div><div><div class="mta-name">Vikram P., Bangalore</div><div class="mta-meta">Unexplained &middot; Age 33</div><div class="mta-pill">Baby girl born 2025</div></div></div></div>
+
+      <div class="mtcard"><div class="mtcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="mtcard-text">"I spent 6 months going to different clinics getting different opinions. <em>The quiz took 3 minutes and explained my situation more clearly than any doctor had.</em>"</div><div class="mtcard-author"><div class="mta-av">SM</div><div><div class="mta-name">Sunita M., Mumbai</div><div class="mta-meta">PCOS &middot; Age 32</div><div class="mta-pill">Conceived on first IVF</div></div></div></div>
+
+      <div class="mtcard"><div class="mtcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="mtcard-text">"We are from a small city. <em>The clinic match sent us to Milann Fertility in Bangalore</em> - perfect for our budget. Dr. Rao delivered our baby."</div><div class="mtcard-author"><div class="mta-av">VL</div><div><div class="mta-name">Veena & Lokesh, Blr</div><div class="mta-meta">Endometriosis &middot; Age 34</div><div class="mta-pill">Baby born - Milann Fertility</div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SECOND CTA -->
+<div class="mcta2">
+  <h2>Ready to find your path?</h2>
+  <p>Join 2,400+ couples who got clarity in 3 minutes. Free report. Free counsellor call.</p>
+  <a href="quiz.html" class="mh-cta" style="background:white;color:#0f766e;box-shadow:0 4px 20px rgba(0,0,0,0.15);">Take the free quiz &#8594;</a>
+</div>
+
+<!-- COMPARE INTRO -->
+<div class="compare-intro">
+  <h2>Or browse clinic prices directly</h2>
+  <p>Compare real IVF prices across Mumbai, Delhi and Bangalore. All clinics. All procedures.</p>
+</div>
+
+d:rgba(255,255,255,0.15);color:white;padding:2px 8px;border-radius:20px;margin-top:5px;border:1px solid rgba(255,255,255,0.2);}
+/* Stats strip */
+.mstats{background:#0f172a;padding:1rem 1.5rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;}
+.mstat{text-align:center;}
+.mstat-val{font-family:'DM Serif Display',serif;font-size:1.5rem;color:white;display:block;}
+.mstat-lbl{font-size:11.5px;color:rgba(255,255,255,0.5);margin-top:1px;}
+/* How it works */
+.mhiw{background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;padding:2.5rem 1.5rem;}
+.mhiw-inner{max-width:800px;margin:0 auto;text-align:center;}
+.mhiw h2{font-family:'DM Serif Display',serif;font-size:1.5rem;color:#0f172a;margin-bottom:0.4rem;}
+.mhiw-sub{font-size:14px;color:#64748b;margin-bottom:2rem;}
+.mhiw-steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;}
+@media(max-width:640px){.mhiw-steps{grid-template-columns:1fr;gap:1rem;}}
+.mhiw-step{text-align:center;}
+.mhiw-num{width:40px;height:40px;border-radius:50%;background:#0d9488;color:white;font-family:'DM Serif Display',serif;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;}
+.mhiw-step h3{font-size:14px;font-weight:600;color:#0f172a;margin-bottom:0.3rem;}
+.mhiw-step p{font-size:13px;color:#64748b;line-height:1.55;}
+/* Testimonials strip */
+.mtest{background:white;border-bottom:1px solid #e2e8f0;padding:2.5rem 1.5rem;}
+.mtest-inner{max-width:1100px;margin:0 auto;}
+.mtest h2{font-family:'DM Serif Display',serif;font-size:1.4rem;color:#0f172a;margin-bottom:0.3rem;}
+.mtest-sub{font-size:13.5px;color:#64748b;margin-bottom:1.5rem;}
+.mtest-scroll{display:flex;gap:1rem;overflow-x:auto;scrollbar-width:none;padding-bottom:0.5rem;}
+.mtest-scroll::-webkit-scrollbar{display:none;}
+.mtcard{background:#f8fafc;border:1px solid #e2e8f0;border-radius:13px;padding:1.1rem;min-width:260px;max-width:280px;flex-shrink:0;}
+.mtcard-stars{color:#F59E0B;font-size:13px;letter-spacing:2px;margin-bottom:0.6rem;}
+.mtcard-text{font-size:13px;color:#334155;line-height:1.65;margin-bottom:0.75rem;}
+.mtcard-text em{font-style:italic;color:#0f766e;font-weight:500;}
+.mtcard-author{display:flex;align-items:center;gap:8px;}
+.mta-av{width:32px;height:32px;border-radius:50%;background:#f0fdfa;border:2px solid #0d9488;color:#0d9488;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.mta-name{font-size:12.5px;font-weight:600;color:#0f172a;}
+.mta-meta{font-size:11px;color:#64748b;}
+.mta-pill{display:inline-block;font-size:10.5px;font-weight:600;background:#f0fdfa;color:#0d9488;padding:2px 8px;border-radius:10px;margin-top:4px;}
+/* Second CTA block */
+.mcta2{background:linear-gradient(135deg,#0f766e,#0d9488);padding:3rem 1.5rem;text-align:center;}
+.mcta2 h2{font-family:'DM Serif Display',serif;font-size:1.7rem;color:white;margin-bottom:0.5rem;}
+.mcta2 p{font-size:14px;color:rgba(255,255,255,0.8);max-width:420px;margin:0 auto 1.5rem;line-height:1.65;}
+/* Compare section label */
+.compare-intro{background:white;border-bottom:1px solid #e2e8f0;padding:1.5rem;text-align:center;}
+.compare-intro h2{font-family:'DM Serif Display',serif;font-size:1.3rem;color:#0f172a;margin-bottom:0.25rem;}
+.compare-intro p{font-size:13.5px;color:#64748b;}
+
 </style>
 </head>
 <body>
@@ -545,7 +722,7 @@ footer strong { color: rgba(255,255,255,0.9); }
  <a href="insurance.html" class="unav-link"> Resources</a>
  </div>
  <div class="unav-right">
- <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="unav-cta">Get Free Quote</a>
+ <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="unav-cta">Take Free Quiz</a>
  </div>
  <button class="unav-burger" id="unav-burger" onclick="toggleDrawer()" aria-label="Menu">
  <span></span><span></span><span></span>
