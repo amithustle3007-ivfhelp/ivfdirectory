@@ -337,7 +337,7 @@ function toggleDrawer(){
  <h3>Get a Free IUI Quote</h3>
  <p>We will send you personalised quotes from top clinics within 2 hours.</p>
  <div id="lead-form">
- <input class="lead-inp" id="lead-phone" type="tel" placeholder="Phone / WhatsApp">
+ <input class="lead-inp" id="lead-phone" type="tel" placeholder="Phone number">
  <select class="lead-sel" id="lead-city">
  <option value="">Select city</option>
  <option>Mumbai</option><option>Delhi</option><option>Bangalore</option>
@@ -345,7 +345,7 @@ function toggleDrawer(){
  <button class="lead-btn" onclick="submitLead()">Get Free Quote</button>
  <div class="lead-trust">Free - No spam - Reply in 2 hrs</div>
  </div>
- <div class="lead-done" id="lead-done">Received! We will WhatsApp you shortly.</div>
+ <div class="lead-done" id="lead-done">Received! We will email you at contact@ivfhelp.org shortly.</div>
  </div>
  <div style="display:flex;justify-content:center;">
  <ins class="adsbygoogle"
@@ -487,8 +487,7 @@ async function submitLead() {
  body: new URLSearchParams({'entry.1601953016':'Guest','entry.303215056':phone||'','entry.1898340488':city||'','entry.714389099':PROC_NAME||'','entry.1786101561':'Procedure page lead'}).toString()
  });
  }catch(e){}
- var msg=encodeURIComponent('Hi IVFdirectory! Procedure: '+PROC_NAME+'. City: '+(city||'Not specified')+'. Phone: '+phone+'. Please send clinic quotes.');
- window.open('https://wa.me/919560663800?text='+msg,'_blank');
+ window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform', '_blank');
  document.getElementById('lead-form').style.display='none';
  document.getElementById('lead-done').style.display='block';
 }

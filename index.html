@@ -1025,7 +1025,7 @@ function toggleDrawer(){
  <h3>Get a Free Cost Estimate</h3>
  <p>Tell us your city and treatment — we'll send a personalised quote within 2 hours.</p>
  <div id="lead-form-wrap">
- <input class="lead-input" id="lead-phone" type="tel" placeholder="Your phone / WhatsApp">
+ <input class="lead-input" id="lead-phone" type="tel" placeholder="Your phone number">
  <select class="lead-select" id="lead-city">
  <option value="">Select city</option>
  <option>Mumbai</option>
@@ -1360,7 +1360,7 @@ async function submitLead() {
 
  // 1. Send to Formspree (email delivery to your inbox)
  const sent = await sendToFormspree({
- _replyto: 'amithustle3007@gmail.com',
+ _replyto: 'contact@ivfhelp.org',
  _subject: 'New IVF Lead  -  ' + (city || 'Unknown city') + ' . ' + (proc || 'Unknown procedure'),
  phone: phone,
  city: city || 'Not specified',
@@ -1383,7 +1383,7 @@ async function submitLead() {
  'City: ' + (city || 'Not specified') + '\n' +
  'Treatment: ' + (proc || 'Not specified')
  );
- window.open('https://wa.me/919560663800?text=' + msg, '_blank');
+ window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform', '_blank');
 
  // 4. Show success state
  document.getElementById('lead-form-wrap').style.display = 'none';

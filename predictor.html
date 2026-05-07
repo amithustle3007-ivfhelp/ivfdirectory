@@ -544,7 +544,7 @@ function toggleDrawer(){
  <p>We'll match you with clinics in your city that have strong track records for your profile — free, within 2 hours.</p>
  <div id="lead-form">
  <div class="lead-inputs">
- <input class="lead-input" id="lead-phone" type="tel" placeholder="Phone / WhatsApp number">
+ <input class="lead-input" id="lead-phone" type="tel" placeholder="Phone / phone number">
  <input class="lead-input" id="lead-name" type="text" placeholder="Your name">
  <button class="lead-submit" onclick="submitLead()">Get Matched With Clinics →</button>
  </div>
@@ -872,18 +872,7 @@ async function submitLead() {
  }
 
  gaEvent('lead_submitted', { source: 'predictor', age: answers.age, diag: answers.diag });
-
- var msg = encodeURIComponent(
- 'Hi IVFdirectory \n' +
- 'I used the IVF success predictor.\n' +
- 'Name: ' + (name || ' - ') + '\n' +
- 'Phone: ' + phone + '\n' +
- 'Age: ' + answers.age + '\n' +
- 'AMH: ' + (answers.amh || ' - ') + '\n' +
- 'Diagnosis: ' + (answers.diag || ' - ') + '\n' +
- 'Please recommend clinics for my profile. Thank you!'
- );
- window.open('https://wa.me/919560663800?text=' + msg, '_blank');
+ window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform', '_blank');
 
  document.getElementById('lead-form').style.display = 'none';
  document.getElementById('lead-done').style.display = 'block';

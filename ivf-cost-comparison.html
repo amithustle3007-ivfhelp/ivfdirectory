@@ -564,7 +564,7 @@ function toggleDrawer(){
  <div id="lf-globalcost">
  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.6rem;">
  <input id="ln-globalcost" type="text" placeholder="Your name" style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;">
- <input id="lp-globalcost" type="tel" placeholder="Phone / WhatsApp" style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;">
+ <input id="lp-globalcost" type="tel" placeholder="Phone number" style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;">
  </div>
  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.9rem;">
  <select id="lc-globalcost" style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;background:white;">
@@ -581,7 +581,7 @@ function toggleDrawer(){
  <button onclick="submitLead_globalcost()" style="width:100%;padding:0.75rem;background:white;color:#0f766e;border:none;border-radius:7px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;">Talk to a Fertility Expert Free &rarr;</button>
  <p style="font-size:11px;opacity:0.6;text-align:center;margin-top:0.5rem;">Free &middot; No spam &middot; Response within 2 hours</p>
  </div>
- <div id="ls-globalcost" style="display:none;text-align:center;padding:0.75rem;font-size:14px;">&#127881; Received! We will WhatsApp you shortly.</div>
+ <div id="ls-globalcost" style="display:none;text-align:center;padding:0.75rem;font-size:14px;">&#127881; Received! We will email you at contact@ivfhelp.org shortly.</div>
 </div>
 <script>
 async function submitLead_globalcost() {
@@ -603,8 +603,7 @@ async function submitLead_globalcost() {
  }).toString()
  });
  } catch(e) { console.warn('Form error', e); }
- var msg = encodeURIComponent('Hi IVFdirectory! Name: ' + (name||'Guest') + '. Phone: ' + phone + '. City: ' + (city||'Not specified') + '. Query: ' + (query||'IVF Cost Query') + '. Please help me. Thank you!');
- window.open('https://wa.me/919560663800?text=' + msg, '_blank');
+ window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform', '_blank');
  document.getElementById('lf-globalcost').style.display = 'none';
  document.getElementById('ls-globalcost').style.display = 'block';
 }
