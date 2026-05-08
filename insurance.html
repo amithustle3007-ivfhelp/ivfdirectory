@@ -787,7 +787,7 @@ function toggleDrawer(){
  <div id="lf-insurance">
  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.6rem;">
  <input id="ln-insurance" type="text" placeholder="Your name" style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;">
- <input id="lp-insurance" type="tel" placeholder="Phone / WhatsApp" style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;">
+ <input id="lp-insurance" type="tel" placeholder="Phone number" style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;">
  </div>
  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.9rem;">
  <select id="lc-insurance" style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;background:white;">
@@ -804,7 +804,7 @@ function toggleDrawer(){
  <button onclick="submitLead_insurance()" style="width:100%;padding:0.75rem;background:white;color:#0f766e;border:none;border-radius:7px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;">Talk to a Fertility Expert Free &rarr;</button>
  <p style="font-size:11px;opacity:0.6;text-align:center;margin-top:0.5rem;">Free &middot; No spam &middot; Response within 2 hours</p>
  </div>
- <div id="ls-insurance" style="display:none;text-align:center;padding:0.75rem;font-size:14px;">&#127881; Received! We will WhatsApp you shortly.</div>
+ <div id="ls-insurance" style="display:none;text-align:center;padding:0.75rem;font-size:14px;">&#127881; Received! We will email you at contact@ivfhelp.org shortly.</div>
 </div>
 <script>
 async function submitLead_insurance() {
@@ -818,16 +818,12 @@ async function submitLead_insurance() {
  method: 'POST', mode: 'no-cors',
  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
  body: new URLSearchParams({
- 'entry.1601953016': name || 'Guest',
- 'entry.303215056': phone,
- 'entry.1898340488': city || 'Not specified',
- 'entry.714389099': query || 'Insurance Query',
- 'entry.1786101561': 'Source: insurance page'
- }).toString()
+        'entry.1601953016': name || 'Guest',
+        'entry.1786101561': phone
+      }).toString()
  });
  } catch(e) { console.warn('Form error', e); }
- var msg = encodeURIComponent('Hi IVFdirectory! Name: ' + (name||'Guest') + '. Phone: ' + phone + '. City: ' + (city||'Not specified') + '. Query: ' + (query||'Insurance Query') + '. Please help me. Thank you!');
- window.open('https://wa.me/919560663800?text=' + msg, '_blank');
+ window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform', '_blank');
  document.getElementById('lf-insurance').style.display = 'none';
  document.getElementById('ls-insurance').style.display = 'block';
 }

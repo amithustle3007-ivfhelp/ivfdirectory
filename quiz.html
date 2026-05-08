@@ -589,7 +589,10 @@ body{font-family:'DM Sans',sans-serif;background:#f8fafc;color:var(--ink);min-he
       <input id="unlock-name" type="text" placeholder="Your name" style="width:100%;padding:.75rem 1rem;border:1.5px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:14px;color:#0f172a;outline:none;margin-bottom:.75rem;display:block;box-sizing:border-box;">
       <input id="unlock-phone" type="tel" placeholder="Phone number (WhatsApp)" style="width:100%;padding:.75rem 1rem;border:1.5px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:14px;color:#0f172a;outline:none;margin-bottom:.5rem;display:block;box-sizing:border-box;">
       <div style="font-size:12px;color:#64748b;margin-bottom:1.25rem;">We only contact you about your fertility guidance. No spam.</div>
-      <button onclick="submitAndGenerate()" style="width:100%;padding:.875rem;background:#0d9488;color:white;border:none;border-radius:10px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;display:block;">View my free Navigator Report &rarr;</button>
+      <button id="unlock-btn" onclick="submitAndGenerate()" style="width:100%;padding:.875rem;background:#0d9488;color:white;border:none;border-radius:10px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;display:block;">View my free Navigator Report &rarr;</button>
+      <div id="unlock-confirm" style="display:none;text-align:center;padding:0.5rem;font-size:12.5px;color:#16a34a;margin-top:0.5rem;">
+        &#10003; Details received - generating your report...
+      </div>
       <div style="margin-top:.5rem;"><button class="btn-back" onclick="backToQ10()">&#8592; Back</button></div>
     </div>
     <!-- LOADING -->
@@ -944,7 +947,6 @@ function showReport(r) {
   document.getElementById('quiz-section').style.display = 'none';
   var urgCls = r.urgency === 'Low' ? 'u-low' : r.urgency === 'High' ? 'u-high' : 'u-mod';
   var urgT = r.urgency === 'Low' ? 'u-low-t' : r.urgency === 'High' ? 'u-high-t' : 'u-mod-t';
-  var clinicsHTML = (r.clinics||[]).map(function(c,i){
     return '<div class="ci"><div class="ci-n">'+(i+1)+'</div><div class="ci-b"><div class="ci-name">'+c.name+'</div><div class="ci-meta">'+c.location+' - Google: '+c.google+' ('+c.reviews+' reviews)</div><div class="ci-price">'+c.price+'</div><div class="ci-tag">'+c.tag+'</div></div></div>';
   }).join('');
   var testsHTML = (r.tests_done||[]).map(function(t){ return '<span class="tc done">'+t+'</span>'; }).join('') +
@@ -996,13 +998,10 @@ function showReport(r) {
         '</div>' +
         '<div style="font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.55;">'+(r.success_note||'')+'</div>' +
       '</div>' +
-      '<div class="rs"><div class="rs-title">3 clinics matched to your profile in '+(ans.q7||'your city')+'</div>' +
-        '<div class="clinic-list">'+clinicsHTML+'</div>' +
-      '</div>' +
       storyHTML +
-      '<div class="rs"><div class="rs-title">Tests to get done before your first clinic visit</div>' +
+      '<div class="rs"><div class="rs-title">Tests the clinic will likely suggest after your visit</div>' +
         '<div class="test-chips">'+testsHTML+'</div>' +
-        '<div style="font-size:11.5px;color:var(--muted);margin-top:8px;">Green = already confirmed from your answers. White = get these done first - saves 1-2 wasted clinic visits.</div>' +
+        '<div style="font-size:11.5px;color:var(--muted);margin-top:8px;">These are the tests your clinic will most likely recommend. Knowing what to expect helps you prepare and budget in advance.</div>' +
       '</div>' +
       '<div class="rs"><div class="rs-title">5 questions to ask every clinic you visit</div>' +
         '<div class="q-list">'+questionsHTML+'</div>' +
@@ -1010,16 +1009,16 @@ function showReport(r) {
     '</div>' +
     '<div class="cta-card">' +
       '<h2>Talk to a fertility counsellor</h2>' +
-      '<p>This report gives you the map. A free 15-minute call with a counsellor who has already read your report gives you the route.</p>' +
-      '<div class="cta-price-row"><span class="cta-rs">Rs</span><span class="cta-amt">99</span><span class="cta-per">15-minute expert counsellor call</span></div>' +
+      '<p>This report gives you the map. A free 30-minute call with a counsellor who has already read your report gives you the route.</p>' +
+      '<div class="cta-price-row"><span class="cta-amt" style="font-size:2rem;letter-spacing:-1px;">FREE</span><span class="cta-per">30-minute expert counsellor call</span></div>' +
       '<div class="cta-features">' +
-        '<div class="cf"><div class="cf-check">&#10003;</div>Counsellor reads your report before the call</div>' +
+        '<div class="cf"><div class="cf-check">&#10003;</div>Counsellor reads your full report before the call</div>' +
         '<div class="cf"><div class="cf-check">&#10003;</div>No basic questions - straight to what you need</div>' +
         '<div class="cf"><div class="cf-check">&#10003;</div>Clinic shortlist narrowed to 1-2 for your case</div>' +
         '<div class="cf"><div class="cf-check">&#10003;</div>Email follow-up to contact@ivfhelp.org with next steps after the call</div>' +
       '</div>' +
       '<a href="'+CALENDLY+'" target="_blank" class="book-btn">Book your Free call &#8594;</a>' +
-      '<div class="cta-note">You will be taken to our free scheduling page (Cal.com) to pick a time that works for you.</div>' +
+      '<div class="cta-note">Pick a time that suits you - your counsellor will have already read your report.</div>' +
     '</div>';
   document.getElementById('report').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1032,7 +1031,7 @@ function showFallback() {
     '<div class="report-card"><div class="rh"><div class="rh-title">Quiz completed</div><div class="rh-pills"><span class="rp">'+(ans.q4||'?')+'</span><span class="rp">'+(ans.q3||'?')+'</span><span class="rp">'+(ans.q7||'?')+'</span></div></div>' +
     '<div class="rs"><div class="urg-note">Thank you for completing the quiz. Your answers have been recorded. Book your FREE counsellor call - no payment required.</div></div></div>' +
     '<div class="cta-card"><h2>Book your counsellor call</h2><p>Your full quiz answers will be shared with the counsellor before the call. No need to repeat yourself.</p>' +
-    '<div class="cta-price-row"><span class="cta-amt" style="font-size:2rem;">FREE</span><span class="cta-per">15-minute call</span></div>' +
+    '<div class="cta-price-row"><span class="cta-amt" style="font-size:2rem;">FREE</span><span class="cta-per">30-minute call</span></div>' +
     '<a href="'+CALENDLY+'" target="_blank" class="book-btn">Book your Free call &#8594;</a></div>';
   document.getElementById('report').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1064,10 +1063,20 @@ async function submitAndGenerate() {
     ph.focus();
     return;
   }
-  document.getElementById('unlock-screen').style.display = 'none';
-  document.getElementById('unlock-screen').classList.remove('active');
-  document.getElementById('loading').style.display = 'block';
-  animLoad();
+  // Show brief confirmation before loading
+  var btn = document.querySelector('#unlock-screen button[onclick="submitAndGenerate()"]');
+  if (btn) { btn.textContent = 'Generating your report...'; btn.disabled = true; }
+  
+  // Show confirmation briefly
+  var confirm = document.getElementById('unlock-confirm');
+  if (confirm) confirm.style.display = 'block';
+  
+  setTimeout(function() {
+    document.getElementById('unlock-screen').style.display = 'none';
+    document.getElementById('unlock-screen').classList.remove('active');
+    document.getElementById('loading').style.display = 'block';
+    animLoad();
+  }, 800);
   var summary = 'Name:'+name+' | Phone:'+phone+' | Age:'+(ans.q4||'?')+' | Trying:'+(ans.q1||'?')+' | Diagnosis:'+(ans.q3||'?')+' | City:'+(ans.q7||'?')+' | AMH:'+(ans.q5||'?')+' | Prev:'+(ans.q6||'?')+' | Budget:'+(ans.q8||'?')+' | Need:'+(ans.q10||'?');
   try {
     await fetch(GPOST, {
@@ -1075,13 +1084,12 @@ async function submitAndGenerate() {
       headers:{'Content-Type':'application/x-www-form-urlencoded'},
       body: new URLSearchParams({
         'entry.1601953016': name || 'Quiz user',
-        'entry.303215056': phone,
-        'entry.1898340488': ans.q7 || '',
-        'entry.714389099': 'QUIZ LEAD - '+(ans.q3||'Not specified'),
-        'entry.1786101561': summary
+        'entry.1786101561': phone
       }).toString()
     });
-  } catch(e) {}
+  } catch(e) { console.error('Form submit error:', e); }
+  // Log submission for debugging
+  console.log('Quiz submitted:', {name: name, phone: phone, city: ans.q7, diagnosis: ans.q3});
   await runAIReport();
 }
 

@@ -490,7 +490,10 @@ async function submitLead() {
  try{
  await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/formResponse',{ method:'POST', mode:'no-cors',
  headers:{'Content-Type':'application/x-www-form-urlencoded'},
- body: new URLSearchParams({'entry.1601953016':'Guest','entry.303215056':phone||'','entry.1898340488':city||'','entry.714389099':PROC_NAME||'','entry.1786101561':'Procedure page lead'}).toString()
+ body: new URLSearchParams({
+        'entry.1601953016': 'Guest',
+        'entry.1786101561': phone||''
+      }).toString()
  });
  }catch(e){}
  window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform', '_blank');

@@ -595,12 +595,9 @@ async function submitLead_globalcost() {
  method: 'POST', mode: 'no-cors',
  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
  body: new URLSearchParams({
- 'entry.1601953016': name || 'Guest',
- 'entry.303215056': phone,
- 'entry.1898340488': city || 'Not specified',
- 'entry.714389099': query || 'IVF Cost Query',
- 'entry.1786101561': 'Source: globalcost page'
- }).toString()
+        'entry.1601953016': name || 'Guest',
+        'entry.1786101561': phone
+      }).toString()
  });
  } catch(e) { console.warn('Form error', e); }
  window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform', '_blank');

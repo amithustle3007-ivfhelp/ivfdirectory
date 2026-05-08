@@ -365,12 +365,9 @@ async function submitLead_doctors() {
  method: 'POST', mode: 'no-cors',
  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
  body: new URLSearchParams({
- 'entry.1601953016': name || 'Guest',
- 'entry.303215056': phone,
- 'entry.1898340488': city || 'Not specified',
- 'entry.714389099': query || 'Find a Doctor',
- 'entry.1786101561': 'Source: doctors page'
- }).toString()
+        'entry.1601953016': name || 'Guest',
+        'entry.1786101561': phone
+      }).toString()
  });
  } catch(e) { console.warn('Form error', e); }
  window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform', '_blank');
@@ -984,12 +981,9 @@ async function book(name, city) {
  method: 'POST', mode: 'no-cors',
  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
  body: new URLSearchParams({
- 'entry.1601953016': name || 'Guest',
- 'entry.303215056': '',
- 'entry.1898340488': city || '',
- 'entry.714389099': 'Book consultation with ' + name,
- 'entry.1786101561': 'Source: doctors page'
- }).toString()
+        'entry.1601953016': name || 'Guest',
+        'entry.1786101561': ''
+      }).toString()
  });
  } catch(e) {}
  window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform', '_blank');

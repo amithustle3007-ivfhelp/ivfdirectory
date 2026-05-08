@@ -591,7 +591,7 @@ function sort(s, btn) {
 }
 
 function bookClinic(name) {
-  var url = GFORM + '?usp=pp_url&entry.714389099=' + encodeURIComponent('Book consultation - ' + name) + '&entry.1786101561=' + encodeURIComponent('Mumbai clinic page');
+  var url = GFORM;
   window.open(url, '_blank');
 }
 
@@ -627,7 +627,7 @@ function bookById(btn) {
   var id = btn.getAttribute('data-clinic');
   var clinic = DATA.filter(function(d){ return d.id === id; })[0];
   if(!clinic) return;
-  var url = GFORM + '?usp=pp_url&entry.714389099=' + encodeURIComponent('Book consultation - ' + clinic.name) + '&entry.1786101561=' + encodeURIComponent('Mumbai clinic page');
+  var url = GFORM;
   window.open(url, '_blank');
 }
 
@@ -738,7 +738,10 @@ async function submitLead() {
   if(!phone){alert('Please enter your phone number.');return;}
   try {
     await fetch(GPOST,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body:new URLSearchParams({'entry.1601953016':name||'Guest','entry.303215056':phone,'entry.1898340488':'Mumbai','entry.714389099':query||'IVF','entry.1786101561':'Mumbai city page lead'}).toString()
+      body:new URLSearchParams({
+        'entry.1601953016': name||'Guest',
+        'entry.1786101561': phone
+      }).toString()
     });
   } catch(e) {}
   document.getElementById('lf').style.display='none';
