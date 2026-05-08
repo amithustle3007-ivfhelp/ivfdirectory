@@ -608,7 +608,7 @@ body{font-family:'DM Sans',sans-serif;background:#f8fafc;color:var(--ink);min-he
 
 <script>
 var GPOST = 'https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/formResponse';
-var CALENDLY = 'https://calendly.com/ivfhelp/fertility-navigator';
+var CALENDLY = 'https://cal.com/amit-hustle-qus767/30min';
 var ans = {};
 var cur = 1;
 
@@ -741,13 +741,24 @@ async function genReport() {
   animLoad();
   // Background form submit
   try {
+    var summary = [
+      'Age: '+(ans.q4||'?'),
+      'Trying: '+(ans.q1||'?'),
+      'Diagnosis: '+(ans.q3||'?'),
+      'City: '+(ans.q7||'?'),
+      'AMH: '+(ans.q5||'?'),
+      'Previous treatment: '+(ans.q6||'?'),
+      'Budget: '+(ans.q8||'?'),
+      'Priority: '+(ans.q9||'?'),
+      'Need: '+(ans.q10||'?')
+    ].join(' | ');
     fetch(GPOST, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'},
       body: new URLSearchParams({
-        'entry.1601953016': 'Quiz user',
-        'entry.303215056': '',
+        'entry.1601953016': 'Fertility Navigator Quiz',
+        'entry.303215056': ans.q7||'Not given',
         'entry.1898340488': ans.q7||'',
-        'entry.714389099': ans.q3||'',
-        'entry.1786101561': 'Age:'+ans.q4+' Trying:'+ans.q1+' Prev:'+ans.q6+' Budget:'+ans.q8
+        'entry.714389099': 'QUIZ: '+(ans.q3||'Not specified'),
+        'entry.1786101561': summary
       }).toString()
     });
   } catch(e){}
@@ -851,7 +862,7 @@ function showReport(r) {
         '<div class="cf"><div class="cf-check">&#10003;</div>Email follow-up to contact@ivfhelp.org with next steps after the call</div>' +
       '</div>' +
       '<a href="'+CALENDLY+'" target="_blank" class="book-btn">Book your Free call &#8594;</a>' +
-      '<div class="cta-note">You will be taken to our scheduling page to pick a time that works for you.</div>' +
+      '<div class="cta-note">You will be taken to our free scheduling page (Cal.com) to pick a time that works for you.</div>' +
     '</div>';
   document.getElementById('report').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
