@@ -296,6 +296,7 @@ footer strong{color:rgba(255,255,255,0.9);}
 
 </style>
 </head>
+
 <body>
 
 <!-- NAV -->
@@ -482,501 +483,59 @@ footer strong{color:rgba(255,255,255,0.9);}
   </div>
 </div>
 
-<!-- COMPARE INTRO -->
-<div class="compare-intro">
-  <h2>Or browse clinic prices directly</h2>
-  <p>Compare real IVF prices across Mumbai, Delhi and Bangalore. All clinics. All procedures.</p>
-</div>
 
-<div class="tool-section" id="compare">
-      <div class="tool-header">
-        <h2>Clinic Price Comparison</h2>
-        <p>Select a city and procedure to compare prices from verified clinics</p>
-      </div>
 
-      <div class="filter-row">
-        <span class="tab-group-label">City</span>
-        <button class="tab-btn active" data-filter="city" data-value="Mumbai" onclick="setFilter('city','Mumbai',this)">Mumbai</button>
-        <button class="tab-btn" data-filter="city" data-value="Delhi" onclick="setFilter('city','Delhi',this)">Delhi</button>
-        <button class="tab-btn" data-filter="city" data-value="Bangalore" onclick="setFilter('city','Bangalore',this)">Bangalore</button>
-        <span class="tab-group-label">Procedure</span>
-        <button class="tab-btn active" data-filter="proc" data-value="IVF" onclick="setFilter('proc','IVF',this)">IVF</button>
-        <button class="tab-btn" data-filter="proc" data-value="IUI" onclick="setFilter('proc','IUI',this)">IUI</button>
-        <button class="tab-btn" data-filter="proc" data-value="ICSI" onclick="setFilter('proc','ICSI',this)">ICSI</button>
-        <button class="tab-btn" data-filter="proc" data-value="FET" onclick="setFilter('proc','FET',this)">FET</button>
-        <button class="tab-btn" data-filter="proc" data-value="EggFreezing" onclick="setFilter('proc','EggFreezing',this)">Egg Freezing</button>
-        <button class="tab-btn" data-filter="proc" data-value="DonorEgg" onclick="setFilter('proc','DonorEgg',this)">Donor Egg</button>
-      </div>
-
-      <div class="results-wrap">
-        <table class="results-table">
-          <thead>
-            <tr>
-              <th>Clinic</th>
-              <th>Base price</th>
-              <th>With medications</th>
-              <th>Success rate</th>
-              <th>0% EMI</th>
-              <th>Data source</th>
-            </tr>
-          </thead>
-          <tbody id="results-body"></tbody>
-        </table>
-      </div>
-
-      <div class="results-disclaimer">
-        ⚠️ Prices are estimates compiled from clinic websites and verified aggregators. Always request an itemised quote directly from your chosen clinic. Medications are almost always billed separately unless stated. Data last reviewed April 2025.
-      </div>
+<!-- FAQ -->
+<div style="max-width:780px;margin:2.5rem auto;padding:0 1.5rem;">
+  <div class="faq-section" id="faq">
+    <div class="faq-header">
+      <h2>Frequently Asked Questions</h2>
     </div>
-
-    <!-- ── INLINE AD SLOT ── -->
-    <div class="ad-wrap-inline">
-      <div class="ad-slot ad-leaderboard">
-        <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4593374584526064" data-ad-slot="AUTO"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-    </div>
-
-    <!-- ── COST BREAKDOWN ── -->
-    <div class="tool-section" id="breakdown">
-      <div class="tool-header">
-        <h2>What Makes Up the Total Cost?</h2>
-        <p>Itemised breakdown for a standard IVF cycle in India (2025 estimates)</p>
-      </div>
-      <div class="breakdown-section">
-        <div class="breakdown-bars" id="breakdown-bars"></div>
-      </div>
-      <div class="inc-exc-grid">
-        <div class="inc-exc-box inc">
-          <h4>✓ Typically included in base price</h4>
-          <ul class="inc-exc-list">
-            <li>Initial consultation with fertility specialist</li>
-            <li>Baseline investigations (ultrasound + blood panel)</li>
-            <li>Egg retrieval (OPU) procedure</li>
-            <li>Embryo culture (3–5 days in lab)</li>
-            <li>Embryo transfer procedure</li>
-            <li>Luteal phase support (2 weeks post-ET)</li>
-            <li>One follow-up consultation</li>
-          </ul>
-        </div>
-        <div class="inc-exc-box exc">
-          <h4>✕ Usually billed separately (ask upfront!)</h4>
-          <ul class="inc-exc-list">
-            <li>Ovarian stimulation injections (₹35,000–₹1,00,000)</li>
-            <li>ICSI micromanipulation (+₹15,000–₹30,000)</li>
-            <li>Embryo freezing for unused embryos</li>
-            <li>Pre-implantation genetic testing (PGT)</li>
-            <li>Anaesthesia fee (sometimes billed separately)</li>
-            <li>Donor eggs or donor sperm (if needed)</li>
-            <li>Repeat monitoring scans beyond package</li>
-          </ul>
-        </div>
-      </div>
-      <div class="tip-box">
-        <strong>💡 Pro tip:</strong> When comparing clinics, always ask: "Can you give me the total all-inclusive estimate including medications, ICSI if needed, and monitoring scans?" The base price is rarely what you actually pay.
-      </div>
-    </div>
-
-    <!-- ── PROCEDURE GUIDE ── -->
-    <section id="procedures">
-      <div class="section-heading">
-        <h2>Procedures & Price Guides</h2>
-        <p>What each treatment involves and what it costs in India</p>
-      </div>
-      <div class="proc-grid" id="proc-grid"></div>
-    </section>
-
-    <!-- ── INLINE AD SLOT 2 ── -->
-    <div class="ad-wrap-inline">
-      <div class="ad-slot ad-leaderboard">
-        <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-ad-client="ca-pub-4593374584526064" data-ad-slot="AUTO" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-    </div>
-
-    <!-- ── FAQ ── -->
-    <div class="faq-section" id="faq">
-      <div class="faq-header">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-      <div id="faq-list"></div>
-    </div>
-
-  </main>
-
-  <!-- ── SIDEBAR ── -->
-  <aside class="sidebar">
-
-    <!-- Sidebar Ad -->
-    <div class="ad-slot ad-rectangle">
-      <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4593374584526064" data-ad-slot="AUTO"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-    <div class="sidebar-card">
-      <h3>Quick Price Reference</h3>
-      <ul class="sidebar-list" id="sidebar-prices"></ul>
-    </div>
-
-    <!-- Lead capture -->
-    <div class="lead-card" id="get-quote">
-      <h3>Get a Free Cost Estimate</h3>
-      <p>Tell us your city and treatment — we'll send a personalised quote within 2 hours.</p>
-      <div id="lead-form-wrap">
-        <input class="lead-input" id="lead-phone" type="tel" placeholder="Your phone / WhatsApp">
-        <select class="lead-select" id="lead-city">
-          <option value="">Select city</option>
-          <option>Mumbai</option>
-          <option>Delhi</option>
-          <option>Bangalore</option>
-        </select>
-        <select class="lead-select" id="lead-proc">
-          <option value="">Select treatment</option>
-          <option>IVF</option>
-          <option>IUI</option>
-          <option>ICSI</option>
-          <option>FET</option>
-          <option>Egg Freezing</option>
-          <option>Donor Egg IVF</option>
-        </select>
-        <button class="lead-btn" onclick="submitLead()">Get Free Quote →</button>
-        <div class="lead-trust">100% free · No spam · Response in 2 hrs</div>
-      </div>
-      <div class="lead-success" id="lead-success">
-        <p>🎉 Request received! We'll WhatsApp you a detailed quote shortly.</p>
-      </div>
-    </div>
-
-    <div class="ad-slot ad-rectangle">
-      <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4593374584526064" data-ad-slot="AUTO"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-    <!-- Key facts -->
-    <div class="sidebar-card">
-      <h3>Key Facts for Patients</h3>
-      <ul class="sidebar-list">
-        <li><strong>Medications</strong> add ₹35K–₹1L on top of base price</li>
-        <li><strong>Average cycles</strong> needed: 2–3 for success</li>
-        <li><strong>Success rates</strong> under age 35: 40–60% per cycle</li>
-        <li><strong>IVF is regulated</strong> under ART Act 2021 in India</li>
-        <li><strong>0% EMI</strong> available at most major chains</li>
-        <li><strong>Insurance</strong> generally does not cover IVF in India</li>
-      </ul>
-    </div>
-
-  </aside>
-</div>
-
-<!-- ── BOTTOM AD SLOT ── -->
-<div class="ad-wrap" style="padding:1.5rem;">
-  <div class="ad-slot ad-leaderboard">
-    <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-ad-client="ca-pub-4593374584526064" data-ad-slot="AUTO" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <div id="faq-list"></div>
   </div>
 </div>
 
-<!-- ── FOOTER ── -->
-<footer>
-  <strong>IVFdirectory India</strong> — India's IVF price discovery platform<br>
-  Pricing data compiled from clinic websites, Practo, Vaidam, and verified aggregators. Updated April 2025.<br>
-  This website provides general information only and does not constitute medical advice.<br>
-  Always consult a qualified fertility specialist before making treatment decisions.<br><br>
-  <a href="#compare">Find Clinics</a> · <a href="#compare">Cost Guide</a> · <a href="#breakdown">Cost Breakdown</a> · <a href="calculator.html">Calculator</a> · <a href="#faq">FAQs</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a>
-</footer>
-
 <script>
-// GA4 helper
-function gaEvent(name,params){try{if(typeof gtag==="function"){gtag("event",name,params||{});}}catch(e){}}
-
-
-// ── DATA ──
-const CLINICS = [
-  { id:'nova_mumbai', name:'Nova IVF — Andheri West', chain:'Nova IVF Fertility', city:'Mumbai', accred:'ICMR', rating:4.8, success:58, emi:true, emi_free:false,
-    IVF:{base_min:150000,base_max:175000,med_min:200000,med_max:250000,conf:'HIGH'},
-    IUI:{base_min:8000,base_max:15000,med_min:15000,med_max:25000,conf:'MEDIUM'},
-    ICSI:{base_min:165000,base_max:200000,med_min:220000,med_max:275000,conf:'MEDIUM'},
-    FET:{base_min:40000,base_max:65000,med_min:55000,med_max:85000,conf:'MEDIUM'},
-    EggFreezing:{base_min:90000,base_max:130000,med_min:140000,med_max:200000,conf:'MEDIUM'},
-    DonorEgg:{base_min:280000,base_max:350000,med_min:280000,med_max:350000,conf:'LOW'}},
-  { id:'indira_mumbai', name:'Indira IVF — Mumbai', chain:'Indira IVF', city:'Mumbai', accred:'ISO', rating:4.4, success:50, emi:true, emi_free:true,
-    IVF:{base_min:110000,base_max:160000,med_min:170000,med_max:260000,conf:'HIGH'},
-    IUI:{base_min:6000,base_max:12000,med_min:12000,med_max:22000,conf:'MEDIUM'},
-    ICSI:{base_min:130000,base_max:180000,med_min:190000,med_max:260000,conf:'MEDIUM'},
-    FET:{base_min:35000,base_max:55000,med_min:50000,med_max:75000,conf:'MEDIUM'},
-    EggFreezing:{base_min:80000,base_max:120000,med_min:130000,med_max:190000,conf:'MEDIUM'},
-    DonorEgg:{base_min:250000,base_max:320000,med_min:250000,med_max:320000,conf:'LOW'}},
-  { id:'bloom_mumbai', name:'Bloom IVF — Lilavati, Bandra', chain:'Bloom IVF', city:'Mumbai', accred:'NABH', rating:4.7, success:60, emi:true, emi_free:false,
-    IVF:{base_min:150000,base_max:200000,med_min:210000,med_max:350000,conf:'HIGH'},
-    IUI:{base_min:8000,base_max:15000,med_min:15000,med_max:28000,conf:'MEDIUM'},
-    ICSI:{base_min:170000,base_max:220000,med_min:230000,med_max:350000,conf:'MEDIUM'},
-    FET:{base_min:45000,base_max:70000,med_min:60000,med_max:95000,conf:'MEDIUM'},
-    EggFreezing:{base_min:100000,base_max:150000,med_min:160000,med_max:230000,conf:'MEDIUM'},
-    DonorEgg:{base_min:300000,base_max:400000,med_min:300000,med_max:400000,conf:'LOW'}},
-  { id:'nova_delhi', name:'Nova IVF — Rajouri Garden', chain:'Nova IVF Fertility', city:'Delhi', accred:'ICMR', rating:4.7, success:57, emi:true, emi_free:false,
-    IVF:{base_min:150000,base_max:175000,med_min:200000,med_max:250000,conf:'HIGH'},
-    IUI:{base_min:8000,base_max:15000,med_min:15000,med_max:25000,conf:'MEDIUM'},
-    ICSI:{base_min:170000,base_max:200000,med_min:220000,med_max:275000,conf:'MEDIUM'},
-    FET:{base_min:40000,base_max:65000,med_min:55000,med_max:85000,conf:'MEDIUM'},
-    EggFreezing:{base_min:90000,base_max:130000,med_min:140000,med_max:200000,conf:'MEDIUM'},
-    DonorEgg:{base_min:270000,base_max:350000,med_min:270000,med_max:350000,conf:'LOW'}},
-  { id:'birla_delhi', name:'Birla Fertility & IVF — Gurugram', chain:'Birla Fertility & IVF', city:'Delhi', accred:'NABH', rating:4.6, success:60, emi:true, emi_free:true,
-    IVF:{base_min:171100,base_max:250000,med_min:230000,med_max:350000,conf:'HIGH'},
-    IUI:{base_min:8000,base_max:16000,med_min:16000,med_max:30000,conf:'MEDIUM'},
-    ICSI:{base_min:190000,base_max:250000,med_min:250000,med_max:380000,conf:'MEDIUM'},
-    FET:{base_min:50000,base_max:80000,med_min:65000,med_max:105000,conf:'MEDIUM'},
-    EggFreezing:{base_min:110000,base_max:160000,med_min:170000,med_max:250000,conf:'MEDIUM'},
-    DonorEgg:{base_min:300000,base_max:420000,med_min:300000,med_max:420000,conf:'MEDIUM'}},
-  { id:'cloudnine_delhi', name:'Cloudnine Fertility — Punjabi Bagh', chain:'Cloudnine Fertility', city:'Delhi', accred:'NABH', rating:4.5, success:55, emi:true, emi_free:false,
-    IVF:{base_min:120000,base_max:180000,med_min:180000,med_max:280000,conf:'HIGH'},
-    IUI:{base_min:7000,base_max:13000,med_min:13000,med_max:25000,conf:'MEDIUM'},
-    ICSI:{base_min:140000,base_max:200000,med_min:200000,med_max:290000,conf:'MEDIUM'},
-    FET:{base_min:40000,base_max:65000,med_min:55000,med_max:85000,conf:'MEDIUM'},
-    EggFreezing:{base_min:85000,base_max:125000,med_min:135000,med_max:195000,conf:'MEDIUM'},
-    DonorEgg:{base_min:260000,base_max:340000,med_min:260000,med_max:340000,conf:'LOW'}},
-  { id:'risaa_delhi', name:'Risaa IVF — Green Park', chain:'Risaa IVF', city:'Delhi', accred:'ISO', rating:4.8, success:65, emi:true, emi_free:true,
-    IVF:{base_min:120000,base_max:180000,med_min:170000,med_max:250000,conf:'HIGH'},
-    IUI:{base_min:5000,base_max:10000,med_min:10000,med_max:20000,conf:'MEDIUM'},
-    ICSI:{base_min:135000,base_max:185000,med_min:185000,med_max:250000,conf:'MEDIUM'},
-    FET:{base_min:35000,base_max:55000,med_min:50000,med_max:75000,conf:'MEDIUM'},
-    EggFreezing:{base_min:80000,base_max:120000,med_min:130000,med_max:190000,conf:'MEDIUM'},
-    DonorEgg:{base_min:240000,base_max:320000,med_min:240000,med_max:320000,conf:'LOW'}},
-  { id:'nova_blr', name:'Nova IVF — Bangalore', chain:'Nova IVF Fertility', city:'Bangalore', accred:'ICMR', rating:4.7, success:55, emi:true, emi_free:false,
-    IVF:{base_min:140000,base_max:175000,med_min:190000,med_max:240000,conf:'MEDIUM'},
-    IUI:{base_min:7000,base_max:13000,med_min:13000,med_max:22000,conf:'MEDIUM'},
-    ICSI:{base_min:155000,base_max:195000,med_min:210000,med_max:265000,conf:'MEDIUM'},
-    FET:{base_min:38000,base_max:60000,med_min:52000,med_max:80000,conf:'MEDIUM'},
-    EggFreezing:{base_min:85000,base_max:125000,med_min:135000,med_max:195000,conf:'MEDIUM'},
-    DonorEgg:{base_min:250000,base_max:330000,med_min:250000,med_max:330000,conf:'LOW'}},
-  { id:'indira_blr', name:'Indira IVF — Bangalore', chain:'Indira IVF', city:'Bangalore', accred:'ISO', rating:4.3, success:55, emi:true, emi_free:true,
-    IVF:{base_min:110000,base_max:160000,med_min:150000,med_max:260000,conf:'HIGH'},
-    IUI:{base_min:5500,base_max:11000,med_min:11000,med_max:20000,conf:'MEDIUM'},
-    ICSI:{base_min:130000,base_max:175000,med_min:180000,med_max:245000,conf:'MEDIUM'},
-    FET:{base_min:32000,base_max:52000,med_min:47000,med_max:70000,conf:'MEDIUM'},
-    EggFreezing:{base_min:75000,base_max:115000,med_min:125000,med_max:185000,conf:'MEDIUM'},
-    DonorEgg:{base_min:235000,base_max:310000,med_min:235000,med_max:310000,conf:'LOW'}},
-  { id:'milann_blr', name:'Milann Fertility — Kumara Park', chain:'Milann Fertility', city:'Bangalore', accred:'ISO', rating:4.7, success:55, emi:true, emi_free:false,
-    IVF:{base_min:125000,base_max:175000,med_min:175000,med_max:260000,conf:'MEDIUM'},
-    IUI:{base_min:7000,base_max:13000,med_min:13000,med_max:23000,conf:'MEDIUM'},
-    ICSI:{base_min:145000,base_max:190000,med_min:200000,med_max:270000,conf:'MEDIUM'},
-    FET:{base_min:40000,base_max:62000,med_min:55000,med_max:82000,conf:'MEDIUM'},
-    EggFreezing:{base_min:85000,base_max:130000,med_min:135000,med_max:200000,conf:'MEDIUM'},
-    DonorEgg:{base_min:255000,base_max:340000,med_min:255000,med_max:340000,conf:'LOW'}}
-];
-
-const PROC_META = {
-  IVF:        { label:'IVF', icon:'🧬', bg:'#f0fdfa', desc:'Standard in vitro fertilisation — eggs retrieved, fertilised in lab, embryo transferred.' },
-  IUI:        { label:'IUI', icon:'💧', bg:'#eff6ff', desc:'Intrauterine insemination — processed sperm placed directly into uterus. Least invasive.' },
-  ICSI:       { label:'ICSI', icon:'🔬', bg:'#faf5ff', desc:'Single sperm injected into each egg. Add-on to IVF for male factor infertility.' },
-  FET:        { label:'FET', icon:'❄️', bg:'#f0f9ff', desc:'Frozen embryo transfer — previously frozen embryo thawed and transferred. No egg retrieval.' },
-  EggFreezing:{ label:'Egg Freezing', icon:'🧊', bg:'#ecfdf5', desc:'Eggs retrieved and vitrified for future use. Popular for fertility preservation.' },
-  DonorEgg:   { label:'Donor Egg IVF', icon:'🌸', bg:'#fdf4ff', desc:'IVF using eggs from an anonymous donor. Recommended for poor ovarian reserve or advanced age.' }
-};
-
-const BREAKDOWN = [
-  { label:'Stimulation injections', min:35000, max:100000, maxVal:100000, color:'#0d9488' },
-  { label:'Embryology lab (fertilisation + culture)', min:25000, max:50000, maxVal:100000, color:'#0891b2' },
-  { label:'Egg retrieval (OPU) procedure', min:15000, max:30000, maxVal:100000, color:'#7c3aed' },
-  { label:'Embryo transfer', min:8000, max:20000, maxVal:100000, color:'#059669' },
-  { label:'Monitoring scans (4–6 ultrasounds)', min:4000, max:12000, maxVal:100000, color:'#d97706' },
-  { label:'Anaesthesia', min:5000, max:12000, maxVal:100000, color:'#6b7280' },
-  { label:'Consultation + workup', min:5000, max:15000, maxVal:100000, color:'#be185d' }
-];
+function gaEvent(n,p){try{if(typeof gtag==="function")gtag("event",n,p||{});}catch(e){}}
 
 const FAQS = [
-  { q:'What is the cost of IVF in Mumbai in 2025?', a:'IVF in Mumbai costs between ₹1,10,000 and ₹3,50,000 per cycle depending on the clinic and protocol. Budget chains like Indira IVF start from ₹1.1L while premium centres like Bloom IVF at Lilavati can reach ₹3.5L including medications. The typical all-inclusive cost with medications is ₹1.7L–₹2.8L.' },
-  { q:'What is the cost of IVF in Delhi in 2025?', a:'IVF in Delhi ranges from ₹1,20,000 to ₹3,80,000 per cycle. Affordable options include Risaa IVF (₹1.2L–₹1.8L base) and Cloudnine (₹1.2L–₹1.8L). Premium Gurugram clinics like Birla Fertility start from ₹1,71,100 and can reach ₹4.17L with medications.' },
-  { q:'What is the cost of IVF in Bangalore in 2025?', a:'IVF in Bangalore typically costs ₹1,10,000 to ₹3,10,000 per cycle — generally 5–10% lower than Mumbai and Delhi. Indira IVF offers packages from ₹1.1L; Milann Fertility charges ₹1.25L–₹2.6L.' },
-  { q:'Are IVF medications included in the quoted price?', a:'Usually NOT. Most clinics quote a base price that excludes stimulation injections (gonadotropins). These medications add ₹35,000–₹1,00,000 to the total cost depending on the protocol. Always ask for an all-inclusive quote before comparing.' },
-  { q:'What is the cost of IUI treatment in India?', a:'IUI is significantly cheaper than IVF. Base procedure costs ₹5,000–₹16,000. With mild stimulation medications and monitoring scans, the total per cycle is ₹10,000–₹30,000. Multiple cycles (3–6) are often recommended before moving to IVF.' },
-  { q:'How much does ICSI cost compared to IVF?', a:'ICSI is usually priced as IVF base + ₹15,000–₹30,000 add-on for the micromanipulation procedure. Some clinics bundle ICSI into their standard IVF package. ICSI is recommended for male factor infertility, low sperm count, or previous IVF fertilisation failure.' },
-  { q:'What does a frozen embryo transfer (FET) cost?', a:'FET costs ₹32,000–₹80,000 for the procedure itself, plus ₹15,000–₹25,000 for endometrial preparation medications. It is significantly cheaper than a fresh IVF cycle since no egg retrieval is needed. FET is commonly done using embryos remaining from a previous IVF cycle.' },
-  { q:'How much does egg freezing cost in India?', a:'Egg freezing (oocyte cryopreservation) costs ₹75,000–₹1,60,000 for the retrieval cycle excluding medications. Add ₹35,000–₹1,00,000 for stimulation injections and ₹10,000–₹25,000 per year for storage. Total first-year cost is typically ₹1.3L–₹2.5L.' },
-  { q:'Is 0% EMI available for IVF treatment?', a:'Yes. Indira IVF, Risaa IVF, and Birla Fertility offer 0% interest EMI plans. Other chains like Nova IVF and Bloom IVF offer EMI but may charge interest. Always confirm the exact EMI terms — some schemes require a medical loan through a partner NBFC.' },
+  { q:'What is the cost of IVF in Mumbai in 2025?', a:'IVF in Mumbai costs between Rs1,10,000 and Rs3,50,000 per cycle depending on the clinic and protocol. Budget chains like Indira IVF start from Rs1.1L while premium centres like Bloom IVF at Lilavati can reach Rs3.5L including medications. The typical all-inclusive cost with medications is Rs1.7L-Rs2.8L.' },
+  { q:'What is the cost of IVF in Delhi in 2025?', a:'IVF in Delhi ranges from Rs1,20,000 to Rs3,80,000 per cycle. Affordable options include Risaa IVF (Rs1.2L-Rs1.8L base) and Cloudnine (Rs1.2L-Rs1.8L). Premium Gurugram clinics like Birla Fertility start from Rs1,71,100 and can reach Rs4.17L with medications.' },
+  { q:'What is the cost of IVF in Bangalore in 2025?', a:'IVF in Bangalore typically costs Rs1,10,000 to Rs3,10,000 per cycle  -  generally 5-10% lower than Mumbai and Delhi. Indira IVF offers packages from Rs1.1L; Milann Fertility charges Rs1.25L-Rs2.6L.' },
+  { q:'Are IVF medications included in the quoted price?', a:'Usually NOT. Most clinics quote a base price that excludes stimulation injections (gonadotropins). These medications add Rs35,000-Rs1,00,000 to the total cost depending on the protocol. Always ask for an all-inclusive quote before comparing.' },
+  { q:'What is the cost of IUI treatment in India?', a:'IUI is significantly cheaper than IVF. Base procedure costs Rs5,000-Rs16,000. With mild stimulation medications and monitoring scans, the total per cycle is Rs10,000-Rs30,000. Multiple cycles (3-6) are often recommended before moving to IVF.' },
+  { q:'How much does ICSI cost compared to IVF?', a:'ICSI is usually priced as IVF base + Rs15,000-Rs30,000 add-on for the micromanipulation procedure. Some clinics bundle ICSI into their standard IVF package. ICSI is recommended for male factor infertility, low sperm count, or previous IVF fertilisation failure.' },
+  { q:'What does a frozen embryo transfer (FET) cost?', a:'FET costs Rs32,000-Rs80,000 for the procedure itself, plus Rs15,000-Rs25,000 for endometrial preparation medications. It is significantly cheaper than a fresh IVF cycle since no egg retrieval is needed. FET is commonly done using embryos remaining from a previous IVF cycle.' },
+  { q:'How much does egg freezing cost in India?', a:'Egg freezing (oocyte cryopreservation) costs Rs75,000-Rs1,60,000 for the retrieval cycle excluding medications. Add Rs35,000-Rs1,00,000 for stimulation injections and Rs10,000-Rs25,000 per year for storage. Total first-year cost is typically Rs1.3L-Rs2.5L.' },
+  { q:'Is 0% EMI available for IVF treatment?', a:'Yes. Indira IVF, Risaa IVF, and Birla Fertility offer 0% interest EMI plans. Other chains like Nova IVF and Bloom IVF offer EMI but may charge interest. Always confirm the exact EMI terms  -  some schemes require a medical loan through a partner NBFC.' },
   { q:'Does health insurance cover IVF in India?', a:'Generally no. Most group health and individual insurance policies in India exclude IVF as it is classified as an elective procedure. However, some insurers have begun offering fertility riders. Indira IVF has partnered with SafeTree for India\'s first IVF-specific insurance product covering 2 IVF and 2 IUI cycles after a 24-month waiting period.' }
 ];
 
-const SIDEBAR_PRICES = [
-  { label:'IVF — Mumbai', range:'₹1.1L – ₹3.5L' },
-  { label:'IVF — Delhi', range:'₹1.2L – ₹3.8L' },
-  { label:'IVF — Bangalore', range:'₹1.1L – ₹3.1L' },
-  { label:'IUI — All cities', range:'₹10K – ₹30K' },
-  { label:'ICSI add-on', range:'₹15K – ₹30K' },
-  { label:'FET', range:'₹47K – ₹1.05L' },
-  { label:'Egg Freezing', range:'₹1.3L – ₹2.5L' },
-  { label:'Donor Egg IVF', range:'₹2.35L – ₹4.2L' }
-];
-
-// ── STATE ──
-let currentCity = 'Mumbai';
-let currentProc = 'IVF';
-
-function fmt(n) {
-  if (n >= 100000) return '₹' + (n/100000).toFixed(n%100000===0?0:1) + 'L';
-  if (n >= 1000) return '₹' + (n/1000).toFixed(0) + 'K';
-  return '₹' + n;
-}
-
-function setFilter(type, value, btn) {
-  if (type === 'city') { currentCity = value; document.querySelectorAll('[data-filter="city"]').forEach(b => b.classList.remove('active')); }
-  if (type === 'proc') { currentProc = value; document.querySelectorAll('[data-filter="proc"]').forEach(b => b.classList.remove('active')); }
-  btn.classList.add('active');
-  renderTable();
-  // GA4 — track which city/procedure users compare most
-  gaEvent('filter_selected', { filter_type: type, filter_value: value, city: currentCity, procedure: currentProc });
-}
-
-function badgeHTML(accred) {
-  if (accred === 'NABH') return '<span class="clinic-badge badge-nabh">NABH</span>';
-  if (accred === 'ICMR') return '<span class="clinic-badge badge-icmr">ICMR</span>';
-  return '<span class="clinic-badge badge-iso">ISO</span>';
-}
-
-function confHTML(c) {
-  const cls = c === 'HIGH' ? 'conf-high' : c === 'MEDIUM' ? 'conf-medium' : 'conf-low';
-  return `<span class="confidence-dot ${cls}"></span><span class="confidence-label">${c === 'HIGH' ? 'Clinic website' : c === 'MEDIUM' ? 'Aggregator' : 'Estimate'}</span>`;
-}
-
-function renderTable() {
-  const rows = CLINICS.filter(c => c.city === currentCity);
-  const tbody = document.getElementById('results-body');
-  tbody.innerHTML = rows.map(c => {
-    const p = c[currentProc];
-    if (!p) return '';
-    const samePrice = p.base_min === p.med_min;
-    return `<tr>
-      <td>
-        <div class="clinic-name-cell">
-          <span class="clinic-name-main">${c.name}</span>
-          <span class="clinic-name-chain">${c.chain} ${badgeHTML(c.accred)}</span>
-        </div>
-      </td>
-      <td class="price-cell">
-        <div class="price-base">${fmt(p.base_min)} – ${fmt(p.base_max)}</div>
-        <div class="price-with-meds">Excl. medications</div>
-      </td>
-      <td class="price-cell">
-        <div class="price-base">${fmt(p.med_min)} – ${fmt(p.med_max)}</div>
-        <div class="price-with-meds">Incl. medications (est.)</div>
-      </td>
-      <td>
-        <div class="success-bar-wrap">
-          <div class="success-bar-bg"><div class="success-bar-fill" style="width:${c.success}%"></div></div>
-          <span class="success-pct">${c.success}%</span>
-        </div>
-      </td>
-      <td>${c.emi_free ? '<span class="emi-tag">0% EMI</span>' : '<span class="no-emi">Available</span>'}</td>
-      <td>${confHTML(p.conf)}</td>
-    </tr>`;
-  }).join('');
-}
-
-function renderBreakdown() {
-  const container = document.getElementById('breakdown-bars');
-  container.innerHTML = BREAKDOWN.map(b => `
-    <div class="breakdown-item">
-      <div class="breakdown-label">${b.label}</div>
-      <div class="breakdown-bar-bg">
-        <div class="breakdown-bar-fill" style="width:${Math.round((b.max/b.maxVal)*100)}%;background:${b.color}"></div>
-      </div>
-      <div class="breakdown-range">${fmt(b.min)} – ${fmt(b.max)}</div>
-    </div>`).join('');
-}
-
-function renderProcCards() {
-  const grid = document.getElementById('proc-grid');
-  grid.innerHTML = Object.entries(PROC_META).map(([key, m]) => {
-    const allPrices = CLINICS.map(c => c[key]?.med_min).filter(Boolean);
-    const minP = Math.min(...allPrices);
-    const maxP = Math.max(...allPrices);
-    return `<div class="proc-card">
-      <div class="proc-card-top">
-        <div class="proc-icon" style="background:${m.bg}">${m.icon}</div>
-        <div>
-          <h3>${m.label}</h3>
-          <div class="proc-price-tag">From ${fmt(minP)} – ${fmt(maxP)}</div>
-        </div>
-      </div>
-      <div class="proc-desc">${m.desc}</div>
-    </div>`;
-  }).join('');
-}
-
-function renderFAQ() {
-  const list = document.getElementById('faq-list');
-  list.innerHTML = FAQS.map((f, i) => `
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>${f.q}</span>
-        <span class="faq-chevron">▼</span>
-      </div>
-      <div class="faq-answer">${f.a}</div>
-    </div>`).join('');
+function renderFaqs() {
+  var el = document.getElementById("faq-list");
+  if (!el) return;
+  el.innerHTML = FAQS.map(function(f, i) {
+    return "<div class=\"faq-item\">" +
+      "<div class=\"faq-question\" onclick=\"toggleFaq(this)\">" +
+        "<span>" + f.q + "</span>" +
+        "<span class=\"faq-chevron\">&#9660;</span>" +
+      "</div>" +
+      "<div class=\"faq-answer\">" + f.a + "</div>" +
+    "</div>";
+  }).join("");
 }
 
 function toggleFaq(el) {
-  const ans = el.nextElementSibling;
-  const open = ans.classList.contains('open');
-  document.querySelectorAll('.faq-answer.open').forEach(a => { a.classList.remove('open'); a.previousElementSibling.classList.remove('open'); });
-  if (!open) {
-    ans.classList.add('open');
-    el.classList.add('open');
-    // GA4 — track which FAQ questions get opened
-    gaEvent('faq_opened', { question: el.querySelector('span').textContent.trim().substring(0, 80) });
-  }
-}
-
-function renderSidebarPrices() {
-  const list = document.getElementById('sidebar-prices');
-  list.innerHTML = SIDEBAR_PRICES.map(p => `<li><strong>${p.label}</strong><span class="price">${p.range}</span></li>`).join('');
-}
-
-async function submitLead() {
-  const phone = document.getElementById('lead-phone').value.trim();
-  const city  = document.getElementById('lead-city').value;
-  const proc  = document.getElementById('lead-proc').value;
-
-  if (!phone) { alert('Please enter your phone number'); return; }
-
-  // 1. Send to Formspree (email delivery to your inbox)
-  const sent = await sendToFormspree({
-    phone:     phone,
-    city:      city || 'Not specified',
-    procedure: proc || 'Not specified',
-    source:    'ivfdirectory_cost_page',
-    timestamp: new Date().toISOString()
+  var ans = el.nextElementSibling;
+  var isOpen = ans.classList.contains("open");
+  document.querySelectorAll(".faq-answer.open").forEach(function(a) {
+    a.classList.remove("open");
+    a.previousElementSibling.classList.remove("open");
   });
-
-  // 2. GA4 — track lead submission (most valuable conversion event)
-  gaEvent('lead_submitted', {
-    city:      city || 'unspecified',
-    procedure: proc || 'unspecified',
-    formspree_ok: sent
-  });
-
-  // 3. Open WhatsApp with pre-filled message
-  const msg = encodeURIComponent(
-    'Hi IVFdirectory \uD83D\uDC4B\nI\'d like a free cost estimate.\n' +
-    'Phone: ' + phone + '\n' +
-    'City: ' + (city || 'Not specified') + '\n' +
-    'Treatment: ' + (proc || 'Not specified')
-  );
-  window.open('https://wa.me/919999999999?text=' + msg, '_blank');
-
-  // 4. Show success state
-  document.getElementById('lead-form-wrap').style.display = 'none';
-  document.getElementById('lead-success').style.display = 'block';
+  if (!isOpen) { ans.classList.add("open"); el.classList.add("open"); }
 }
 
-// ── INIT ──
-renderTable();
-renderBreakdown();
-renderProcCards();
-renderFAQ();
-renderSidebarPrices();
-
-// GA4 — log initial city/procedure view
-gaEvent('page_view_tool', { default_city: currentCity, default_procedure: currentProc });
-
+document.addEventListener("DOMContentLoaded", function() { renderFaqs(); });
 </script>
 
 <!-- FLOATING QUIZ BUTTON -->
@@ -989,5 +548,29 @@ window.addEventListener("scroll",function(){
   if(f) f.style.display=window.scrollY>400?"flex":"none";
 });
 </script>
+
+
+
+<footer>
+  <strong>IVFdirectory India</strong> — India's IVF price discovery platform<br>
+  Pricing data compiled from clinic websites, Practo, Vaidam, and verified aggregators. Updated April 2025.<br>
+  This website provides general information only and does not constitute medical advice.<br>
+  Always consult a qualified fertility specialist before making treatment decisions.<br><br>
+  <a href="#compare">Find Clinics</a> · <a href="#compare">Cost Guide</a> · <a href="#breakdown">Cost Breakdown</a> · <a href="calculator.html">Calculator</a> · <a href="#faq">FAQs</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a>
+</footer>
+
+
+
+<!-- FLOATING QUIZ BUTTON -->
+<a id="quiz-float" href="quiz.html" style="display:none;position:fixed;bottom:20px;right:20px;z-index:999;background:linear-gradient(135deg,#0f766e,#0d9488);color:white;border-radius:50px;padding:0.75rem 1.5rem;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 24px rgba(13,148,136,0.4);">
+  &#127836; Take the free quiz &#8594;
+</a>
+<script>
+window.addEventListener("scroll",function(){
+  var f=document.getElementById("quiz-float");
+  if(f) f.style.display=window.scrollY>400?"flex":"none";
+});
+</script>
 </body>
+
 </html>
