@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fertility Navigator Quiz - IVFdirectory India</title>
+<title>Fertility Navigator Quiz - IVFhelp India</title>
 <meta name="description" content="Take the free 3-minute fertility quiz. Get your personalised Fertility Navigator Report - procedure recommendation, success odds and expert questions to ask.">
 <link rel="canonical" href="https://www.ivfhelp.org/quiz.html">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JBW0NLD3Y"></script>
@@ -201,7 +201,7 @@ a{color:inherit;text-decoration:none;}
 <body>
 
 <nav class="nav">
-  <a href="index.html" class="nav-logo"><div class="nav-dot"></div>IVFdirectory</a>
+  <a href="index.html" class="nav-logo"><div class="nav-dot"></div>IVFhelp</a>
   <a href="index.html" class="nav-back">&#8592; Back to home</a>
 </nav>
 
@@ -471,7 +471,8 @@ a{color:inherit;text-decoration:none;}
 </div>
 
 <script>
-var GPOST = 'https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/formResponse';
+var GPOST = 'https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/formResponse';
+var SCRIPT_URL = 'REPLACE_WITH_YOUR_APPS_SCRIPT_URL'; // Set this after deploying Apps Script
 var CALENDLY = 'https://cal.com/amit-hustle-qus767/30min';
 var ans = {};
 
@@ -558,17 +559,43 @@ async function submitAndGenerate() {
     document.getElementById('loading').style.display = 'block';
     animLoad();
   }, 800);
-  var summary = 'Age:'+ans.q4+' Trying:'+ans.q1+' Diagnosis:'+ans.q3+' City:'+ans.q7+' AMH:'+ans.q5+' Prev:'+ans.q6+' Budget:'+ans.q8+' Need:'+ans.q10;
+
+  var summary = 'Age:'+ans.q4+' | Trying:'+ans.q1+' | Diagnosis:'+ans.q3+' | City:'+ans.q7+' | AMH:'+ans.q5+' | Prev:'+ans.q6+' | Budget:'+ans.q8+' | Need:'+ans.q10;
+
+  // PRIMARY: Apps Script Web App - sends real email to contact@ivfhelp.org
   try {
-    await fetch(GPOST, {
-      method:'POST', mode:'no-cors',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'text/plain'},
+      body: JSON.stringify({
+        name: name || 'Not given',
+        phone: phone,
+        city: ans.q7 || 'Not given',
+        diagnosis: ans.q3 || 'Not given',
+        age: ans.q4 || 'Not given',
+        trying: ans.q1 || 'Not given',
+        amh: ans.q5 || 'Not given',
+        budget: ans.q8 || 'Not given',
+        prev: ans.q6 || 'Not given',
+        need: ans.q10 || 'Not given',
+        summary: summary
+      })
+    });
+  } catch(e) { console.log('Script submit error:', e); }
+
+  // BACKUP: Google Form submission
+  try {
+    fetch(GPOST, {
+      method: 'POST', mode: 'no-cors',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: new URLSearchParams({
-        'entry.1601953016': name || 'Quiz user',
-        'entry.1786101561': phone+' | '+summary
+        'entry.55671786': name || 'Quiz user',
+        'entry.1601274733': phone + ' | ' + summary
       }).toString()
     });
   } catch(e) {}
+
   setTimeout(function(){ runAIReport(); }, 800);
 }
 

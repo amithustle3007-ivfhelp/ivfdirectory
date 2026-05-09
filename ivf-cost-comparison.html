@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IVF Cost by Country 2026 — Global Comparison in USD | IVFdirectory</title>
+<title>IVF Cost by Country 2026 — Global Comparison in USD | IVFhelp</title>
 <meta name="description" content="Compare IVF costs across countries in USD. USA, UK, Australia, Europe, India, Thailand, Israel and more. See how India compares globally for IVF treatment costs in 2026.">
 <meta name="keywords" content="IVF cost by country 2026, IVF cost comparison international, IVF cost USA vs India, cheapest country for IVF, IVF medical tourism India, global IVF prices USD">
 <meta name="robots" content="index, follow">
@@ -256,7 +256,7 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
 <nav class="unav">
  <div class="unav-top">
  <a href="index.html" class="unav-logo">
- <div class="unav-logo-dot"></div>IVFdirectory
+ <div class="unav-logo-dot"></div>IVFhelp
  </a>
  <div class="unav-links">
  <a href="index.html#compare" class="unav-link"> Compare Prices</a>
@@ -266,7 +266,7 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
  <a href="insurance.html" class="unav-link"> Resources</a>
  </div>
  <div class="unav-right">
- <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="unav-cta">Get Free Quote</a>
+ <a href="https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/viewform" target="_blank" rel="noopener" class="unav-cta">Get Free Quote</a>
  </div>
  <button class="unav-burger" id="unav-burger" onclick="toggleDrawer()" aria-label="Menu">
  <span></span><span></span><span></span>
@@ -278,7 +278,7 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
  <div class="unav-drawer" id="unav-drawer">
  <div class="unav-drawer-inner">
  <div class="unav-mob-sec"><div class="unav-mob-lbl"> Compare by City</div><div class="unav-mob-links"><a href="mumbai.html" class="unav-mob-link">Mumbai — from ₹1.1L</a><a href="delhi.html" class="unav-mob-link">Delhi — from ₹1.2L</a><a href="bangalore.html" class="unav-mob-link">Bangalore — from ₹1.1L</a></div></div><div class="unav-mob-sec"><div class="unav-mob-lbl"> Procedures</div><div class="unav-mob-links"><a href="ivf.html" class="unav-mob-link">IVF</a><a href="iui.html" class="unav-mob-link">IUI</a><a href="icsi.html" class="unav-mob-link">ICSI</a><a href="donor-egg-ivf.html" class="unav-mob-link">Donor Egg IVF</a></div></div><div class="unav-mob-sec"><div class="unav-mob-lbl"> Doctors & Tools</div><div class="unav-mob-links"><a href="doctors.html" class="unav-mob-link">Find a Doctor</a><a href="calculator.html" class="unav-mob-link">Cost Calculator</a><a href="predictor.html" class="unav-mob-link">Success Predictor</a><a href="ivf-cost-comparison.html" class="unav-mob-link here">Global Costs</a></div></div><div class="unav-mob-sec"><div class="unav-mob-lbl"> Resources</div><div class="unav-mob-links"><a href="insurance.html" class="unav-mob-link">Insurance</a><a href="surrogacy.html" class="unav-mob-link">Surrogacy & ART</a></div></div>
- <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="unav-mob-cta">Get Free Quote →</a>
+ <a href="https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/viewform" target="_blank" rel="noopener" class="unav-mob-cta">Get Free Quote →</a>
  </div>
  </div>
 </nav>
@@ -591,22 +591,22 @@ async function submitLead_globalcost() {
  var query = document.getElementById('lq-globalcost').value;
  if (!phone) { alert('Please enter your phone number.'); return; }
  try {
- await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/formResponse', {
+ await fetch('https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/formResponse', {
  method: 'POST', mode: 'no-cors',
  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
  body: new URLSearchParams({
-        'entry.1601953016': name || 'Guest',
-        'entry.1786101561': phone
+        'entry.55671786': name || 'Guest',
+        'entry.1601274733': phone
       }).toString()
  });
  } catch(e) { console.warn('Form error', e); }
- window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform', '_blank');
+ window.open('https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/viewform', '_blank');
  document.getElementById('lf-globalcost').style.display = 'none';
  document.getElementById('ls-globalcost').style.display = 'block';
 }
 </script>
 <footer>
- <div class="footer-logo"><a href="index.html">IVFdirectory</a></div>
+ <div class="footer-logo"><a href="index.html">IVFhelp</a></div>
  <p>India's IVF price discovery platform</p>
  <p><a href="index.html">Home</a> &nbsp;|&nbsp; <a href="calculator.html">Cost Calculator</a> &nbsp;|&nbsp; <a href="insurance.html">Insurance</a> &nbsp;|&nbsp; <a href="surrogacy.html">Surrogacy & ART</a> &nbsp;|&nbsp; <a href="doctors.html">Find a Doctor</a></p>
  <p class="disclaimer">Prices are estimated ranges based on published clinic data, government sources and academic research. Exchange rates: April 2026 (1 USD ≈ ₹84, 1 GBP ≈ $1.27, 1 AUD ≈ $0.65, 1 EUR ≈ $1.08). Costs vary widely within each country. Always obtain direct clinic quotes. This is not medical or financial advice.</p>

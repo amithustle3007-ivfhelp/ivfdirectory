@@ -234,7 +234,7 @@ footer strong{color:rgba(255,255,255,0.9);}
 <nav class="unav">
  <div class="unav-top">
  <a href="index.html" class="unav-logo">
- <div class="unav-logo-dot"></div>IVFdirectory
+ <div class="unav-logo-dot"></div>IVFhelp
  </a>
  <div class="unav-links">
  <a href="index.html#compare" class="unav-link"> Compare Prices</a>
@@ -244,7 +244,7 @@ footer strong{color:rgba(255,255,255,0.9);}
  <a href="insurance.html" class="unav-link"> Resources</a>
  </div>
  <div class="unav-right">
- <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="unav-cta">Get Free Quote</a>
+ <a href="https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/viewform" target="_blank" rel="noopener" class="unav-cta">Get Free Quote</a>
  </div>
  <button class="unav-burger" id="unav-burger" onclick="toggleDrawer()" aria-label="Menu">
  <span></span><span></span><span></span>
@@ -256,7 +256,7 @@ footer strong{color:rgba(255,255,255,0.9);}
  <div class="unav-drawer" id="unav-drawer">
  <div class="unav-drawer-inner">
  <div class="unav-mob-sec"><div class="unav-mob-lbl"> Compare by City</div><div class="unav-mob-links"><a href="mumbai.html" class="unav-mob-link">Mumbai — from ₹1.1L</a><a href="delhi.html" class="unav-mob-link">Delhi — from ₹1.2L</a><a href="bangalore.html" class="unav-mob-link">Bangalore — from ₹1.1L</a></div></div><div class="unav-mob-sec"><div class="unav-mob-lbl"> Procedures</div><div class="unav-mob-links"><a href="ivf.html" class="unav-mob-link">IVF</a><a href="iui.html" class="unav-mob-link">IUI</a><a href="icsi.html" class="unav-mob-link">ICSI</a><a href="donor-egg-ivf.html" class="unav-mob-link">Donor Egg IVF</a></div></div><div class="unav-mob-sec"><div class="unav-mob-lbl"> Doctors & Tools</div><div class="unav-mob-links"><a href="doctors.html" class="unav-mob-link here">Find a Doctor</a><a href="calculator.html" class="unav-mob-link">Cost Calculator</a><a href="predictor.html" class="unav-mob-link">Success Predictor</a><a href="ivf-cost-comparison.html" class="unav-mob-link">Global Costs</a></div></div><div class="unav-mob-sec"><div class="unav-mob-lbl"> Resources</div><div class="unav-mob-links"><a href="insurance.html" class="unav-mob-link">Insurance</a><a href="surrogacy.html" class="unav-mob-link">Surrogacy & ART</a></div></div>
- <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform" target="_blank" rel="noopener" class="unav-mob-cta">Get Free Quote →</a>
+ <a href="https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/viewform" target="_blank" rel="noopener" class="unav-mob-cta">Get Free Quote →</a>
  </div>
  </div>
 </nav>
@@ -361,16 +361,16 @@ async function submitLead_doctors() {
  var query = document.getElementById('lq-doctors').value;
  if (!phone) { alert('Please enter your phone number.'); return; }
  try {
- await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/formResponse', {
+ await fetch('https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/formResponse', {
  method: 'POST', mode: 'no-cors',
  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
  body: new URLSearchParams({
-        'entry.1601953016': name || 'Guest',
-        'entry.1786101561': phone
+        'entry.55671786': name || 'Guest',
+        'entry.1601274733': phone
       }).toString()
  });
  } catch(e) { console.warn('Form error', e); }
- window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform', '_blank');
+ window.open('https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/viewform', '_blank');
  document.getElementById('lf-doctors').style.display = 'none';
  document.getElementById('ls-doctors').style.display = 'block';
 }
@@ -396,7 +396,7 @@ async function submitLead_doctors() {
 </div>
 
 <footer>
- <strong>IVFdirectory India</strong> &mdash; India's IVF price discovery platform<br>
+ <strong>IVFhelp India</strong> &mdash; India's IVF price discovery platform<br>
  Doctor profiles compiled from clinic websites, Practo, published interviews and verified public sources. Updated April 2026. Not medical advice.<br><br>
  <a href="index.html">Home</a> &middot; <a href="doctors.html">Find a Doctor</a> &middot; <a href="mumbai.html">Mumbai</a> &middot; <a href="delhi.html">Delhi</a> &middot; <a href="bangalore.html">Bangalore</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="predictor.html">Predictor</a> &middot; <a href="privacy.html">Privacy Policy</a>
 </footer>
@@ -977,16 +977,16 @@ function toggle(id, btn) {
 
 async function book(name, city) {
  try {
- await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/formResponse', {
+ await fetch('https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/formResponse', {
  method: 'POST', mode: 'no-cors',
  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
  body: new URLSearchParams({
-        'entry.1601953016': name || 'Guest',
-        'entry.1786101561': ''
+        'entry.55671786': name || 'Guest',
+        'entry.1601274733': ''
       }).toString()
  });
  } catch(e) {}
- window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsF7P21H7Cv2WbTXs8J6iQ7ciS2d2bHUREoKYfyp_61EJJ0A/viewform', '_blank');
+ window.open('https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/viewform', '_blank');
 }
 
 function tFaq(el) {
