@@ -3,33 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fertility Navigator Quiz - IVFhelp India</title>
-<meta name="description" content="Take the free 3-minute fertility quiz. Get your personalised Fertility Navigator Report - procedure recommendation, success odds and expert questions to ask.">
+<title>Fertility Navigator Quiz - IVFhelp.org</title>
+<meta name="description" content="Free 3-minute fertility quiz. Get your personalised Fertility Navigator Report.">
 <link rel="canonical" href="https://www.ivfhelp.org/quiz.html">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JBW0NLD3Y"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1JBW0NLD3Y');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --teal:#0d9488;--teal-d:#0f766e;--teal-l:#f0fdfa;
-  --ink:#0f172a;--ink2:#334155;--muted:#64748b;
-  --border:#e2e8f0;--bg:#f8fafc;--green:#16a34a;--amber:#d97706;--red:#dc2626;
-}
+:root{--teal:#0d9488;--teal-d:#0f766e;--teal-l:#f0fdfa;--ink:#0f172a;--ink2:#334155;--muted:#64748b;--border:#e2e8f0;--bg:#f8fafc;--green:#16a34a;--amber:#d97706;--red:#dc2626;}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;}
 a{color:inherit;text-decoration:none;}
 
 /* NAV */
 .nav{background:white;border-bottom:1px solid var(--border);padding:0 1.5rem;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
-.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:6px;}
-.nav-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);}
+.nav-logo{display:flex;align-items:center;}
 .nav-back{font-size:12.5px;color:var(--muted);}
 .nav-back:hover{color:var(--teal);}
 
 /* LANDING */
-#landing{display:block;}
 .lhero{background:white;min-height:calc(100vh - 52px);display:flex;flex-direction:column;}
 .lh-grid{flex:1;display:grid;grid-template-columns:1fr 1fr;min-height:70vh;}
 @media(max-width:720px){.lh-grid{grid-template-columns:1fr;}}
@@ -47,23 +41,18 @@ a{color:inherit;text-decoration:none;}
 .lht-dot{width:6px;height:6px;border-radius:50%;background:var(--green);}
 .lh-right{background:linear-gradient(160deg,#0f766e 0%,#0d9488 55%,#0891b2 100%);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1rem;justify-content:center;position:relative;overflow:hidden;}
 @media(max-width:720px){.lh-right{display:none;}}
-.ps-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:13px;padding:1rem 1.1rem;position:relative;z-index:1;}
+.ps-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:13px;padding:1rem 1.1rem;}
 .ps-quote{font-size:13.5px;color:rgba(255,255,255,0.9);line-height:1.6;margin-bottom:0.75rem;font-weight:300;}
 .ps-quote em{font-style:italic;color:white;font-weight:500;}
 .ps-author{display:flex;align-items:center;gap:8px;}
 .ps-av{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white;flex-shrink:0;}
 .ps-name{font-size:12px;font-weight:600;color:white;}
 .ps-detail{font-size:11px;color:rgba(255,255,255,0.6);}
-.ps-result{display:inline-block;font-size:11px;font-weight:700;background:rgba(255,255,255,0.15);color:white;padding:2px 8px;border-radius:20px;margin-top:5px;border:1px solid rgba(255,255,255,0.2);}
-
-/* STATS */
+.ps-result{display:inline-block;font-size:11px;font-weight:700;background:rgba(255,255,255,0.15);color:white;padding:2px 8px;border-radius:20px;margin-top:5px;}
 .stats{background:#0f172a;padding:1rem 1.5rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;}
-.stat{text-align:center;}
 .stat-val{font-family:'Fraunces',serif;font-size:1.5rem;color:white;display:block;}
 .stat-lbl{font-size:11.5px;color:rgba(255,255,255,0.5);margin-top:1px;}
-
-/* TESTIMONIALS */
-.testi{background:white;border-top:1px solid var(--border);padding:2.5rem 1.5rem;}
+.testi{background:white;border-top:1px solid var(--border);padding:2rem 1.5rem;}
 .testi-inner{max-width:1100px;margin:0 auto;}
 .testi h2{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--ink);margin-bottom:0.3rem;}
 .testi-sub{font-size:13.5px;color:var(--muted);margin-bottom:1.5rem;}
@@ -80,9 +69,10 @@ a{color:inherit;text-decoration:none;}
 .ta-pill{display:inline-block;font-size:10.5px;font-weight:600;background:var(--teal-l);color:var(--teal);padding:2px 8px;border-radius:10px;margin-top:4px;}
 .testi-cta{text-align:center;padding:1.5rem 0 0.5rem;}
 
-/* QUIZ SECTION */
+/* QUIZ SECTION - hidden by default */
 #quiz-section{display:none;}
-.quiz-shell{max-width:600px;margin:0 auto;padding:1.5rem;}
+
+/* Progress */
 .prog-wrap{padding:1.25rem 0 0.5rem;}
 .prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;}
 .prog-lbl{font-size:12.5px;color:var(--muted);}
@@ -92,9 +82,11 @@ a{color:inherit;text-decoration:none;}
 .sp-strip{background:var(--teal-l);border:1px solid rgba(13,148,136,0.15);border-radius:10px;padding:0.7rem 1rem;display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
 .sp-face{width:28px;height:28px;border-radius:50%;background:var(--teal);color:white;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .sp-text{font-size:12.5px;color:var(--teal-d);line-height:1.45;flex:1;}
-.q-card{background:white;border:1px solid var(--border);border-radius:16px;padding:2rem;display:none;animation:cardIn 0.3s ease;}
+
+/* QUESTION CARDS - THE KEY: only show the one with data-active="true" */
+.q-card{display:none;background:white;border:1px solid var(--border);border-radius:16px;padding:2rem;animation:cardIn 0.3s ease;}
 .q-card.active{display:block;}
-@keyframes cardIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+@keyframes cardIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 .q-badge{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:0.6rem;}
 .q-text{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:500;line-height:1.35;color:var(--ink);margin-bottom:0.3rem;}
 .q-context{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:1.5rem;}
@@ -119,11 +111,11 @@ a{color:inherit;text-decoration:none;}
 .btn-next:hover:not(:disabled){background:var(--teal-d);}
 .btn-next:disabled{background:var(--border);color:var(--muted);cursor:not-allowed;}
 
-/* UNLOCK SCREEN */
-#unlock-screen{display:none;}
+/* UNLOCK */
+#unlock-screen{display:none;background:white;border:1px solid var(--border);border-radius:16px;padding:2rem;}
 
 /* LOADING */
-#loading{display:none;text-align:center;padding:3rem 2rem;}
+#loading{display:none;text-align:center;padding:3rem 2rem;background:white;border:1px solid var(--border);border-radius:16px;}
 .spin{width:52px;height:52px;border:3px solid var(--teal-l);border-top-color:var(--teal);border-radius:50%;animation:spin 0.75s linear infinite;margin:0 auto 1.5rem;}
 @keyframes spin{to{transform:rotate(360deg);}}
 .load-title{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:500;color:var(--ink);margin-bottom:0.4rem;}
@@ -155,9 +147,7 @@ a{color:inherit;text-decoration:none;}
 .u-mod{background:var(--amber);width:60%;}
 .u-high{background:var(--red);width:92%;}
 .urg-tag{font-size:13.5px;font-weight:600;flex-shrink:0;}
-.u-low-t{color:var(--green);}
-.u-mod-t{color:var(--amber);}
-.u-high-t{color:var(--red);}
+.u-low-t{color:var(--green);}.u-mod-t{color:var(--amber);}.u-high-t{color:var(--red);}
 .urg-note{font-size:13px;color:var(--ink2);line-height:1.65;}
 .proc-row{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;}
 @media(max-width:500px){.proc-row{grid-template-columns:1fr;}}
@@ -174,9 +164,7 @@ a{color:inherit;text-decoration:none;}
 @media(max-width:500px){.odds-row{grid-template-columns:1fr 1fr;}}
 .odds-box{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:0.875rem;text-align:center;}
 .ob-val{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;display:block;margin-bottom:3px;}
-.ob-val.g{color:var(--green);}
-.ob-val.a{color:var(--amber);}
-.ob-val.m{color:var(--muted);}
+.ob-val.g{color:var(--green);}.ob-val.a{color:var(--amber);}.ob-val.m{color:var(--muted);}
 .ob-lbl{font-size:11px;color:var(--muted);line-height:1.4;}
 .test-chips{display:flex;flex-wrap:wrap;gap:6px;}
 .tc{font-size:12.5px;padding:4px 10px;border-radius:6px;background:var(--bg);border:1px solid var(--border);color:var(--ink2);}
@@ -194,39 +182,41 @@ a{color:inherit;text-decoration:none;}
 .cf{display:flex;align-items:center;gap:8px;font-size:13.5px;color:rgba(255,255,255,0.88);}
 .cf-check{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;}
 .book-btn{display:inline-block;background:white;color:var(--teal-d);font-size:15px;font-weight:700;padding:0.9rem 2.5rem;border-radius:10px;cursor:pointer;border:none;font-family:inherit;text-decoration:none;}
-.book-btn:hover{opacity:0.93;color:var(--teal-d);}
 .cta-note{font-size:12px;opacity:0.55;margin-top:0.875rem;}
+
+/* Quiz wrapper - single column, no overflow */
+.quiz-wrap{max-width:600px;margin:0 auto;padding:1.5rem;}
 </style>
 </head>
 <body>
 
 <nav class="nav">
-  <a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:0;"><svg width="148" height="36" viewBox="0 0 296 72" style="display:block;" aria-label="IVFhelp.org">
-        <g transform="translate(2,4)">
-          <circle cx="14" cy="14" r="13" fill="#0d9488"/>
-          <circle cx="34" cy="14" r="13" fill="#0d9488"/>
-          <polygon points="2,22 46,22 24,52" fill="#0d9488"/>
-          <rect x="21" y="6" width="6" height="18" rx="1.5" fill="white"/>
-          <rect x="14" y="13" width="20" height="6" rx="1.5" fill="white"/>
-          <circle cx="24" cy="37" r="5" fill="white" opacity="0.9"/>
-          <ellipse cx="24" cy="47" rx="4" ry="3.5" fill="white" opacity="0.65"/>
-        </g>
-        <text x="58" y="42" font-family="system-ui,-apple-system,sans-serif" font-size="30" font-weight="700" fill="#0f172a" letter-spacing="-0.5">IVFHELP<tspan font-weight="300" fill="#0d9488">.ORG</tspan></text>
-      </svg></a>
+  <a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:0;">
+    <svg width="130" height="32" viewBox="0 0 296 72" style="display:block;" aria-label="IVFhelp.org">
+      <g transform="translate(2,4)">
+        <circle cx="14" cy="14" r="13" fill="#0d9488"/>
+        <circle cx="34" cy="14" r="13" fill="#0d9488"/>
+        <polygon points="2,22 46,22 24,52" fill="#0d9488"/>
+        <rect x="21" y="6" width="6" height="18" rx="1.5" fill="white"/>
+        <rect x="14" y="13" width="20" height="6" rx="1.5" fill="white"/>
+        <circle cx="24" cy="37" r="5" fill="white" opacity="0.9"/>
+        <ellipse cx="24" cy="47" rx="4" ry="3.5" fill="white" opacity="0.65"/>
+      </g>
+      <text x="58" y="42" font-family="system-ui,-apple-system,sans-serif" font-size="30" font-weight="700" fill="#0f172a" letter-spacing="-0.5">IVFHELP<tspan font-weight="300" fill="#0d9488">.ORG</tspan></text>
+    </svg>
+  </a>
   <a href="index.html" class="nav-back">&#8592; Back to home</a>
 </nav>
 
-<!-- LANDING PAGE -->
+<!-- ═══ LANDING ═══ -->
 <div id="landing">
   <div class="lhero">
     <div class="lh-grid">
       <div class="lh-left">
         <div class="lh-badge">Free &middot; 3 minutes &middot; No sign-up</div>
         <h1 class="lh-h1">Find your <em>IVF path</em><br>in 3 minutes</h1>
-        <p class="lh-sub">Answer 10 questions. Get a personalised Fertility Navigator Report - procedure recommendation, success odds and expert questions to ask every clinic. <strong>Completely free.</strong></p>
-        <button class="start-btn" onclick="startQuiz()">
-          Find my fertility path <span style="font-size:18px;">&#8594;</span>
-        </button>
+        <p class="lh-sub">Answer 10 questions. Get a personalised Fertility Navigator Report — procedure recommendation, success odds and expert questions to ask every clinic. <strong>Completely free.</strong></p>
+        <button class="start-btn" onclick="startQuiz()">Find my fertility path &#8594;</button>
         <div class="lh-trust">
           <div class="lht"><div class="lht-dot"></div>Completely free</div>
           <div class="lht"><div class="lht-dot"></div>Personalised to your profile</div>
@@ -239,7 +229,7 @@ a{color:inherit;text-decoration:none;}
           <div class="ps-author"><div class="ps-av">PR</div><div><div class="ps-name">Priya R.</div><div class="ps-detail">Mumbai &middot; PCOS &middot; Age 31</div><div class="ps-result">Now 8 months pregnant</div></div></div>
         </div>
         <div class="ps-card">
-          <div class="ps-quote">"The clinic match saved us Rs40,000. <em>A better-rated clinic at exactly our budget</em> - we would never have found it on our own."</div>
+          <div class="ps-quote">"The clinic match saved us Rs40,000. <em>A better-rated clinic at exactly our budget</em> — we would never have found it on our own."</div>
           <div class="ps-author"><div class="ps-av">SK</div><div><div class="ps-name">Suresh &amp; Kavita</div><div class="ps-detail">Delhi &middot; Male factor &middot; Ages 34/33</div><div class="ps-result">Conceived first attempt</div></div></div>
         </div>
         <div class="ps-card">
@@ -259,10 +249,10 @@ a{color:inherit;text-decoration:none;}
         <h2>When nothing else gave clarity, this did.</h2>
         <p class="testi-sub">Real stories from couples who used the Fertility Navigator</p>
         <div class="tscroll">
-          <div class="tcard"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tcard-text">"I had PCOS and assumed I needed IVF. <em>The report showed me IUI was worth trying first.</em> Saved Rs80,000 and conceived on the second IUI cycle."</div><div class="tcard-author"><div class="ta-av">NR</div><div><div class="ta-name">Neha R., Delhi</div><div class="ta-meta">PCOS &middot; Age 29</div><div class="ta-pill">Conceived on IUI - not IVF</div></div></div></div>
-          <div class="tcard"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tcard-text">"After 3 failed IVFs the counsellor call was life-changing - <em>she had read my full report and found the thin endometrium issue</em> no one else had flagged."</div><div class="tcard-author"><div class="ta-av">DK</div><div><div class="ta-name">Deepa K., Mumbai</div><div class="ta-meta">3 failed IVFs &middot; Age 38</div><div class="ta-pill">Pregnant after protocol change</div></div></div></div>
-          <div class="tcard"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tcard-text">"The 5 questions gave us confidence to ask what we needed. <em>We switched clinics and conceived on the first attempt.</em>"</div><div class="tcard-author"><div class="ta-av">KP</div><div><div class="ta-name">Kavita &amp; Pradeep, Blr</div><div class="ta-meta">Male factor &middot; Ages 33/36</div><div class="ta-pill">Now 6 months pregnant</div></div></div></div>
-          <div class="tcard"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tcard-text">"<em>The clinic match was exactly right</em> - same success rate as the premium clinic, Rs1.2L cheaper and 15 minutes from home."</div><div class="tcard-author"><div class="ta-av">VP</div><div><div class="ta-name">Vikram P., Bangalore</div><div class="ta-meta">Unexplained &middot; Age 33</div><div class="ta-pill">Baby girl born 2025</div></div></div></div>
+          <div class="tcard"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tcard-text">"I had PCOS and assumed I needed IVF. <em>The report showed me IUI was worth trying first.</em> Saved Rs80,000 and conceived on the second IUI cycle."</div><div class="tcard-author"><div class="ta-av">NR</div><div><div class="ta-name">Neha R., Delhi</div><div class="ta-meta">PCOS &middot; Age 29</div><div class="ta-pill">Conceived on IUI</div></div></div></div>
+          <div class="tcard"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tcard-text">"After 3 failed IVFs the counsellor call was life-changing — <em>she found the thin endometrium issue</em> no one else had flagged."</div><div class="tcard-author"><div class="ta-av">DK</div><div><div class="ta-name">Deepa K., Mumbai</div><div class="ta-meta">3 failed IVFs &middot; Age 38</div><div class="ta-pill">Pregnant after protocol change</div></div></div></div>
+          <div class="tcard"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tcard-text">"The 5 questions gave us confidence. <em>We switched clinics and conceived on the first attempt.</em>"</div><div class="tcard-author"><div class="ta-av">KP</div><div><div class="ta-name">Kavita &amp; Pradeep, Blr</div><div class="ta-meta">Male factor &middot; Ages 33/36</div><div class="ta-pill">Now 6 months pregnant</div></div></div></div>
+          <div class="tcard"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tcard-text">"<em>The clinic match was exactly right</em> — same success rate, Rs1.2L cheaper and 15 minutes from home."</div><div class="tcard-author"><div class="ta-av">VP</div><div><div class="ta-name">Vikram P., Bangalore</div><div class="ta-meta">Unexplained &middot; Age 33</div><div class="ta-pill">Baby girl born 2025</div></div></div></div>
           <div class="tcard"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tcard-text">"6 months of different clinics, different opinions. <em>The quiz took 3 minutes and explained my situation more clearly than any doctor had.</em>"</div><div class="tcard-author"><div class="ta-av">SM</div><div><div class="ta-name">Sunita M., Mumbai</div><div class="ta-meta">PCOS &middot; Age 32</div><div class="ta-pill">Conceived on first IVF</div></div></div></div>
         </div>
         <div class="testi-cta">
@@ -273,24 +263,23 @@ a{color:inherit;text-decoration:none;}
   </div>
 </div>
 
-<!-- QUIZ -->
+<!-- ═══ QUIZ ═══ -->
 <div id="quiz-section">
-  <div class="quiz-shell">
+  <div class="quiz-wrap">
     <div class="prog-wrap">
       <div class="prog-top"><span class="prog-lbl" id="prog-lbl">Question 1 of 10</span><span class="prog-pct" id="prog-pct">10%</span></div>
       <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:10%"></div></div>
     </div>
     <div class="sp-strip" id="sp-strip">
-      <div class="sp-face">PR</div>
-      <div class="sp-text"><strong>Priya from Mumbai</strong> completed this quiz 2 hours ago and has already booked her counsellor call.</div>
+      <div class="sp-face" id="sp-face">PR</div>
+      <div class="sp-text" id="sp-text">Priya from Mumbai completed this 2 hours ago and has already booked her counsellor call.</div>
     </div>
 
-    <!-- Q1 -->
-    <div class="q-card active" id="q1">
+    <div id="q1" class="q-card active">
       <div class="q-badge">Question 1 of 10</div>
       <div class="q-text">How long have you been trying to conceive?</div>
       <div class="q-context">This helps us understand your situation and how urgently you need guidance.</div>
-      <div class="q-voice" id="qv-1"><div class="qv-av" id="qv-av-1">PR</div><div><div class="qv-quote" id="qv-q-1">Loading...</div><div class="qv-name" id="qv-n-1">...</div></div></div></div>
+      <div class="q-voice"><div class="qv-av" id="qv-av-1">SK</div><div><div class="qv-quote" id="qv-q-1">"We waited 2 years thinking it would happen naturally. The quiz told us we had already crossed the clinical threshold for treatment."</div><div class="qv-name" id="qv-n-1">Suresh K., Delhi - Now a father of one</div></div></div>
       <div class="opts">
         <button class="opt" onclick="pick('q1','Under 6 months',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Under 6 months</span><span class="opt-sub">Still within natural conception window</span></div></button>
         <button class="opt" onclick="pick('q1','6-12 months',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">6 to 12 months</span><span class="opt-sub">Good time to get a baseline workup</span></div></button>
@@ -298,29 +287,27 @@ a{color:inherit;text-decoration:none;}
         <button class="opt" onclick="pick('q1','2-3 years',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">2 to 3 years</span><span class="opt-sub">Fertility treatment likely needed</span></div></button>
         <button class="opt" onclick="pick('q1','3+ years',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">More than 3 years</span><span class="opt-sub">Active treatment advisable - every month matters</span></div></button>
       </div>
-      <div class="q-nav"><div></div><button class="btn-next" id="n1" onclick="next(1)" disabled>Next &#8594;</button></div>
+      <div class="q-nav"><div></div><button class="btn-next" id="n1" onclick="goNext(1)" disabled>Next &#8594;</button></div>
     </div>
 
-    <!-- Q2 -->
-    <div class="q-card" id="q2">
+    <div id="q2" class="q-card">
       <div class="q-badge">Question 2 of 10</div>
       <div class="q-text">Have any fertility tests been done?</div>
       <div class="q-context">Tests already done help us give you a more accurate picture.</div>
       <div class="opts">
         <button class="opt" onclick="pick('q2','No tests yet',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">No tests yet</span><span class="opt-sub">We will tell you which tests to get done first</span></div></button>
         <button class="opt" onclick="pick('q2','Some basic tests',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Some basic tests done</span><span class="opt-sub">Blood tests, ultrasound etc.</span></div></button>
-        <button class="opt" onclick="pick('q2','Full workup done',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Full fertility workup done</span><span class="opt-sub">AMH, semen analysis, HSG etc.</span></div></button>
-        <button class="opt" onclick="pick('q2','Have diagnosis',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Yes - we have a diagnosis</span><span class="opt-sub">Doctor has confirmed a specific condition</span></div></button>
+        <button class="opt" onclick="pick('q2','Full workup done',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Full fertility workup done</span></div></button>
+        <button class="opt" onclick="pick('q2','Have diagnosis',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Yes - we have a diagnosis</span></div></button>
       </div>
-      <div class="q-nav"><button class="btn-back" onclick="back(2)">&#8592; Back</button><button class="btn-next" id="n2" onclick="next(2)" disabled>Next &#8594;</button></div>
+      <div class="q-nav"><button class="btn-back" onclick="goBack(2)">&#8592; Back</button><button class="btn-next" id="n2" onclick="goNext(2)" disabled>Next &#8594;</button></div>
     </div>
 
-    <!-- Q3 -->
-    <div class="q-card" id="q3">
+    <div id="q3" class="q-card">
       <div class="q-badge">Question 3 of 10</div>
       <div class="q-text">What is the diagnosis or primary concern?</div>
       <div class="q-context">Select the closest match - this determines which procedure you need.</div>
-      <div class="q-voice" id="qv-2"><div class="qv-av" id="qv-av-2">PR</div><div><div class="qv-quote" id="qv-q-2">Loading...</div><div class="qv-name" id="qv-n-2">...</div></div></div></div>
+      <div class="q-voice"><div class="qv-av" id="qv-av-2">NR</div><div><div class="qv-quote" id="qv-q-2">"I had PCOS and assumed I needed IVF straight away. The report explained that IUI was worth trying first. Saved Rs80,000."</div><div class="qv-name" id="qv-n-2">Neha R., Delhi - Conceived on 2nd IUI cycle</div></div></div>
       <div class="opts">
         <button class="opt" onclick="pick('q3','PCOS',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">PCOS</span><span class="opt-sub">Polycystic Ovary Syndrome</span></div></button>
         <button class="opt" onclick="pick('q3','Endometriosis',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Endometriosis</span></div></button>
@@ -330,62 +317,58 @@ a{color:inherit;text-decoration:none;}
         <button class="opt" onclick="pick('q3','Multiple factors',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Multiple factors</span></div></button>
         <button class="opt" onclick="pick('q3','Not sure',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Not sure yet</span></div></button>
       </div>
-      <div class="q-nav"><button class="btn-back" onclick="back(3)">&#8592; Back</button><button class="btn-next" id="n3" onclick="next(3)" disabled>Next &#8594;</button></div>
+      <div class="q-nav"><button class="btn-back" onclick="goBack(3)">&#8592; Back</button><button class="btn-next" id="n3" onclick="goNext(3)" disabled>Next &#8594;</button></div>
     </div>
 
-    <!-- Q4 -->
-    <div class="q-card" id="q4">
+    <div id="q4" class="q-card">
       <div class="q-badge">Question 4 of 10</div>
       <div class="q-text">How old is the female partner?</div>
       <div class="q-context">Age is the single most important factor in fertility planning.</div>
-      <div class="q-voice" id="qv-3"><div class="qv-av" id="qv-av-3">PR</div><div><div class="qv-quote" id="qv-q-3">Loading...</div><div class="qv-name" id="qv-n-3">...</div></div></div></div>
+      <div class="q-voice"><div class="qv-av" id="qv-av-3">DK</div><div><div class="qv-quote" id="qv-q-3">"I was 38. The report told me clearly that at my age, going straight to IVF rather than trying IUI for months was the right call."</div><div class="qv-name" id="qv-n-3">Deepa K., Mumbai - Pregnant after protocol change</div></div></div>
       <div class="opts">
         <button class="opt" onclick="pick('q4','Under 30',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Under 30</span></div></button>
         <button class="opt" onclick="pick('q4','30-34',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">30 to 34</span></div></button>
         <button class="opt" onclick="pick('q4','35-37',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">35 to 37</span><span class="opt-sub">Success rates begin declining - timely action important</span></div></button>
         <button class="opt" onclick="pick('q4','38-40',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">38 to 40</span><span class="opt-sub">Every 3 months matters at this age</span></div></button>
-        <button class="opt" onclick="pick('q4','41-42',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">41 to 42</span><span class="opt-sub">Specialist advice essential</span></div></button>
+        <button class="opt" onclick="pick('q4','41-42',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">41 to 42</span></div></button>
         <button class="opt" onclick="pick('q4','43+',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">43 or above</span><span class="opt-sub">Donor egg IVF typically recommended</span></div></button>
       </div>
-      <div class="q-nav"><button class="btn-back" onclick="back(4)">&#8592; Back</button><button class="btn-next" id="n4" onclick="next(4)" disabled>Next &#8594;</button></div>
+      <div class="q-nav"><button class="btn-back" onclick="goBack(4)">&#8592; Back</button><button class="btn-next" id="n4" onclick="goNext(4)" disabled>Next &#8594;</button></div>
     </div>
 
-    <!-- Q5 -->
-    <div class="q-card" id="q5">
+    <div id="q5" class="q-card">
       <div class="q-badge">Question 5 of 10</div>
       <div class="q-text">Do you know your AMH level?</div>
-      <div class="q-context">AMH measures your egg reserve. Skip if not tested - we will flag it in your report.</div>
+      <div class="q-context">AMH measures your egg reserve. Skip if not tested.</div>
       <div class="opts">
         <button class="opt" onclick="pick('q5','AMH above 2',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Yes - above 2 ng/mL</span><span class="opt-sub">Good ovarian reserve</span></div></button>
-        <button class="opt" onclick="pick('q5','AMH 1-2',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Yes - between 1 and 2 ng/mL</span><span class="opt-sub">Moderate reserve</span></div></button>
+        <button class="opt" onclick="pick('q5','AMH 1-2',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Yes - between 1 and 2 ng/mL</span></div></button>
         <button class="opt" onclick="pick('q5','AMH below 1',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Yes - below 1 ng/mL</span><span class="opt-sub">Low reserve - specialist protocol needed</span></div></button>
-        <button class="opt" onclick="pick('q5','AMH not tested',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Not tested yet</span><span class="opt-sub">We will include this in your test checklist</span></div></button>
+        <button class="opt" onclick="pick('q5','AMH not tested',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Not tested yet</span></div></button>
       </div>
-      <div class="q-nav"><button class="btn-back" onclick="back(5)">&#8592; Back</button><button class="btn-next" id="n5" onclick="next(5)" disabled>Next &#8594;</button></div>
+      <div class="q-nav"><button class="btn-back" onclick="goBack(5)">&#8592; Back</button><button class="btn-next" id="n5" onclick="goNext(5)" disabled>Next &#8594;</button></div>
     </div>
 
-    <!-- Q6 -->
-    <div class="q-card" id="q6">
+    <div id="q6" class="q-card">
       <div class="q-badge">Question 6 of 10</div>
       <div class="q-text">Have you had any previous IVF or IUI attempts?</div>
       <div class="q-context">Previous treatment history changes what we recommend next.</div>
-      <div class="q-voice" id="qv-4"><div class="qv-av" id="qv-av-4">PR</div><div><div class="qv-quote" id="qv-q-4">Loading...</div><div class="qv-name" id="qv-n-4">...</div></div></div></div>
+      <div class="q-voice"><div class="qv-av" id="qv-av-4">RA</div><div><div class="qv-quote" id="qv-q-4">"After 3 failed IVFs I was told just try again. The counsellor call helped me understand I should be investigating deeper."</div><div class="qv-name" id="qv-n-4">Rekha A., Delhi - Successfully pregnant</div></div></div>
       <div class="opts">
         <button class="opt" onclick="pick('q6','No previous treatment',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">No - this is our first time</span></div></button>
         <button class="opt" onclick="pick('q6','1 failed IUI',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">1 failed IUI cycle</span></div></button>
         <button class="opt" onclick="pick('q6','2-3 failed IUI',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">2 to 3 failed IUI cycles</span><span class="opt-sub">IVF is typically recommended after this</span></div></button>
         <button class="opt" onclick="pick('q6','1 failed IVF',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">1 failed IVF cycle</span></div></button>
-        <button class="opt" onclick="pick('q6','2-3 failed IVF',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">2 to 3 failed IVF cycles</span><span class="opt-sub">Deeper investigation strongly recommended</span></div></button>
-        <button class="opt" onclick="pick('q6','4+ failed IVF',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">4 or more failed IVF cycles</span><span class="opt-sub">Specialist second opinion essential</span></div></button>
+        <button class="opt" onclick="pick('q6','2-3 failed IVF',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">2 to 3 failed IVF cycles</span></div></button>
+        <button class="opt" onclick="pick('q6','4+ failed IVF',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">4 or more failed IVF cycles</span></div></button>
       </div>
-      <div class="q-nav"><button class="btn-back" onclick="back(6)">&#8592; Back</button><button class="btn-next" id="n6" onclick="next(6)" disabled>Next &#8594;</button></div>
+      <div class="q-nav"><button class="btn-back" onclick="goBack(6)">&#8592; Back</button><button class="btn-next" id="n6" onclick="goNext(6)" disabled>Next &#8594;</button></div>
     </div>
 
-    <!-- Q7 -->
-    <div class="q-card" id="q7">
+    <div id="q7" class="q-card">
       <div class="q-badge">Question 7 of 10</div>
       <div class="q-text">Which city are you based in?</div>
-      <div class="q-context">We use this to tailor clinic recommendations in your report.</div>
+      <div class="q-context">We use this to tailor recommendations in your report.</div>
       <div class="opts">
         <button class="opt" onclick="pick('q7','Mumbai',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Mumbai</span></div></button>
         <button class="opt" onclick="pick('q7','Delhi / NCR',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Delhi / NCR</span></div></button>
@@ -393,14 +376,13 @@ a{color:inherit;text-decoration:none;}
         <button class="opt" onclick="pick('q7','Other city',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Other Indian city</span></div></button>
         <button class="opt" onclick="pick('q7','Outside India',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Outside India</span></div></button>
       </div>
-      <div class="q-nav"><button class="btn-back" onclick="back(7)">&#8592; Back</button><button class="btn-next" id="n7" onclick="next(7)" disabled>Next &#8594;</button></div>
+      <div class="q-nav"><button class="btn-back" onclick="goBack(7)">&#8592; Back</button><button class="btn-next" id="n7" onclick="goNext(7)" disabled>Next &#8594;</button></div>
     </div>
 
-    <!-- Q8 -->
-    <div class="q-card" id="q8">
+    <div id="q8" class="q-card">
       <div class="q-badge">Question 8 of 10</div>
       <div class="q-text">What is your budget for treatment?</div>
-      <div class="q-context">No right or wrong answer - this helps match you to the right clinic tier.</div>
+      <div class="q-context">No right or wrong answer - helps match you to the right clinic tier.</div>
       <div class="opts">
         <button class="opt" onclick="pick('q8','Under Rs1.5L',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Under Rs1.5 lakh per cycle</span></div></button>
         <button class="opt" onclick="pick('q8','Rs1.5L-Rs2.5L',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Rs1.5L to Rs2.5L per cycle</span></div></button>
@@ -408,11 +390,10 @@ a{color:inherit;text-decoration:none;}
         <button class="opt" onclick="pick('q8','Above Rs4L',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Above Rs4L - premium clinics</span></div></button>
         <button class="opt" onclick="pick('q8','Not sure',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Not sure yet</span></div></button>
       </div>
-      <div class="q-nav"><button class="btn-back" onclick="back(8)">&#8592; Back</button><button class="btn-next" id="n8" onclick="next(8)" disabled>Next &#8594;</button></div>
+      <div class="q-nav"><button class="btn-back" onclick="goBack(8)">&#8592; Back</button><button class="btn-next" id="n8" onclick="goNext(8)" disabled>Next &#8594;</button></div>
     </div>
 
-    <!-- Q9 -->
-    <div class="q-card" id="q9">
+    <div id="q9" class="q-card">
       <div class="q-badge">Question 9 of 10</div>
       <div class="q-text">What matters most when choosing a clinic?</div>
       <div class="q-context">We use this to prioritise our recommendations.</div>
@@ -423,27 +404,26 @@ a{color:inherit;text-decoration:none;}
         <button class="opt" onclick="pick('q9','Location',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Close to home / easy to reach</span></div></button>
         <button class="opt" onclick="pick('q9','Balance',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">A balance of everything</span></div></button>
       </div>
-      <div class="q-nav"><button class="btn-back" onclick="back(9)">&#8592; Back</button><button class="btn-next" id="n9" onclick="next(9)" disabled>Next &#8594;</button></div>
+      <div class="q-nav"><button class="btn-back" onclick="goBack(9)">&#8592; Back</button><button class="btn-next" id="n9" onclick="goNext(9)" disabled>Next &#8594;</button></div>
     </div>
 
-    <!-- Q10 -->
-    <div class="q-card" id="q10">
+    <div id="q10" class="q-card">
       <div class="q-badge">Question 10 of 10 - Last one!</div>
       <div class="q-text">What do you need most right now?</div>
       <div class="q-context">This shapes the focus of your personalised Navigator Report.</div>
       <div class="opts">
         <button class="opt" onclick="pick('q10','Understand options',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Understand all my options</span><span class="opt-sub">I am in early research mode</span></div></button>
-        <button class="opt" onclick="pick('q10','Second opinion',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Get a second opinion</span><span class="opt-sub">I have seen a doctor but want another view</span></div></button>
-        <button class="opt" onclick="pick('q10','Compare clinics',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Compare clinics and costs</span><span class="opt-sub">I know what I need - just need the right clinic</span></div></button>
+        <button class="opt" onclick="pick('q10','Second opinion',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Get a second opinion</span></div></button>
+        <button class="opt" onclick="pick('q10','Compare clinics',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Compare clinics and costs</span></div></button>
         <button class="opt" onclick="pick('q10','Ready to start',this)"><div class="opt-check">&#10003;</div><div class="opt-body"><span class="opt-label">Ready to start - need to move fast</span></div></button>
       </div>
-      <div class="q-nav"><button class="btn-back" onclick="back(10)">&#8592; Back</button><button class="btn-next" id="n10" onclick="showUnlock()" disabled>Get my free report &#8594;</button></div>
+      <div class="q-nav"><button class="btn-back" onclick="goBack(10)">&#8592; Back</button><button class="btn-next" id="n10" onclick="showUnlock()" disabled>Get my free report &#8594;</button></div>
     </div>
 
-    <!-- UNLOCK SCREEN -->
-    <div class="q-card" id="unlock-screen" style="display:none;">
+    <!-- UNLOCK -->
+    <div id="unlock-screen">
       <div class="q-badge">One last step!</div>
-      <div class="q-text">Where should we send your report?</div>
+      <div class="q-text" style="font-family:'Fraunces',serif;font-size:1.3rem;font-weight:500;line-height:1.35;color:var(--ink);margin-bottom:0.3rem;">Where should we send your report?</div>
       <div class="q-context">Enter your details to unlock your free Fertility Navigator Report.</div>
       <div style="background:var(--teal-l);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin-bottom:1.25rem;font-size:13px;color:var(--teal-d);line-height:1.5;">
         <strong>Your report includes:</strong> Procedure recommendation &middot; Success odds &middot; Tests the clinic will suggest &middot; 5 questions to ask
@@ -451,90 +431,101 @@ a{color:inherit;text-decoration:none;}
       <input id="unlock-name" type="text" placeholder="Your name" style="width:100%;padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;margin-bottom:.75rem;display:block;box-sizing:border-box;">
       <input id="unlock-phone" type="tel" placeholder="Phone number (WhatsApp)" style="width:100%;padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;margin-bottom:.5rem;display:block;box-sizing:border-box;">
       <div style="font-size:12px;color:var(--muted);margin-bottom:1.25rem;">We only contact you about your fertility guidance. No spam.</div>
-      <button id="unlock-btn" onclick="submitAndGenerate()" style="width:100%;padding:.875rem;background:var(--teal);color:white;border:none;border-radius:10px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;display:block;box-sizing:border-box;">View my free Navigator Report &rarr;</button>
+      <button id="unlock-btn" onclick="submitAndGenerate()" style="width:100%;padding:.875rem;background:var(--teal);color:white;border:none;border-radius:10px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;display:block;box-sizing:border-box;">View my free Navigator Report &#8594;</button>
       <div id="unlock-confirm" style="display:none;text-align:center;padding:.5rem;font-size:12.5px;color:var(--green);margin-top:.5rem;">&#10003; Details received - generating your report...</div>
-      <div class="q-nav" style="margin-top:.75rem;"><button class="btn-back" onclick="backToQ10()">&#8592; Back</button><div></div></div>
+      <div style="margin-top:.75rem;"><button class="btn-back" onclick="goBackToQ10()">&#8592; Back</button></div>
     </div>
 
     <!-- LOADING -->
-    <div id="loading" style="display:none;">
-      <div class="q-card active" style="text-align:center;padding:3rem 2rem;">
-        <div class="spin"></div>
-        <div class="load-title">Generating your Fertility Navigator Report...</div>
-        <div class="load-sub">Analysing your profile</div>
-        <div class="load-steps">
-          <div class="ls"><div class="ls-dot now" id="ld1"></div>Analysing your fertility profile</div>
-          <div class="ls"><div class="ls-dot" id="ld2"></div>Calculating success odds</div>
-          <div class="ls"><div class="ls-dot" id="ld3"></div>Preparing personalised questions</div>
-          <div class="ls"><div class="ls-dot" id="ld4"></div>Finalising your Navigator Report</div>
-        </div>
+    <div id="loading">
+      <div class="spin"></div>
+      <div class="load-title">Generating your Fertility Navigator Report...</div>
+      <div class="load-sub">Analysing your profile</div>
+      <div class="load-steps">
+        <div class="ls"><div class="ls-dot now" id="ld1"></div>Analysing your fertility profile</div>
+        <div class="ls"><div class="ls-dot" id="ld2"></div>Calculating success odds</div>
+        <div class="ls"><div class="ls-dot" id="ld3"></div>Preparing personalised questions</div>
+        <div class="ls"><div class="ls-dot" id="ld4"></div>Finalising your Navigator Report</div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- REPORT -->
-<div id="report" style="display:none;">
+<div id="report">
   <div class="report-shell">
-    <div class="ai-note">This report is personalised to your quiz answers. It provides guidance - not medical advice. Your free counsellor call gives you personalised clinical recommendations.</div>
+    <div class="ai-note">This report is personalised to your quiz answers. It provides guidance - not medical advice.</div>
     <div id="report-body"></div>
   </div>
 </div>
 
 <script>
 var GPOST = 'https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/formResponse';
-var SCRIPT_URL = 'REPLACE_WITH_YOUR_APPS_SCRIPT_URL'; // Set this after deploying Apps Script
-var CALENDLY = 'https://cal.com/amit-hustle-qus767/15min';
+var CAL   = 'https://cal.com/amit-hustle-qus767/30min';
 var ans = {};
+var cur = 1;
 
-// Social proof pool  -  randomised each session
-var SP_POOL = [
-  'Priya from Mumbai completed this 2 hours ago and already booked her counsellor call.',
-  'Anita from Bangalore: "The test checklist alone saved me a wasted clinic visit."',
-  'Neha from Delhi: "I had PCOS and assumed IVF. The report showed me IUI could work first. Saved Rs80,000."',
-  'Deepa from Mumbai: "Understanding my AMH in plain language was the most useful thing anyone told me."',
-  'Suresh from Delhi: "The report explained our success odds clearly - we finally understood the numbers."',
-  'Rekha from Delhi: "After 3 failed IVFs the counsellor call explained what we should investigate next."',
-  'Kavita from Bangalore: "The matched clinic was 15 mins from home. Same success rate at a lower price."',
-  'Vikram from Bangalore: "We saved Rs1.2L by finding a better-rated clinic at our budget."',
-  'Meera from Mumbai: "I had no idea what AMH meant. The report explained everything in plain language."',
-  'Arjun & Preethi from Bangalore: "The quiz took 4 minutes and gave us more clarity than 3 doctor visits."',
-  'Sunita from Hyderabad: "After 2 failed IUIs, the report told me exactly what to ask the new clinic."',
-  'Ramesh from Delhi: "My wife was about to book a Rs3L package. The report helped us find a Rs1.8L option with better ratings."',
-  'Divya from Chennai: "The 5 questions to ask every clinic were the most useful thing I have ever read about IVF."',
-  'Pooja from Pune: "I cried reading the report - it finally put into words what I had been feeling for 2 years."',
-  'Nikhil & Shalini from Mumbai: "We used the report to shortlist 2 clinics instead of visiting 6. Saved us weeks."',
-  'Lakshmi from Bangalore: "Low AMH at 36. The report was honest about the urgency. That was exactly what I needed."',
-  'Rahul from Delhi: "Male factor was our issue. The report explained ICSI vs IVF in a way no one had bothered to."',
-  'Ananya from Mumbai: "3 years trying. The quiz was the first time someone organised all our information in one place."'
+// Social proof rotation
+var SP_MSGS = [
+  {face:'PR', text:'Priya from Mumbai completed this 2 hours ago and already booked her counsellor call.'},
+  {face:'AN', text:'Anita from Bangalore: "The test checklist alone saved me a wasted clinic visit."'},
+  {face:'NR', text:'Neha from Delhi: "I had PCOS and assumed IVF. The report showed me IUI could work first."'},
+  {face:'DK', text:'Deepa from Mumbai: "Understanding my AMH in plain language was the most useful thing anyone told me."'},
+  {face:'SK', text:'Suresh from Delhi: "The report explained our success odds clearly - we finally understood the numbers."'},
+  {face:'RK', text:'Rekha from Delhi: "After 3 failed IVFs the counsellor call explained what we should investigate next."'},
+  {face:'VP', text:'Vikram from Bangalore: "The matched clinic was 15 mins from home. Same success rate at a lower price."'},
+  {face:'LM', text:'Lakshmi from Bangalore: "We saved Rs1.2L by finding a better-rated clinic at our budget."'},
+  {face:'SM', text:'Sunita from Hyderabad: "I had no idea what AMH meant. The report explained everything clearly."'},
+  {face:'AR', text:'Over 2,400 couples have used this quiz. Your personalised report is ready in seconds.'}
 ];
-
-function getRandomSP(exclude) {
-  var pool = SP_POOL.filter(function(s) { return s !== exclude; });
-  return pool[Math.floor(Math.random() * pool.length)];
+// Shuffle SP_MSGS
+for (var i = SP_MSGS.length-1; i > 0; i--) {
+  var j = Math.floor(Math.random()*(i+1));
+  var t = SP_MSGS[i]; SP_MSGS[i] = SP_MSGS[j]; SP_MSGS[j] = t;
 }
 
-var SP = [''];
-for (var i = 1; i <= 9; i++) {
-  SP.push('');
+// Voice pool for q-voice divs
+var VOICES = [
+  {av:'SK', q:'"We waited 2 years thinking it would happen naturally. The quiz told us we had crossed the clinical threshold for treatment."', n:'Suresh K., Delhi - Now a father of one'},
+  {av:'MR', q:'"I had done 3 rounds of IUI. The report was the first thing that told me clearly it was time to move to IVF."', n:'Meera R., Mumbai - Now 7 months pregnant'},
+  {av:'NR', q:'"I had PCOS and assumed I needed IVF straight away. The report explained IUI was worth trying first. Saved Rs80,000."', n:'Neha R., Delhi - Conceived on 2nd IUI cycle'},
+  {av:'PR', q:'"After 2 years of trying I did not know if I needed IVF or IUI. The quiz told me in 3 minutes what 3 doctors could not explain."', n:'Priya S., Mumbai - Now 8 months pregnant'},
+  {av:'DK', q:'"I was 38. The report told me clearly that at my age, going straight to IVF rather than trying IUI was the right call."', n:'Deepa K., Mumbai - Pregnant after protocol change'},
+  {av:'RA', q:'"After 3 failed IVFs I was told just try again. The counsellor call helped me understand I should be investigating deeper."', n:'Rekha A., Delhi - Successfully pregnant'},
+  {av:'VP', q:'"We had a budget and were pushed towards a more expensive clinic. The report matched us to a better-rated one."', n:'Vikram P., Bangalore - Baby girl born 2025'},
+  {av:'LM', q:'"Low AMH at 36. The report was honest about urgency without being scary. That was exactly what I needed."', n:'Lakshmi M., Bangalore - IVF successful at 37'}
+];
+// Shuffle voices
+for (var i = VOICES.length-1; i > 0; i--) {
+  var j = Math.floor(Math.random()*(i+1));
+  var t = VOICES[i]; VOICES[i] = VOICES[j]; VOICES[j] = t;
 }
-// Fill SP with random picks at session start
-(function() {
-  var used = [];
-  for (var i = 1; i < SP.length; i++) {
-    var available = SP_POOL.filter(function(s){ return used.indexOf(s) === -1; });
-    if (available.length === 0) { used = []; available = SP_POOL.slice(); }
-    var pick = available[Math.floor(Math.random() * available.length)];
-    used.push(pick);
-    SP[i] = pick;
+// Inject into q-voice slots after DOM ready
+window.addEventListener('DOMContentLoaded', function() {
+  for (var id = 1; id <= 4; id++) {
+    var v = VOICES[(id-1) % VOICES.length];
+    var av = document.getElementById('qv-av-'+id);
+    var q  = document.getElementById('qv-q-'+id);
+    var n  = document.getElementById('qv-n-'+id);
+    if (av) av.textContent = v.av;
+    if (q)  q.textContent  = v.q;
+    if (n)  n.textContent  = v.n;
   }
-  SP[9] = 'Over 2,400 couples have used this quiz. Your personalised report is ready in seconds.';
-})();
+});
 
-function startQuiz() {
-  document.getElementById('landing').style.display = 'none';
-  document.getElementById('quiz-section').style.display = 'block';
-  window.scrollTo({top:0, behavior:'smooth'});
+function showOnly(el) {
+  // Hide ALL quiz cards and special screens
+  var all = document.querySelectorAll('.q-card, #unlock-screen, #loading');
+  all.forEach(function(e) {
+    e.style.display = 'none';
+    e.classList.remove('active');
+  });
+  // Show just this one
+  if (el) {
+    el.style.display = 'block';
+    el.classList.add('active');
+    setTimeout(function(){ el.scrollIntoView({behavior:'smooth', block:'start'}); }, 50);
+  }
 }
 
 function updateProgress(q) {
@@ -542,8 +533,16 @@ function updateProgress(q) {
   document.getElementById('prog-fill').style.width = pct+'%';
   document.getElementById('prog-pct').textContent = pct+'%';
   document.getElementById('prog-lbl').textContent = 'Question '+q+' of 10';
-  var sp = document.getElementById('sp-strip');
-  if (SP[q]) { sp.querySelector('.sp-text').innerHTML = SP[q]; sp.style.display = 'flex'; }
+  var sp = SP_MSGS[(q-1) % SP_MSGS.length];
+  document.getElementById('sp-face').textContent = sp.face;
+  document.getElementById('sp-text').textContent = sp.text;
+}
+
+function startQuiz() {
+  document.getElementById('landing').style.display = 'none';
+  var qs = document.getElementById('quiz-section');
+  qs.style.display = 'block';
+  showOnly(document.getElementById('q1'));
 }
 
 function pick(qid, val, btn) {
@@ -554,44 +553,34 @@ function pick(qid, val, btn) {
   if (nb) nb.disabled = false;
 }
 
-function next(n) {
+function goNext(n) {
   if (!ans['q'+n]) return;
-  document.getElementById('q'+n).classList.remove('active');
-  var nx = n+1;
-  document.getElementById('q'+nx).classList.add('active');
-  updateProgress(nx);
-  window.scrollTo({top:60, behavior:'smooth'});
+  cur = n+1;
+  updateProgress(cur);
+  showOnly(document.getElementById('q'+cur));
 }
 
-function back(n) {
-  document.getElementById('q'+n).classList.remove('active');
-  var prev = n-1;
-  var el = prev===0 ? null : document.getElementById('q'+prev);
-  if (prev===0) {
-    document.getElementById('quiz-section').style.display='none';
-    document.getElementById('landing').style.display='block';
-    window.scrollTo({top:0,behavior:'smooth'});
-  } else {
-    el.classList.add('active');
-    updateProgress(prev);
-    window.scrollTo({top:60,behavior:'smooth'});
+function goBack(n) {
+  if (n-1 === 0) {
+    document.getElementById('quiz-section').style.display = 'none';
+    document.getElementById('landing').style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+    return;
   }
+  cur = n-1;
+  updateProgress(cur);
+  showOnly(document.getElementById('q'+cur));
 }
 
 function showUnlock() {
   if (!ans.q10) return;
-  document.getElementById('q10').classList.remove('active');
-  var us = document.getElementById('unlock-screen');
-  us.style.display = 'block';
-  us.classList.add('active');
-  window.scrollTo({top:60,behavior:'smooth'});
+  showOnly(document.getElementById('unlock-screen'));
 }
 
-function backToQ10() {
-  document.getElementById('unlock-screen').style.display = 'none';
-  document.getElementById('unlock-screen').classList.remove('active');
-  document.getElementById('q10').classList.add('active');
-  window.scrollTo({top:60,behavior:'smooth'});
+function goBackToQ10() {
+  cur = 10;
+  updateProgress(10);
+  showOnly(document.getElementById('q10'));
 }
 
 async function submitAndGenerate() {
@@ -607,49 +596,21 @@ async function submitAndGenerate() {
   var confirm = document.getElementById('unlock-confirm');
   if (confirm) confirm.style.display = 'block';
   setTimeout(function(){
-    document.getElementById('unlock-screen').style.display = 'none';
-    document.getElementById('unlock-screen').classList.remove('active');
-    document.getElementById('loading').style.display = 'block';
+    showOnly(document.getElementById('loading'));
     animLoad();
-  }, 800);
-
-  var summary = 'Age:'+ans.q4+' | Trying:'+ans.q1+' | Diagnosis:'+ans.q3+' | City:'+ans.q7+' | AMH:'+ans.q5+' | Prev:'+ans.q6+' | Budget:'+ans.q8+' | Need:'+ans.q10;
-
-  // PRIMARY: Apps Script Web App - sends real email to contact@ivfhelp.org
+  }, 700);
+  var summary = 'Age:'+ans.q4+' Trying:'+ans.q1+' Diagnosis:'+ans.q3+' City:'+ans.q7+' AMH:'+ans.q5+' Prev:'+ans.q6+' Budget:'+ans.q8+' Need:'+ans.q10;
   try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {'Content-Type': 'text/plain'},
-      body: JSON.stringify({
-        name: name || 'Not given',
-        phone: phone,
-        city: ans.q7 || 'Not given',
-        diagnosis: ans.q3 || 'Not given',
-        age: ans.q4 || 'Not given',
-        trying: ans.q1 || 'Not given',
-        amh: ans.q5 || 'Not given',
-        budget: ans.q8 || 'Not given',
-        prev: ans.q6 || 'Not given',
-        need: ans.q10 || 'Not given',
-        summary: summary
-      })
-    });
-  } catch(e) { console.log('Script submit error:', e); }
-
-  // BACKUP: Google Form submission
-  try {
-    fetch(GPOST, {
-      method: 'POST', mode: 'no-cors',
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    await fetch(GPOST, {
+      method:'POST', mode:'no-cors',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
       body: new URLSearchParams({
         'entry.55671786': name || 'Quiz user',
-        'entry.1601274733': phone + ' | ' + summary
+        'entry.1601274733': phone+' | '+summary
       }).toString()
     });
   } catch(e) {}
-
-  setTimeout(function(){ runAIReport(); }, 800);
+  setTimeout(function(){ runReport(); }, 700);
 }
 
 function animLoad() {
@@ -662,7 +623,7 @@ function animLoad() {
   }, 700);
 }
 
-function runAIReport() {
+function runReport() {
   setTimeout(function(){
     var r = generateReport();
     showReport(r);
@@ -825,50 +786,13 @@ function showReport(r) {
         '<div class="cf"><div class="cf-check">&#10003;</div>Clinic shortlist narrowed to 1-2 for your case</div>'+
         '<div class="cf"><div class="cf-check">&#10003;</div>WhatsApp follow-up with next steps after</div>'+
       '</div>'+
-      '<a href="'+CALENDLY+'" target="_blank" class="book-btn">Book your free call &#8594;</a>'+
+      '<a href="https://cal.com/amit-hustle-qus767/30min" target="_blank" class="book-btn">Book your free call &#8594;</a>'+
       '<div class="cta-note">Pick a time that suits you - your counsellor will have already read your report.</div>'+
     '</div>';
 
   document.getElementById('report').style.display='block';
   window.scrollTo({top:0,behavior:'smooth'});
 }
-
-// Patient voice randomiser
-var VOICE_POOL = [
-  {av:'SK', quote:'"We waited 2 years thinking it would happen naturally. The quiz told us we had already crossed the clinical threshold for treatment."', name:'Suresh K., Delhi - Now a father of one'},
-  {av:'MR', quote:'"I had done 3 rounds of IUI before this. The report was the first thing that told me clearly it was time to move to IVF."', name:'Meera R., Mumbai - Now 7 months pregnant'},
-  {av:'AR', quote:'"As the male partner I felt lost in every clinic visit. The report finally explained my role in the process clearly."', name:'Arjun P., Bangalore - Twin boys born 2025'},
-  {av:'NR', quote:'"I had PCOS and assumed I needed IVF straight away. The report explained that IUI was worth trying first. Saved Rs80,000."', name:'Neha R., Delhi - Conceived on 2nd IUI cycle'},
-  {av:'PR', quote:'"After 2 years of trying I did not know if I needed IVF or IUI. The quiz told me in 3 minutes what 3 doctors could not explain clearly."', name:'Priya S., Mumbai - Now 8 months pregnant'},
-  {av:'DK', quote:'"I was 38. The report told me clearly that at my age, going straight to IVF rather than trying IUI was the right call."', name:'Deepa K., Mumbai - Pregnant after protocol change'},
-  {av:'RA', quote:'"After 3 failed IVFs I was told just try again. The counsellor call helped me understand I should be investigating deeper."', name:'Rekha A., Delhi - Successfully pregnant'},
-  {av:'VP', quote:'"We had a budget and were pushed towards a more expensive clinic. The report matched us to a better-rated clinic that fit our budget."', name:'Vikram P., Bangalore - Baby girl born 2025'},
-  {av:'LM', quote:'"Low AMH at 36. The report was honest about urgency without being scary. That was exactly what I needed to hear."', name:'Lakshmi M., Bangalore - IVF successful at 37'},
-  {av:'SM', quote:'"After 2 failed IUIs the report told me exactly what questions to ask the new clinic. The answers told me to switch immediately."', name:'Sunita M., Hyderabad - Conceived after clinic switch'},
-  {av:'AN', quote:'"3 years of trying. The quiz was the first time someone organised all our information in one place and made sense of it."', name:'Ananya T., Mumbai - Now 6 months pregnant'},
-  {av:'RK', quote:'"Male factor was our issue. The report explained ICSI vs IVF in a way no one had bothered to explain in 18 months of clinic visits."', name:'Rahul K., Delhi - ICSI successful first attempt'}
-];
-
-(function() {
-  var pool = VOICE_POOL.slice();
-  // Shuffle pool
-  for (var i = pool.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
-  }
-  // Assign to each voice slot
-  var slots = document.querySelectorAll('[id^="qv-"][id$="1"],[id^="qv-"][id$="2"],[id^="qv-"][id$="3"],[id^="qv-"][id$="4"]');
-  var ids = [1,2,3,4];
-  ids.forEach(function(id, idx) {
-    var v = pool[idx % pool.length];
-    var av = document.getElementById('qv-av-'+id);
-    var q = document.getElementById('qv-q-'+id);
-    var n = document.getElementById('qv-n-'+id);
-    if (av) av.textContent = v.av;
-    if (q) q.textContent = v.quote;
-    if (n) n.textContent = v.name;
-  });
-})();
 
 </script>
 </body>
