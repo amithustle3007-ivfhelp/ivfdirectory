@@ -237,6 +237,11 @@ a{color:inherit;text-decoration:none;}
 footer{background:#0f172a;color:rgba(255,255,255,.5);padding:2rem 1.5rem;font-size:12px;text-align:center;line-height:1.9;}
 footer a{color:rgba(255,255,255,.65);}
 footer strong{color:white;}
+
+/* Collapse empty AdSense slots — expand automatically when ads load */
+.adsbygoogle:empty{min-height:0!important;height:0!important;overflow:hidden;}
+.ad-bar:has(.adsbygoogle:empty){padding:0!important;border:none!important;min-height:0!important;}
+ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;}
 </style>
 </head>
 <body>
@@ -346,7 +351,7 @@ footer strong{color:white;}
   <aside class="sidebar">
     <div class="lead-card">
       <h3>Get Free Quotes</h3>
-      <p>We send personalised quotes from top Mumbai clinics within 2 hours.</p>
+      <p>We send personalised quotes from top Mumbai clinics within 24 hours.</p>
       <div id="lf">
         <input class="l-inp" id="ln" type="text" placeholder="Your name">
         <input class="l-inp" id="lp" type="tel" placeholder="Phone number">
@@ -356,7 +361,7 @@ footer strong{color:white;}
           <option>Donor Egg IVF</option><option>Fertility Consultation</option>
         </select>
         <button class="l-btn" onclick="submitLead()">Get Free Quotes from Bangalore</button>
-        <div class="l-trust">Free - No spam - Reply within 2 hrs</div>
+        <div class="l-trust">Free - No spam - Reply within 24 hours</div>
       </div>
       <div class="l-done" id="ld">Thank you! We will email you at contact@ivfhelp.org shortly.</div>
     </div>
@@ -595,8 +600,7 @@ function sort(s, btn) {
 }
 
 function bookClinic(name) {
-  var url = GFORM;
-  window.open(url, '_blank');
+  submitClinicLead(name, 'Specialist Team');
 }
 
 function toggle(id, btn) {
@@ -631,8 +635,77 @@ function bookById(btn) {
   var id = btn.getAttribute('data-clinic');
   var clinic = DATA.filter(function(d){ return d.id === id; })[0];
   if(!clinic) return;
-  var url = GFORM;
-  window.open(url, '_blank');
+  submitClinicLead(clinic.name, clinic.doctor.name);
+}
+
+function submitClinicLead(clinicName, doctorName) {
+  // Show a quick inline form instead of opening Google Form blank
+  var city = window.location.pathname.replace('/','').replace('.html','') || 'India';
+  city = city.charAt(0).toUpperCase() + city.slice(1);
+  var modal = document.getElementById('lead-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'lead-modal';
+    modal.style.cssText = 'position:fixed;inset:0;background:rgba(15,23,42,0.55);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem;';
+    modal.innerHTML = '<div style="background:white;border-radius:16px;padding:1.5rem;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.2);">'
+      + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">'
+      + '<div style="font-family:Fraunces,serif;font-size:1.1rem;font-weight:600;color:#0f172a;">Book Free Consultation</div>'
+      + '<button onclick="document.getElementById(\'lead-modal\').style.display=\'none\'" style="background:none;border:none;font-size:1.2rem;cursor:pointer;color:#64748b;">&times;</button>'
+      + '</div>'
+      + '<div id="modal-clinic" style="background:#f0fdfa;border-left:3px solid #0d9488;border-radius:0 8px 8px 0;padding:0.6rem 0.875rem;margin-bottom:1rem;font-size:13px;color:#0f766e;"></div>'
+      + '<input id="modal-name" type="text" placeholder="Your name" style="width:100%;padding:.7rem 1rem;border:1.5px solid #e2e8f0;border-radius:9px;font-size:14px;font-family:inherit;outline:none;margin-bottom:.6rem;box-sizing:border-box;">'
+      + '<input id="modal-phone" type="tel" placeholder="WhatsApp number" style="width:100%;padding:.7rem 1rem;border:1.5px solid #e2e8f0;border-radius:9px;font-size:14px;font-family:inherit;outline:none;margin-bottom:.6rem;box-sizing:border-box;">'
+      + '<select id="modal-query" style="width:100%;padding:.7rem 1rem;border:1.5px solid #e2e8f0;border-radius:9px;font-size:14px;font-family:inherit;outline:none;margin-bottom:.875rem;box-sizing:border-box;background:white;">'
+      + '<option value="">What are you looking for?</option>'
+      + '<option>IVF</option><option>IUI</option><option>ICSI</option>'
+      + '<option>Donor Egg IVF</option><option>Fertility Consultation</option><option>Second Opinion</option>'
+      + '</select>'
+      + '<button id="modal-submit" onclick="submitModalLead()" style="width:100%;padding:.8rem;background:#0d9488;color:white;border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;">Request Free Consultation &rarr;</button>'
+      + '<div style="font-size:11px;color:#94a3b8;text-align:center;margin-top:.5rem;">Free &middot; No spam &middot; We call within 24 hours</div>'
+      + '<div id="modal-done" style="display:none;text-align:center;padding:1rem 0;">'
+      + '<div style="font-size:1.5rem;margin-bottom:.5rem;">&#10003;</div>'
+      + '<div style="font-size:14px;font-weight:600;color:#16a34a;margin-bottom:.25rem;">Request sent!</div>'
+      + '<div style="font-size:12.5px;color:#64748b;">Our counsellor will call you within 24 hours to help with your consultation at <span id="modal-clinic-name"></span>.</div>'
+      + '</div>'
+      + '</div>';
+    document.body.appendChild(modal);
+  }
+  document.getElementById('modal-clinic').innerHTML = '<strong>Clinic:</strong> ' + clinicName + ' &nbsp;&middot;&nbsp; <strong>Doctor:</strong> ' + doctorName;
+  document.getElementById('modal-clinic-name').textContent = clinicName;
+  document.getElementById('modal-submit').style.display = 'block';
+  document.getElementById('modal-done').style.display = 'none';
+  modal.dataset.clinic = clinicName;
+  modal.dataset.doctor = doctorName;
+  modal.style.display = 'flex';
+}
+
+async function submitModalLead() {
+  var name  = document.getElementById('modal-name').value.trim();
+  var phone = document.getElementById('modal-phone').value.trim();
+  var query = document.getElementById('modal-query').value;
+  var modal = document.getElementById('lead-modal');
+  var clinic = modal.dataset.clinic || 'Not specified';
+  var doctor = modal.dataset.doctor || 'Not specified';
+  if (!phone) {
+    document.getElementById('modal-phone').style.borderColor = '#dc2626';
+    document.getElementById('modal-phone').focus();
+    return;
+  }
+  var city = document.title.includes('Mumbai') ? 'Mumbai' : document.title.includes('Delhi') ? 'Delhi' : 'Bangalore';
+  var summary = 'CLINIC LEAD | Clinic: ' + clinic + ' | Doctor: ' + doctor + ' | City: ' + city + ' | Query: ' + (query || 'General') + ' | Name: ' + (name || 'Not given');
+  try {
+    await fetch(GPOST, {
+      method: 'POST', mode: 'no-cors',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({
+        'entry.55671786': name || 'Clinic enquiry',
+        'entry.1601274733': phone + ' | ' + summary
+      }).toString()
+    });
+  } catch(e) {}
+  document.getElementById('modal-submit').style.display = 'none';
+  document.getElementById('modal-done').style.display = 'block';
+  setTimeout(function(){ modal.style.display = 'none'; }, 3500);
 }
 
 function render() {
@@ -744,7 +817,7 @@ async function submitLead() {
     await fetch(GPOST,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},
       body:new URLSearchParams({
         'entry.55671786': name||'Guest',
-        'entry.1601274733': phone
+        'entry.1601274733': phone + ' | PAGE: BANGALORE CLINICS PAGE'
       }).toString()
     });
   } catch(e) {}

@@ -206,6 +206,11 @@ footer strong { color: rgba(255,255,255,0.9); }
 .unav-mob-cta:hover{background:#0f766e;color:white;}
 @media(max-width:860px){.unav-links,.unav-right,.unav-strip{display:none!important;}.unav-burger{display:flex!important;}.unav-drawer{display:block!important;}.unav-top{padding:0 1rem;}.unav-logo{height:50px;font-size:1rem;}}
 
+
+/* Collapse empty AdSense slots — expand automatically when ads load */
+.adsbygoogle:empty{min-height:0!important;height:0!important;overflow:hidden;}
+.ad-bar:has(.adsbygoogle:empty){padding:0!important;border:none!important;min-height:0!important;}
+ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage",

@@ -261,6 +261,11 @@ footer .disclaimer{font-size:11.5px;opacity:0.55;max-width:700px;margin:1rem aut
 .unav-mob-cta:hover{background:#0f766e;color:white;}
 @media(max-width:860px){.unav-links,.unav-right,.unav-strip{display:none!important;}.unav-burger{display:flex!important;}.unav-drawer{display:block!important;}.unav-top{padding:0 1rem;}.unav-logo{height:50px;font-size:1rem;}}
 
+
+/* Collapse empty AdSense slots — expand automatically when ads load */
+.adsbygoogle:empty{min-height:0!important;height:0!important;overflow:hidden;}
+.ad-bar:has(.adsbygoogle:empty){padding:0!important;border:none!important;min-height:0!important;}
+ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;}
 </style>
 </head>
 <body>
@@ -698,7 +703,7 @@ function toggleDrawer(){
  </div>
  <div class="step">
  <div class="step-left"><div class="step-num">5</div><div class="step-line"></div></div>
- <div class="step-body"><h4>Submit claim within the intimation window</h4><p>Most insurers require claim intimation within 24–72 hours of hospitalisation (or procedure). For OPD fertility treatments, submit within the policy's OPD claim window (usually 30 days of treatment). Late submission is the most common reason for rejection.</p></div>
+ <div class="step-body"><h4>Submit claim within the intimation window</h4><p>Most insurers require claim intimation within 24–724 hours of hospitalisation (or procedure). For OPD fertility treatments, submit within the policy's OPD claim window (usually 30 days of treatment). Late submission is the most common reason for rejection.</p></div>
  </div>
  </div>
  </div>
@@ -811,7 +816,7 @@ function toggleDrawer(){
  </select>
  </div>
  <button onclick="submitLead_insurance()" style="width:100%;padding:0.75rem;background:white;color:#0f766e;border:none;border-radius:7px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;">Talk to a Fertility Expert Free &rarr;</button>
- <p style="font-size:11px;opacity:0.6;text-align:center;margin-top:0.5rem;">Free &middot; No spam &middot; Response within 2 hours</p>
+ <p style="font-size:11px;opacity:0.6;text-align:center;margin-top:0.5rem;">Free &middot; No spam &middot; Response within 24 hours</p>
  </div>
  <div id="ls-insurance" style="display:none;text-align:center;padding:0.75rem;font-size:14px;">&#127881; Received! We will email you at contact@ivfhelp.org shortly.</div>
 </div>
@@ -828,7 +833,7 @@ async function submitLead_insurance() {
  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
  body: new URLSearchParams({
         'entry.55671786': name || 'Guest',
-        'entry.1601274733': phone
+        'entry.1601274733': phone + ' | PAGE: INSURANCE PAGE'
       }).toString()
  });
  } catch(e) { console.warn('Form error', e); }

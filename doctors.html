@@ -228,6 +228,11 @@ footer strong{color:rgba(255,255,255,0.9);}
 .unav-mob-cta:hover{background:#0f766e;color:white;}
 @media(max-width:860px){.unav-links,.unav-right,.unav-strip{display:none!important;}.unav-burger{display:flex!important;}.unav-drawer{display:block!important;}.unav-top{padding:0 1rem;}.unav-logo{height:50px;font-size:1rem;}}
 
+
+/* Collapse empty AdSense slots — expand automatically when ads load */
+.adsbygoogle:empty{min-height:0!important;height:0!important;overflow:hidden;}
+.ad-bar:has(.adsbygoogle:empty){padding:0!important;border:none!important;min-height:0!important;}
+ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;}
 </style>
 </head>
 <body>
@@ -339,7 +344,7 @@ function toggleDrawer(){
  
 <div id="lead-box-doctors" style="background:linear-gradient(135deg,#0f766e,#0d9488);border-radius:12px;padding:1.75rem;color:white;margin:2rem auto;max-width:680px;">
  <h3 style="font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:0.3rem;">Talk to a Fertility Expert — Free</h3>
- <p style="font-size:13px;opacity:0.78;margin-bottom:1.25rem;">Tell us your city and what you need. We will match you with the right specialist within 2 hours.</p>
+ <p style="font-size:13px;opacity:0.78;margin-bottom:1.25rem;">Tell us your city and what you need. We will match you with the right specialist within 24 hours.</p>
  <div id="lf-doctors">
  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.6rem;">
  <input id="ln-doctors" type="text" placeholder="Your name" style="padding:0.65rem 0.9rem;border:none;border-radius:7px;font-family:inherit;font-size:13px;color:#111;outline:none;width:100%;">
@@ -358,7 +363,7 @@ function toggleDrawer(){
  </select>
  </div>
  <button onclick="submitLead_doctors()" style="width:100%;padding:0.75rem;background:white;color:#0f766e;border:none;border-radius:7px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;">Talk to a Fertility Expert Free &rarr;</button>
- <p style="font-size:11px;opacity:0.6;text-align:center;margin-top:0.5rem;">Free &middot; No spam &middot; Response within 2 hours</p>
+ <p style="font-size:11px;opacity:0.6;text-align:center;margin-top:0.5rem;">Free &middot; No spam &middot; Response within 24 hours</p>
  </div>
  <div id="ls-doctors" style="display:none;text-align:center;padding:0.75rem;font-size:14px;">&#127881; Received! We will email you at contact@ivfhelp.org shortly.</div>
 </div>
@@ -375,7 +380,7 @@ async function submitLead_doctors() {
  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
  body: new URLSearchParams({
         'entry.55671786': name || 'Guest',
-        'entry.1601274733': phone
+        'entry.1601274733': phone + ' | PAGE: DOCTORS PAGE'
       }).toString()
  });
  } catch(e) { console.warn('Form error', e); }
@@ -991,7 +996,7 @@ async function book(name, city) {
  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
  body: new URLSearchParams({
         'entry.55671786': name || 'Guest',
-        'entry.1601274733': ''
+        'entry.1601274733': '' + ' | PAGE: DOCTORS PAGE'
       }).toString()
  });
  } catch(e) {}
