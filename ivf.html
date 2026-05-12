@@ -365,69 +365,10 @@ function toggleDrawer(){
  <li><span>With meds - Bangalore</span><span class="price">Rs1.6L-Rs2.6L</span></li>
  </ul>
  </div>
- <div class="quote-form-block" id="qf-ivf">
-  <div class="qfb-inner">
-    <div class="qfb-left">
-      <h2 class="qfb-title">Ready to Start IVF Treatment in India?</h2>
-      <p class="qfb-sub">Get personalised quotes from top clinics in Mumbai, Delhi or Bangalore — free within 24 hours.</p>
-    </div>
-    <div class="qfb-right" id="qf-ivf-form">
-      <div class="qfb-row">
-        <input class="qfb-inp" id="qn-ivf" type="text" placeholder="Your name">
-        <input class="qfb-inp" id="qp-ivf" type="tel" placeholder="Phone number">
-      </div>
-      <div class="qfb-row">
-        <select class="qfb-sel" id="qc-ivf">
-          <option value="">Select city</option>
-          <option>Mumbai</option><option>Delhi</option><option>Bangalore</option>
-          <option>Hyderabad</option><option>Chennai</option><option>Other city</option>
-        </select>
-        <select class="qfb-sel" id="qq-ivf">
-          <option value="IVF PROCEDURE PAGE">IVF Treatment Query</option>
-          <option>IVF</option><option>IUI</option><option>ICSI</option>
-          <option>Donor Egg IVF</option><option>Fertility Consultation</option>
-          <option>Second Opinion</option>
-        </select>
-      </div>
-      <button class="qfb-btn" onclick="submitLead_ivf()">Talk to a Fertility Expert Free &#8594;</button>
-      <div class="qfb-trust">Free &middot; No spam &middot; Response within 24 hours</div>
-    </div>
-    <div class="qfb-done" id="qd-ivf" style="display:none;">
-      <div class="qfb-done-icon">&#10003;</div>
-      <div class="qfb-done-title">Request received!</div>
-      <div class="qfb-done-sub">Our counsellor will call you within 24 hours. You can also <a href="quiz.html" style="color:#0d9488;font-weight:600;">take the free quiz</a> for an instant personalised report.</div>
-    </div>
-  </div>
+ 
 </div>
 
-<script>
-async function submitLead_ivf() {
-  var name  = document.getElementById('qn-ivf').value.trim();
-  var phone = document.getElementById('qp-ivf').value.trim();
-  var city  = document.getElementById('qc-ivf').value;
-  var query = document.getElementById('qq-ivf').value;
-  if (!phone) {
-    var ph = document.getElementById('qp-ivf');
-    ph.style.borderColor = '#dc2626';
-    ph.placeholder = 'Please enter your phone number';
-    ph.focus();
-    return;
-  }
-  var summary = 'PAGE: IVF PROCEDURE PAGE | City: ' + (city||'Not given') + ' | Query: ' + (query||'General') + ' | Name: ' + (name||'Not given');
-  try {
-    await fetch('https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/formResponse', {
-      method: 'POST', mode: 'no-cors',
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      body: new URLSearchParams({
-        'entry.55671786': name || 'Guest',
-        'entry.1601274733': phone + ' | ' + summary
-      }).toString()
-    });
-  } catch(e) {}
-  document.getElementById('qf-ivf-form').style.display = 'none';
-  document.getElementById('qd-ivf').style.display = 'block';
-}
-</script>
+
  <div class="lead-done" id="lead-done">Received! We will email you at contact@ivfhelp.org shortly.</div>
  </div>
  <div style="display:flex;justify-content:center;">
@@ -466,6 +407,68 @@ async function submitLead_ivf() {
  data-full-width-responsive="true"></ins>
  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
+
+<div class="quote-form-block" id="qf-ivf">
+  <div class="qfb-inner">
+    <div class="qfb-left">
+      <h2 class="qfb-title">Ready to Start IVF Treatment in India?</h2>
+      <p class="qfb-sub">Get personalised quotes from top clinics in Mumbai, Delhi or Bangalore — free within 24 hours.</p>
+    </div>
+    <div class="qfb-right" id="qf-ivf-form">
+      <div class="qfb-row">
+        <input class="qfb-inp" id="qn-ivf" type="text" placeholder="Your name">
+        <input class="qfb-inp" id="qp-ivf" type="tel" placeholder="Phone number">
+      </div>
+      <div class="qfb-row">
+        <select class="qfb-sel" id="qc-ivf">
+          <option value="">Select city</option>
+          <option>Mumbai</option><option>Delhi</option><option>Bangalore</option>
+          <option>Hyderabad</option><option>Chennai</option><option>Other</option>
+        </select>
+        <select class="qfb-sel" id="qq-ivf">
+          <option value="IVF PROCEDURE PAGE">IVF Treatment Query</option>
+          <option>IVF</option><option>IUI</option><option>ICSI</option>
+          <option>Donor Egg IVF</option><option>Second Opinion</option>
+        </select>
+      </div>
+      <button class="qfb-btn" onclick="submitLead_ivf()">Talk to a Fertility Expert Free &#8594;</button>
+      <div class="qfb-trust">Free &middot; No spam &middot; Response within 24 hours</div>
+    </div>
+    <div class="qfb-done" id="qd-ivf" style="display:none;">
+      <div class="qfb-done-icon">&#10003;</div>
+      <div class="qfb-done-title">Request received!</div>
+      <div class="qfb-done-sub">Our counsellor will call you within 24 hours. Or <a href="quiz.html" style="color:#5eead4;font-weight:600;">take the free quiz</a> for an instant personalised report.</div>
+    </div>
+  </div>
+</div>
+<script>
+async function submitLead_ivf() {
+  var name  = document.getElementById('qn-ivf').value.trim();
+  var phone = document.getElementById('qp-ivf').value.trim();
+  var city  = document.getElementById('qc-ivf').value;
+  var query = document.getElementById('qq-ivf').value;
+  if (!phone) {
+    var ph = document.getElementById('qp-ivf');
+    ph.style.borderColor = '#dc2626';
+    ph.placeholder = 'Please enter your phone number';
+    ph.focus();
+    return;
+  }
+  var summary = 'PAGE: IVF PROCEDURE PAGE | City: ' + (city||'Not given') + ' | Query: ' + (query||'General') + ' | Name: ' + (name||'Not given');
+  try {
+    await fetch('https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/formResponse', {
+      method: 'POST', mode: 'no-cors',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({
+        'entry.55671786': name || 'Guest',
+        'entry.1601274733': phone + ' | ' + summary
+      }).toString()
+    });
+  } catch(e) {}
+  document.getElementById('qf-ivf-form').style.display = 'none';
+  document.getElementById('qd-ivf').style.display = 'block';
+}
+</script>
 <footer>
  <strong>IVFhelp India</strong> &mdash; India's IVF price discovery platform<br>
  Pricing data from clinic websites and verified aggregators. Updated April 2026. Not medical advice.<br><br>
