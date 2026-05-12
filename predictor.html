@@ -889,7 +889,6 @@ async function submitLead() {
  }
 
  gaEvent('lead_submitted', { source: 'predictor', age: answers.age, diag: answers.diag });
- window.open('https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/viewform', '_blank');
 
  document.getElementById('lead-form').style.display = 'none';
  document.getElementById('lead-done').style.display = 'block';
