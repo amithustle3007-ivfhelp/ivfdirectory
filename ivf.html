@@ -218,6 +218,24 @@ footer strong{color:rgba(255,255,255,0.9);}
 .adsbygoogle:empty{min-height:0!important;height:0!important;overflow:hidden;}
 .ad-bar:has(.adsbygoogle:empty){padding:0!important;border:none!important;min-height:0!important;}
 ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;}
+
+/* ── Quote Form Block ── */
+.quote-form-block{background:linear-gradient(135deg,#0f766e 0%,#0d9488 60%,#0891b2 100%);border-radius:16px;padding:2rem 2.5rem;margin:2rem 0;}
+.qfb-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:2rem;align-items:center;}
+@media(max-width:768px){.qfb-inner{grid-template-columns:1fr;gap:1.25rem;}}
+.qfb-title{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:white;line-height:1.2;margin-bottom:.5rem;}
+.qfb-sub{font-size:13.5px;color:rgba(255,255,255,0.8);line-height:1.6;}
+.qfb-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem;}
+@media(max-width:540px){.qfb-row{grid-template-columns:1fr;}}
+.qfb-inp,.qfb-sel{width:100%;padding:.75rem 1rem;border:none;border-radius:10px;font-family:inherit;font-size:14px;color:#0f172a;outline:none;background:white;box-sizing:border-box;}
+.qfb-inp::placeholder{color:#94a3b8;}
+.qfb-btn{width:100%;padding:.875rem;background:white;color:#0f766e;border:none;border-radius:10px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:opacity .15s;margin-bottom:.5rem;}
+.qfb-btn:hover{opacity:.92;}
+.qfb-trust{font-size:12px;color:rgba(255,255,255,0.6);text-align:center;}
+.qfb-done{text-align:center;padding:1rem 0;}
+.qfb-done-icon{font-size:2rem;color:white;margin-bottom:.5rem;}
+.qfb-done-title{font-family:'Fraunces',serif;font-size:1.2rem;color:white;font-weight:600;margin-bottom:.35rem;}
+.qfb-done-sub{font-size:13.5px;color:rgba(255,255,255,0.8);line-height:1.6;}
 </style>
 </head>
 <body>
@@ -347,18 +365,69 @@ function toggleDrawer(){
  <li><span>With meds - Bangalore</span><span class="price">Rs1.6L-Rs2.6L</span></li>
  </ul>
  </div>
- <div class="lead-card" id="get-quote">
- <h3>Get a Free IVF Quote</h3>
- <p>We will send you personalised quotes from top clinics within 24 hours.</p>
- <div id="lead-form">
- <input class="lead-inp" id="lead-phone" type="tel" placeholder="Phone number">
- <select class="lead-sel" id="lead-city">
- <option value="">Select city</option>
- <option>Mumbai</option><option>Delhi</option><option>Bangalore</option>
- </select>
- <button class="lead-btn" onclick="submitLead()">Get Free Quote</button>
- <div class="lead-trust">Free - No spam - Reply in 2 hrs</div>
- </div>
+ <div class="quote-form-block" id="qf-ivf">
+  <div class="qfb-inner">
+    <div class="qfb-left">
+      <h2 class="qfb-title">Ready to Start IVF Treatment in India?</h2>
+      <p class="qfb-sub">Get personalised quotes from top clinics in Mumbai, Delhi or Bangalore — free within 24 hours.</p>
+    </div>
+    <div class="qfb-right" id="qf-ivf-form">
+      <div class="qfb-row">
+        <input class="qfb-inp" id="qn-ivf" type="text" placeholder="Your name">
+        <input class="qfb-inp" id="qp-ivf" type="tel" placeholder="Phone number">
+      </div>
+      <div class="qfb-row">
+        <select class="qfb-sel" id="qc-ivf">
+          <option value="">Select city</option>
+          <option>Mumbai</option><option>Delhi</option><option>Bangalore</option>
+          <option>Hyderabad</option><option>Chennai</option><option>Other city</option>
+        </select>
+        <select class="qfb-sel" id="qq-ivf">
+          <option value="IVF PROCEDURE PAGE">IVF Treatment Query</option>
+          <option>IVF</option><option>IUI</option><option>ICSI</option>
+          <option>Donor Egg IVF</option><option>Fertility Consultation</option>
+          <option>Second Opinion</option>
+        </select>
+      </div>
+      <button class="qfb-btn" onclick="submitLead_ivf()">Talk to a Fertility Expert Free &#8594;</button>
+      <div class="qfb-trust">Free &middot; No spam &middot; Response within 24 hours</div>
+    </div>
+    <div class="qfb-done" id="qd-ivf" style="display:none;">
+      <div class="qfb-done-icon">&#10003;</div>
+      <div class="qfb-done-title">Request received!</div>
+      <div class="qfb-done-sub">Our counsellor will call you within 24 hours. You can also <a href="quiz.html" style="color:#0d9488;font-weight:600;">take the free quiz</a> for an instant personalised report.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+async function submitLead_ivf() {
+  var name  = document.getElementById('qn-ivf').value.trim();
+  var phone = document.getElementById('qp-ivf').value.trim();
+  var city  = document.getElementById('qc-ivf').value;
+  var query = document.getElementById('qq-ivf').value;
+  if (!phone) {
+    var ph = document.getElementById('qp-ivf');
+    ph.style.borderColor = '#dc2626';
+    ph.placeholder = 'Please enter your phone number';
+    ph.focus();
+    return;
+  }
+  var summary = 'PAGE: IVF PROCEDURE PAGE | City: ' + (city||'Not given') + ' | Query: ' + (query||'General') + ' | Name: ' + (name||'Not given');
+  try {
+    await fetch('https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/formResponse', {
+      method: 'POST', mode: 'no-cors',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({
+        'entry.55671786': name || 'Guest',
+        'entry.1601274733': phone + ' | ' + summary
+      }).toString()
+    });
+  } catch(e) {}
+  document.getElementById('qf-ivf-form').style.display = 'none';
+  document.getElementById('qd-ivf').style.display = 'block';
+}
+</script>
  <div class="lead-done" id="lead-done">Received! We will email you at contact@ivfhelp.org shortly.</div>
  </div>
  <div style="display:flex;justify-content:center;">
@@ -497,22 +566,7 @@ function toggleFaq(el) {
  document.querySelectorAll('.faq-a.open').forEach(function(a){a.classList.remove('open');a.previousElementSibling.classList.remove('open');});
  if(!isOpen){ans.classList.add('open');el.classList.add('open');}
 }
-async function submitLead() {
- var phone=document.getElementById('lead-phone').value.trim();
- var city=document.getElementById('lead-city').value;
- if(!phone){alert('Please enter your phone number.');return;}
- try{
- await fetch('https://docs.google.com/forms/d/e/1FAIpQLScPzbnYAFZP64A8p_eh_enUUxMJxBLb5lDiar1oIp5Ri6W9jA/formResponse',{ method:'POST', mode:'no-cors',
- headers:{'Content-Type':'application/x-www-form-urlencoded'},
- body: new URLSearchParams({
-        'entry.55671786': 'Guest',
-        'entry.1601274733': phone + ' | PAGE: IVF PROCEDURE PAGE'
-      }).toString()
- });
- }catch(e){}
- document.getElementById('lead-form').style.display='none';
- document.getElementById('lead-done').style.display='block';
-}
+
 renderTable(); renderFAQ();
 </script>
 </body>
